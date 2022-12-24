@@ -1,0 +1,26 @@
+{
+  "name": "ysm",
+  "version": "1.0.0",
+  "description": "ysm wiki page",
+  "main": "index.js",
+  "scripts": {
+    "docs:dev": "vuepress dev docs",
+    "docs:build": "vuepress build docs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TartaricAcid/ysm.git"
+  },
+  "keywords": [
+    "vuepress"
+  ],
+  "author": "tartaric_acid",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/TartaricAcid/ysm/issues"
+  },
+  "homepage": "https://github.com/TartaricAcid/ysm#readme",
+  "devDependencies": {
+    "vuepress": "^1.9.7"
+  }
+}
