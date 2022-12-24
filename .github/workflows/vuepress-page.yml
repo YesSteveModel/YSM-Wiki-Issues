@@ -1,6 +1,7 @@
 name: Vuepress Build Page
 
 on:
+  workflow_dispatch:
   push:
     paths:
       - 'docs/**'
