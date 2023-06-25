@@ -250,47 +250,21 @@ Yes Steve Model 模组主模型文件命名必须为 `main.json`。其使用的�
 
 考虑到模型还有一些内容需要自定义，我们还添加了一些可自定义的内容。
 
-但是目前 Blockbench 并不支持这些自定义内容，所以我们需要手动修改 `main.json` 文件才可以添加。并且 Blockbench 还会在保持文件时自动剔除这些内容。**我们会尽快开发 Blockbench 插件来解决此问题，请稍安勿躁！**
+但是目前 Blockbench 软件本身并不支持这些自定义内容，所以你需要安装 ysm-utils 插件来做到这一点。
 
-所有的配置都位于 `main.json` 模型文件中，建议使用 `Visual Studio Code` 这样的软件来修改此文件。
+> 插件的下载地址：<https://share.weiyun.com/zT4yu7ck>
 
-这里只列出了一部分内容，标记了说明的地方才是我们添加的自定义配置：
+下载好以后，不要修改文件名，选择一个地方放置此文件。然后打开 Blockbench，依次选择：文件 -> 插件 -> 从文件加载插件。最终加载上 ysm 插件。
 
-```json
-{
-	"format_version": "1.12.0",
-	"minecraft:geometry": [
-		{
-			"description": {
-				"identifier": "geometry.unknown",
-				"texture_width": 128,
-				"texture_height": 128,
-				"visible_bounds_width": 4,
-				"visible_bounds_height": 4.5,
-				"visible_bounds_offset": [0, 1.75, 0],                
-				"ysm_height_scale": 1.0,   // 高度全局缩放，默认模型都缩放了 0.8 倍
-				"ysm_width_scale": 1.0,    // 宽度全局缩放，默认模型都缩放了 0.8 倍
-				"ysm_extra_info": {
-                    // 游戏内模型选择界面的名称
-					"name": "Wine Fox （酒狐）",
-                    // 模型选择界面的备注说明
-                    // 你可以通过 \n 字符来换行
-					"tips": "A fox girl who loves to drink wine.\n一只爱喝葡萄酒的狐娘。",
-                    // 模型选择界面的作者栏
-					"authors": ["Gesila", "???"],
-                    // 模型选择界面的协议栏
-					"license": "CC BY-NC-SA 4.0",
-                    // 自定义额外动画名，会替换轮盘界面的名称
-					"extra_animation_names": ["诹访大舞", "招手"]
-				}
-			},
-			"bones": []
-		}
-	]
-}
-```
+![6.png](https://s2.loli.net/2023/06/26/HpVFRtY8WCnP25G.png)
 
-最终效果如图所示：
+当菜单栏出现”是！史蒂夫“栏时，代表插件已经加载成功。
+
+而后随便打开一个基岩版模型文件，依次点击 ”是！史蒂夫“ 菜单、添加信息，你就可以打开如下界面添加额外信息了。填写完毕后点击确认，并且记得再次按下 `Ctrl S` 保存文件。
+
+![7.png](https://s2.loli.net/2023/06/26/rWVOmgHaB2jTpQd.png)
+
+重载模型后，进入游戏，最终效果如图所示：
 
 ![5.png](https://s2.loli.net/2023/06/25/Izugoi8nYCOeVpJ.png)
 
