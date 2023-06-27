@@ -254,7 +254,7 @@ Yes Steve Model 模组主模型文件命名必须为 `main.json`。其使用的�
 
 但是目前 Blockbench 软件本身并不支持这些自定义内容，所以你需要安装 ysm-utils 插件来做到这一点。
 
-> 插件的下载地址：<https://share.weiyun.com/rgG6p8vf>
+> 插件的下载地址：<https://share.weiyun.com/dZnnjrHb>
 
 下载好以后，不要修改文件名，选择一个地方放置此文件。然后打开 Blockbench，依次选择：文件 -> 插件 -> 从文件加载插件。最终加载上 ysm 插件。
 
