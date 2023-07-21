@@ -14,6 +14,10 @@ Yes Steve Model 模组考虑到了服务器群体的模组需求，采用了诸�
 - 原版玩家模型修改：添加了默认的 Steve 和 Alex 模型，这两个模型均可自动调用玩家皮肤显示。
 - 简单的自定义功能：模型自定义功能极其简单，只需要在特定文件夹放置模型、材质和动画文件，在游戏内输入重载指令即可自动加载、同步。**不需要书写任何配置文件**！
 - 动画轮盘功能：当按下 `Z` 键时，能够打开一个轮盘动画。通过它你可以方便播放各种有趣的动画（比如动作、表情等）。
+- **部分**兼容[更真实的第一人称模型（First-person Model）](https://www.curseforge.com/minecraft/mc-mods/first-person-model)模组。
+- 与[永恒枪械工坊（Timeless and Classics Guns）](https://www.curseforge.com/minecraft/mc-mods/timeless-and-classic-guns-tac)模组的兼容：可以完美的兼容该模组的持枪、换弹、瞄准、开火等诸多动作。
+
+![2023-07-20_18.jpg](https://s2.loli.net/2023/07/20/N6sOS9ea5xwfn8t.jpg)
 
 ## 二、怎么使用此模组
 
@@ -68,6 +72,8 @@ custom （或 auth）文件夹
     ├─arm.json             手臂模型文件，用于第一人称手臂的显示（固定名称）
     ├─main.animation.json  主模型文件的动画文件（固定名称）
     ├─extra.animation.json 轮盘动画文件（固定名称）
+    ├─arm.animation.json   手部动画文件（固定名称）
+    ├─tac.animation.json   与永恒枪械模组的兼容动画文件（固定名称）
     ├─happy_skin.png       主模型文件贴图1（名称可自定义，会作为游戏内显示名称）
     ├─...                  任意多个贴图文件
     └─good_cloth_12.png    主模型文件贴图2（名称可自定义，会作为游戏内显示名称）    
@@ -89,13 +95,17 @@ Yes Steve Model 模组主模型文件命名必须为 `main.json`。其使用的�
 
 某些特定组名会被游戏自动添加某些特殊功能：
 
-|           组名            |                             说明                             |
-| :-----------------------: | :----------------------------------------------------------: |
-|          `Head`           |              游戏会默认添加头部随视角摆动的动画              |
-|     `LeftHandLocator`     | 左手手持物品的定位组<br/>没有此组就不会渲染副手物品<br>由`LeftHandLocator`的旋转点定位手持物品，对其应用缩放、旋转和位移动画可以修改手持物品的大小、朝向和位置 |
-|    `RightHandLocator`     | 右手手持物品的定位组<br/>没有此组就不会渲染主手物品<br/>由`RightHandLocator`的旋转点定位手持物品，对其应用缩放、旋转和位移动画可以修改手持物品的大小、朝向和位置 |
-|      `ElytraLocator`      | 鞘翅的定位组<br/>没有此组就不会渲染鞘翅<br/>由`ElytraLocator`的旋转点定位鞘翅，对其应用缩放、旋转和位移动画可以修改鞘翅的大小、朝向和位置 |
-| 所有以 `ysmGlow` 开头的组 | 发光组，在绝大多数光影下会渲染发光效果。<br/>**只作用于当前组** |
+|                             组名                             |                             说明                             |
+| :----------------------------------------------------------: | :----------------------------------------------------------: |
+|                            `Head`                            |              游戏会默认添加头部随视角摆动的动画              |
+|                          `AllHead`                           |     更真实的第一人称模型模组中，会默认隐藏此分组下的模型     |
+|                      `LeftHandLocator`                       | 左手手持物品的定位组<br/>没有此组就不会渲染副手物品<br>由`LeftHandLocator`的旋转点定位手持物品，对其应用缩放、旋转和位移动画可以修改手持物品的大小、朝向和位置 |
+|                      `RightHandLocator`                      | 右手手持物品的定位组<br/>没有此组就不会渲染主手物品<br/>由`RightHandLocator`的旋转点定位手持物品，对其应用缩放、旋转和位移动画可以修改手持物品的大小、朝向和位置 |
+|                       `ElytraLocator`                        | 鞘翅的定位组<br/>没有此组就不会渲染鞘翅<br/>由`ElytraLocator`的旋转点定位鞘翅，对其应用缩放、旋转和位移动画可以修改鞘翅的大小、朝向和位置 |
+|                       `PistolLocator`                        | 当玩家安装了[永恒枪械工坊（Timeless and Classics Guns）](https://www.curseforge.com/minecraft/mc-mods/timeless-and-classic-guns-tac)模组后，副手持有手枪时，会渲染一个插在腰部的手枪模型<br/>这是此手枪模型的定位组<br/>没有此组就不会渲染插在腰间的枪械模型<br/>由`PistolLocator`的旋转点定位手枪模型的位置，对其应用缩放、旋转和位移动画可以修改手枪模型的大小、朝向和位置 |
+|                        `RifleLocator`                        | 当玩家安装了[永恒枪械工坊（Timeless and Classics Guns）](https://www.curseforge.com/minecraft/mc-mods/timeless-and-classic-guns-tac)模组后，副手持有步枪或火箭筒时，会渲染一个背在背上的步枪或火箭筒模型<br/>这是此模型的定位组<br/>没有此组就不会渲染背在背上的模型<br/>由`RifleLocator`的旋转点定位模型的位置，对其应用缩放、旋转和位移动画可以修改模型的大小、朝向和位置 |
+|                        `ViewLocator`                         | [更真实的第一人称模型（First-person Model）](https://www.curseforge.com/minecraft/mc-mods/first-person-model)模组中，玩家头部的高低由此组旋转点的 Y 值决定 |
+| 所有以 `ysmGlow` 开头的组，比如 `ysmGlowHead`，`ysmGlowRingBow` | 发光组，在绝大多数光影下会渲染发光效果。<br/>**只作用于当前组** |
 
 ![2.png](https://s2.loli.net/2023/06/25/OQY3GPnWrHCBpzw.png)
 
@@ -115,6 +125,8 @@ Yes Steve Model 模组主模型文件命名必须为 `main.json`。其使用的�
 
 ![2.png](https://s2.loli.net/2023/02/11/yLC1siW2aFvStXE.png)
 
+>第一人称手部模型目前还不支持基岩版动画，但可以完美兼容永恒枪械工坊模组
+
 ## 九、贴图文件的制作
 
 - 材质使用 `png` 格式材质，不建议使用**半透明**贴图，这会造成各种渲染错误；
@@ -126,7 +138,7 @@ Yes Steve Model 模组主模型文件命名必须为 `main.json`。其使用的�
 
 动画文件是可选选项。没有动画文件，或者缺失部分动画时，游戏均会智能调用默认的动画文件。如果你的模型是按照默认模型二次修改的，那么即可完美兼容。
 
-游戏内只有一个动画是代码添加的，不可修改：
+**游戏内只有一个动画是代码添加的，不可修改**：
 
 - 头部随鼠标摆动的动画：智能识别 `Head` 分组添加的动画
 
@@ -164,7 +176,7 @@ Yes Steve Model 模组主模型文件命名必须为 `main.json`。其使用的�
 
 ### 2. 手部动画
 
-手部动画独立于主动画，也放置于 `main.animation.json` 文件中。会在玩家左键、右键时播放，所以它会覆盖主动画。你不应该在手部动画中添加其他与手部无关的组的动画。当没有如下的手部动画时，游戏会调用默认的 `use_mainhand` `use_offhand` `swing_hand` 等动画。
+手部动画独立于主动画，放置于 `arm.animation.json` 文件中。会在玩家左键、右键时播放，所以它会覆盖主动画。你不应该在手部动画中添加其他与手部无关的组的动画。当没有如下的手部动画时，游戏会调用默认的 `use_mainhand` `use_offhand` `swing_hand` 等动画。
 
 这里先补充几个 Minecraft 原版知识：
 
@@ -172,6 +184,7 @@ Yes Steve Model 模组主模型文件命名必须为 `main.json`。其使用的�
 - 副手：英文为 offhand，在游戏内默认为左手；
 - 使用：英文为 use，部分物品在玩家手持时，按下右键能够使用。比如食物、药水、弓箭、盾牌等。只要是能够使用的物品，无论在左手还是右手、均可以鼠标右键触发使用；
 - 挥动：英文为 swing，玩家鼠标左键点击即会触发挥动。玩家**只能挥动主手**。
+- 持有：英文为 hold，玩家主手或副手持有任何物品，且不进行任何操作时，即为持有状态。
 - 物品 ID：在游戏内按下 `F3 H` 快捷键就能打开物品 ID 显示，如下图所示。原版每种物品都有自己的 ID；
 
 ![3.png](https://s2.loli.net/2023/06/25/BTo2G4dPbK5SlAq.png)
@@ -179,6 +192,8 @@ Yes Steve Model 模组主模型文件命名必须为 `main.json`。其使用的�
 - 标签：对于同一类（比如所有的剑）物品，原版提供了标签（tag）系统，这一块需要通过 [wiki](https://minecraft.fandom.com/zh/wiki/%E6%A0%87%E7%AD%BE) 查询。
 
 通过特定的动画名，你可以很方便的添加自定义的使用、挥动动画，其格式如下：
+
+#### a. 使用动画
 
 使用动画默认自带了 9 个原版分类动画：
 
@@ -203,20 +218,32 @@ Yes Steve Model 模组主模型文件命名必须为 `main.json`。其使用的�
 | `use_mainhand$minecraft:shield`、`use_offhand$minecraft:shield` | 使用物品 ID 为 minecraft:shield （其实就是原版盾牌）的物品时播放 | `$` 加物品 ID  |
 | `use_mainhand#minecraft:dirt`、`use_offhand#minecraft:dirt`  | 使用标签为 minecraft:dirt （原版的泥土、草方块均有此标签）物品时播放 | `#` 加物品标签 |
 
-因为原版中，玩家只能左键挥动主手，故左键挥动不区分左右，统一以 `swing` 开头，后面可以通过 `$` 加物品 ID或者 `#` 加物品标签的方式添加挥动动画。
+#### b. 挥动动画
+
+因为原版中，玩家只能左键挥动主手，故左键挥动不区分左右，统一以 `swing` 开头，后面可以通过 `$` 加物品 ID 或者 `#` 加物品标签的方式添加挥动动画。
 
 这里只给出几个示例，你可以添加无限多个自定义动画：
-|                        名称                        |                             作用                             | 备注           |
-| :------------------------------------------------: | :----------------------------------------------------------: | -------------- |
-| `swing$minecraft:shield`、`swing$minecraft:shield` | 手持物品 ID 为 minecraft:shield （其实就是原版盾牌）左键挥动时播放 | `$` 加物品 ID  |
-|   `swing#minecraft:dirt`、`swing#minecraft:dirt`   | 手持标签为 minecraft:dirt （原版的泥土、草方块均有此标签）左键挥动时播放 | `#` 加物品标签 |
+|           名称           |                             作用                             | 备注           |
+| :----------------------: | :----------------------------------------------------------: | -------------- |
+| `swing$minecraft:shield` | 手持物品 ID 为 minecraft:shield （其实就是原版盾牌）左键挥动时播放 | `$` 加物品 ID  |
+|  `swing#minecraft:dirt`  | 手持标签为 minecraft:dirt （原版的泥土、草方块均有此标签）左键挥动时播放 | `#` 加物品标签 |
 
-目前有两个动画作为临时性的补充动画添加其中，后续**会考虑**为其添加上述的物品 ID 和标签识别功能：
+#### c. 持有动画
+
+持有动画会在玩家持有物品（此时物品没有使用或挥动）时播放。挥动动画有主手副手之分，以 `hold_mainhand` 或 `hold_offhand` 开头，**遵循主手优先原则**。后面通过 `$` 加物品 ID 或者 `#` 加物品标签的方式添加持有动画。
+
+由于原版的充能十字弓和抛出的鱼竿比较特殊，无法通过物品 ID 或者物品 tag 识别，故特意为其添加了固定名称的动画：
+
 |                             名称                             |          作用          |
 | :----------------------------------------------------------: | :--------------------: |
 | `hold_mainhand:charged_crossbow`、`hold_offhand:charged_crossbow` | 手持充能十字弓时的动画 |
 |                   `hold_mainhand:fishing`                    |   抛出钓鱼竿后的动画   |
 
+这里给出几个持有物品动画的示例，你可以添加无限多个自定义动画：
+|                             名称                             |                             作用                             | 备注           |
+| :----------------------------------------------------------: | :----------------------------------------------------------: | -------------- |
+| `hold_mainhand$minecraft:shield`、`hold_offhand$minecraft:shield` | 手持物品 ID 为 minecraft:shield （其实就是原版盾牌）无任何操作时播放 | `$` 加物品 ID  |
+| `hold_mainhand#minecraft:dirt`、`hold_offhand#minecraft:dirt` | 手持标签为 minecraft:dirt （原版的泥土、草方块均有此标签）无任何操作时播放 | `#` 加物品标签 |
 
 ### 3. 并行动画
 
@@ -236,7 +263,28 @@ Yes Steve Model 模组主模型文件命名必须为 `main.json`。其使用的�
 | `pre_parallel0` `pre_parallel1`<br>`pre_parallel2` `pre_parallel3`<br>`pre_parallel4` `pre_parallel5`<br>`pre_parallel6` `pre_parallel7` | 与主动画互相独立，优先级最低 | 循环播放 |
 | `parallel0` `parallel1`<br>`parallel2` `parallel3`<br>`parallel4` `parallel5`<br>`parallel6` `parallel7` | 与主动画互相独立，优先级最高 | 循环播放 |
 
-### 4. 额外动画（轮盘动画）
+### 4. 护甲动画
+
+护甲动画目前没有明确的放置位置，你可以放置在 `main.animation.json` 文件中。护甲动画会在玩家穿上对应护甲时播放。
+
+所以为了做出穿戴后显示护甲动画的设计，你应该这样做：
+
+1. 在并行动画中将所有的护甲组缩放设置为 0；
+2. 制作特定的护甲动画，将特定的组缩放修改回 1；
+
+护甲动画的命名方式和前述的手部动画几乎完全一致。原版护甲依据穿戴位置，区分为：`head`、`chest`、`legs（注意是复数）`、`feet` 四种。所有的护甲动画也以这几个名称作为前缀，后面通过 `$` 加物品 ID 或者 `#` 加物品标签的方式添加护甲动画。
+
+这里给出几个持有护甲动画的示例，你可以添加无限多个自定义动画：
+
+|                 名称                 |                             作用                             | 备注                               |
+| :----------------------------------: | :----------------------------------------------------------: | ---------------------------------- |
+|     `head$minecraft:iron_helmet`     | 玩家头盔栏穿戴 ID 为 minecraft:iron_helmet（其实就是原版铁头盔）的物品时播放 | `$` 加物品 ID                      |
+| `chest$minecraft:diamond_chestplate` | 玩家胸甲栏穿戴 ID 为 minecraft:diamond_chestplate（其实就是原版钻石胸甲）的物品时播放 | `$` 加物品 ID                      |
+|      `legs#forge:armor/diamond`      |    玩家护腿栏穿戴标签为 forge:armor/diamond 的物品时播放     | `#` 加物品 ID                      |
+|       `feet#forge:armor/iron`        |      玩家靴子栏穿戴标签为 forge:armor/iron 的物品时播放      | `#` 加物品 ID                      |
+|            `head:default`            | 玩家头盔栏穿戴任何护甲时播放。优先级最低，可以拿来做默认显示 | 同样适用于 `chest`、`legs`和`feet` |
+
+### 5. 额外动画（轮盘动画）
 
 以下动画是八个额外动画，额外动画需单独放置于 `extra.animation.json` 文件中，这些动画会在使用动画轮盘时进行播放。
 
@@ -246,7 +294,80 @@ Yes Steve Model 模组主模型文件命名必须为 `main.json`。其使用的�
 | :----------------------------------------------------------: | :--------------------------: | :--------------------------------: |
 | `extra0` `extra1`<br>`extra2` `extra3`<br>`extra4` `extra5`<br>`extra6` `extra7` | 使用动画轮盘播放对应额外动画 | 依据动画文件设定的循环类型进行播放 |
 
-## 十一、额外的配置参数
+### 6. [永恒枪械工坊](https://www.curseforge.com/minecraft/mc-mods/timeless-and-classic-guns-tac)的兼容
+
+[永恒枪械工坊（Timeless and Classics Guns）](https://www.curseforge.com/minecraft/mc-mods/timeless-and-classic-guns-tac)模组是一个制作精良的枪械类模组，我们为其添加了动画支持。
+
+枪械目前区分了手枪（`pistol`）、步枪（`rifle`）、火箭筒（`rpg`）三种类型，且动画设计上采用了上半身+下半身的设计，大大简化了动画的工作量。
+
+兼容的动画需要放置于 `tac.animation.json` 文件中，这些动画会在玩家持有[永恒枪械工坊（Timeless and Classics Guns）](https://www.curseforge.com/minecraft/mc-mods/timeless-and-classic-guns-tac)模组的枪械时播放。
+
+#### a. 下半身动画
+|    名称    |              作用              |
+| :--------: | :----------------------------: |
+| `tac:idle` |   玩家手持武器时，下半身动画   |
+| `tac:run`  | 玩家手持武器疾跑时，下半身动画 |
+| `tac:walk` | 玩家手持武器行走时，下半身动画 |
+
+#### b. 上半身动画
+
+|          名称          |              作用               |
+| :--------------------: | :-----------------------------: |
+| `tac:aim:fire:pistol`  |   玩家手持手枪瞄准开火的动画    |
+|  `tac:aim:fire:rifle`  |   玩家手持步枪瞄准开火的动画    |
+|   `tac:aim:fire:rpg`   |   玩家手持 RPG 瞄准开火的动画   |
+|    `tac:aim:pistol`    |     玩家手持手枪瞄准的动画      |
+|    `tac:aim:rifle`     |     玩家手持步枪瞄准的动画      |
+|     `tac:aim:rpg`      |     玩家手持 RPG 瞄准的动画     |
+| `tac:hold:fire:pistol` |    玩家手持手枪腰射时的动画     |
+| `tac:hold:fire:rifle`  |    玩家手持步枪腰射时的动画     |
+|  `tac:hold:fire:rpg`   |    玩家手持 RPG 腰射时的动画    |
+|   `tac:hold:pistol`    |      玩家手持手枪时的动画       |
+|    `tac:hold:rifle`    |      玩家手持步枪时的动画       |
+|     `tac:hold:rpg`     |      玩家手持 RPG 时的动画      |
+|  `tac:reload:pistol`   |     玩家给手枪换弹时的动画      |
+|   `tac:reload:rifle`   |     玩家给步枪换弹时的动画      |
+|    `tac:reload:rpg`    |     玩家给 RPG 换弹时的动画     |
+|    `tac:run:pistol`    | 玩家手持手枪疾跑时，上半身动画  |
+|    `tac:run:rifle`     | 玩家手持步枪疾跑时，上半身动画  |
+|     `tac:run:rpg`      | 玩家手持 RPG 疾跑时，上半身动画 |
+
+#### c. 全身动画
+
+趴下或爬行时，持枪姿势无法做成上半身+下半身的设计，故直接设计为全身姿势
+|            名称            |           作用            |
+| :------------------------: | :-----------------------: |
+|     `tac:climb:pistol`     |  玩家手持手枪爬行的动画   |
+|     `tac:climb:rifle`      |  玩家手持步枪爬行的动画   |
+|      `tac:climb:rpg`       |  玩家手持 RPG 爬行的动画  |
+| `tac:climbing:fire:pistol` | 玩家手持手枪卧射时的动画  |
+| `tac:climbing:fire:rifle`  | 玩家手持步枪卧射时的动画  |
+|  `tac:climbing:fire:rpg`   | 玩家手持 RPG 卧射时的动画 |
+|   `tac:climbing:pistol`    | 玩家手持手枪趴下时的动画  |
+|    `tac:climbing:rifle`    | 玩家手持步枪趴下时的动画  |
+|     `tac:climbing:rpg`     | 玩家手持 RPG 趴下时的动画 |
+
+#### d. 投雷动画
+|          名称          |         作用         |
+| :--------------------: | :------------------: |
+| `tac:mainhand:grenade` | 玩家主手投雷时的动画 |
+| `tac:offhand:grenade`  | 玩家副手投雷时的动画 |
+
+## 十一、更真实的第一人称模型的兼容
+
+[更真实的第一人称模型（First-person Model）](https://www.curseforge.com/minecraft/mc-mods/first-person-model)模组是一个模仿传统 3D 游戏中玩家视角的模组，它替换了原版的第一人称视角，使其更加的真实有趣。
+
+![2023-07-21_00.18.jpg](https://s2.loli.net/2023/07/21/25SgTJLdlU1iYCQ.jpg)
+
+> 请注意：因为 1.16.5 版本[更真实的第一人称模型（First-person Model）](https://www.curseforge.com/minecraft/mc-mods/first-person-model)模组并未开放 API，所以本模组**<u>仅不兼容</u>**此版本。
+
+组名为 `AllHead` 的模型，会在渲染第一人称视角玩家时自动隐藏。如果你有帽子或者其他会阻挡第一人称视角的模型，均应放置在此组下。
+
+玩家视角的高低由 `ViewLocator` 的旋转点控制，但是因为[更真实的第一人称模型（First-person Model）](https://www.curseforge.com/minecraft/mc-mods/first-person-model)模组强制将 X、Z 坐标限定为原点处，故只能修改玩家视角的高度。
+
+此外，我们还提供了 `ysm.first_person_mod_hide` molang 参数。当玩家安装[更真实的第一人称模型（First-person Model）](https://www.curseforge.com/minecraft/mc-mods/first-person-model)模组，且需要隐藏玩家头部时，此参数返回为 true，否者返回 false。你可以通过它制作更复杂的第一人称隐藏功能。
+
+## 十二、额外的配置参数
 
 在玩家选择模型时，往往还需要一些额外的配置信息，比如**对模型整体的缩放**，或者给模型添加名称、作者、提示说明、协议等诸多内容（如下图所示）。为此我们设计了额外的配置参数来实现这样的功能。
 
@@ -266,7 +387,7 @@ Yes Steve Model 模组主模型文件命名必须为 `main.json`。其使用的�
 
 ![7.png](https://s2.loli.net/2023/06/26/rWVOmgHaB2jTpQd.png)
 
-## 十二、相关指令 
+## 十三、相关指令 
 
 模组全部采用 `/ysm` 开头的指令，均需要 OP 2 等级权限才可以使用。所有的指令添加了游戏内的提示功能，所有模型 ID 、玩家 ID 即可智能提示。
 
@@ -281,7 +402,7 @@ Yes Steve Model 模组主模型文件命名必须为 `main.json`。其使用的�
 - `/ysm auth <player> remove <model_id>` 清除玩家授权的 xxx 模型；
 - `/ysm export <model_id>` 将某个模型导出成 ysm 专属模型格式。
 
-## 十三、MoLang 语法拓展和介绍
+## 十四、MoLang 语法拓展和介绍
 
 MoLang 是 mojang 官方为基岩版动画设计的一种极其简单的语言，我们可以通过 MoLang 实现各种复杂的动画。
 
@@ -331,3 +452,69 @@ MoLang 是 mojang 官方为基岩版动画设计的一种极其简单的语言�
 如果你想知道目前所有可用的 MoLang 变量，直接在游戏内按下 `Alt B` 快捷键，即可打开如下界面（如果显示不下，请在原版游戏设置中设置 GUI 缩放大小）：
 
 ![4.png](https://s2.loli.net/2023/06/25/tCbrNwy3OG2iKSe.png)
+
+你也可以在下表中找到所有的变量：
+
+|               变量名                |                             简介                             |
+| :---------------------------------: | :----------------------------------------------------------: |
+|                `PI`                 |                           π，常量                            |
+|                 `E`                 |                        自然对数，常量                        |
+|         `query.actor_count`         |                           实体数量                           |
+|          `query.anim_time`          |         当前动画播放时间（秒），如果动画未播放则为 0         |
+|       `query.body_x_rotation`       |                玩家身体 X 旋转角度，默认为 0                 |
+|       `query.body_y_rotation`       |                玩家身体 Y 旋转角度，默认为 0                 |
+|     `query.cardinal_facing_2d`      |   玩家朝向（忽略上下朝向，北=2.0，南=3.0，西=4.0，东=5.0）   |
+|    `query.distance_from_camera`     |                     玩家和镜头之间的距离                     |
+|       `query.equipment_count`       |          玩家装备的护甲数量（0-4），不考虑手持物品           |
+|    `query.eye_target_x_rotation`    |                玩家视角 X 旋转角度，默认为 0                 |
+|    `query.eye_target_y_rotation`    |                玩家视角 Y 旋转角度，默认为 0                 |
+|        `query.ground_speed`         |                      玩家速度（米/秒）                       |
+|          `query.has_cape`           |              玩家有披风时为 true，否则为 false               |
+|          `query.has_rider`          |              玩家被骑乘时为 true，否则为 false               |
+|       `query.head_x_rotation`       |                玩家头部 X 旋转角度，默认为 0                 |
+|       `query.head_y_rotation`       |                玩家头部 Y 旋转角度，默认为 0                 |
+|           `query.health`            |                           玩家血量                           |
+|          `query.hurt_time`          |                    玩家受伤计时，默认为 0                    |
+|          `query.is_eating`          |             玩家正在进食时为 true，否则为 false              |
+|       `query.is_first_person`       |         玩家处于第一人称视角时为 true，否则为 false          |
+|         `query.is_in_water`         |              玩家在水中时为 true，否则为 false               |
+|     `query.is_in_water_or_rain`     |           玩家在水中或雨中时为 true，否则为 false            |
+|         `query.is_jumping`          |               玩家跳跃时为 true，否则为 false                |
+|         `query.is_on_fire`          |               玩家着火时为 true，否则为 false                |
+|        `query.is_on_ground`         |              玩家在地面时为 true，否则为 false               |
+|       `query.is_playing_dead`       |             玩家濒死状态时为 true，否则为 false              |
+|          `query.is_riding`          |               玩家骑乘时为 true，否则为 false                |
+|         `query.is_sleeping`         |               玩家睡觉时为 true，否则为 false                |
+|         `query.is_sneaking`         |               玩家潜行时为 true，否则为 false                |
+|        `query.is_spectator`         |           玩家是观察者模式时为 true，否则为 false            |
+|        `query.is_sprinting`         |               玩家疾跑时为 true，否则为 false                |
+|         `query.is_swimming`         |               玩家游泳时为 true，否则为 false                |
+|        `query.is_using_item`        |           玩家正在使用物品时为 true，否则为 false            |
+|    `query.item_in_use_duration`     | 从 0 开始持续计数，直到该物品的最大可使用时长（秒），默认为 0 |
+|    `query.item_max_use_duration`    |         所使用的物品的最大可使用时长（秒），默认为 0         |
+| `query.item_remaining_use_duration` |         所使用的物品的剩余可使用时长（秒），默认为 0         |
+|          `query.life_time`          |        当前动画播放了多久（秒），如果动画未播放则为 0        |
+|         `query.max_health`          |                        玩家的最大血量                        |
+|   `query.modified_distance_moved`   |                 玩家水平移动距离的总数（米）                 |
+|         `query.moon_phase`          |                       当前月相（0-7）                        |
+|        `query.player_level`         |                   玩家的经验等级，默认为 0                   |
+|         `query.time_of_day`         |    一天中的时间（午夜=0，日出=0.25，正午=0.5，日落=0.75）    |
+|         `query.time_stamp`          |                     当前所处世界的时间戳                     |
+|       `query.vertical_speed`        |      玩家移动中垂直分量的速度（米/秒），朝上移动为正数       |
+|        `query.walk_distance`        |                 玩家步行移动距离的总数（米）                 |
+|          `query.yaw_speed`          |                   实体 Y 角度旋转时的速度                    |
+|          `ysm.armor_value`          |                        护甲值（0-20）                        |
+|          `ysm.has_helmet`           |             玩家穿戴头盔时为 true，否则为 false              |
+|        `ysm.has_chest_plate`        |             玩家穿戴胸甲时为 true，否则为 false              |
+|         `ysm.has_leggings`          |             玩家穿戴护腿时为 true，否则为 false              |
+|           `ysm.has_boots`           |             玩家穿戴靴子时为 true，否则为 false              |
+|         `ysm.has_mainhand`          |           玩家主手持有物品时为 true，否则为 false            |
+|          `ysm.has_offhand`          |           玩家副手持有物品时为 true，否则为 false            |
+|         `ysm.is_close_eyes`         |            默认为 false，当玩家需要眨眼返回 true             |
+|          `ysm.is_riptide`           |           玩家处于激流状态时为 true，否则为 false            |
+|          `ysm.has_elytra`           |            玩家穿戴鞘翅时返回 true，否则为 false             |
+|         `ysm.elytra_rot_x`          |                    玩家鞘翅的 X 旋转角度                     |
+|         `ysm.elytra_rot_y`          |                    玩家鞘翅的 Y 旋转角度                     |
+|         `ysm.elytra_rot_z`          |                    玩家鞘翅的 Z 旋转角度                     |
+|          `ysm.food_level`           |                        返回玩家饥饿值                        |
+|     `ysm.first_person_mod_hide`     | 当玩家安装更真实的第一人称模型模组，且需要隐藏玩家头部时为 true，否者为 false |
