@@ -2,7 +2,13 @@
 
 ## 一、简介
 
-Yes Steve Model 模组是一个修改原版玩家模型的 `Minecraft Forge` 模组，它采用了 `geckolib` 作为核心，使用 Minecraft 基岩版模型和动画文件。从而使玩家能够随心所欲的自定义玩家模型和动画。
+Yes Steve Model 模组是一个修改原版玩家模型的 `Minecraft Forge` 模组，它能够使用 Minecraft 基岩版模型和动画文件。从而使玩家能够随心所欲的自定义玩家模型和动画。
+
+> **温馨提醒：**
+>
+> - 本模组添加了对[永恒枪械工坊](https://www.curseforge.com/minecraft/mc-mods/timeless-and-classic-guns-tac)模组的兼容，但需要 **0.3.7** 及以上版本的[永恒枪械工坊](https://www.curseforge.com/minecraft/mc-mods/timeless-and-classic-guns-tac)模组才可以，否则游戏内持枪会导致游戏崩溃。
+> - 本模组添加了对[更真实的第一人称模型](https://www.curseforge.com/minecraft/mc-mods/first-person-model)模组的兼容，但是**适用于 Minecraft 1.16.5 版本**的[更真实的第一人称模型](https://www.curseforge.com/minecraft/mc-mods/first-person-model)模组过于陈旧，无法兼容。
+> - 模型包文件**不要大于 2MB 大小**，否则服务器同步玩家模型时，会因为包文件过大而导致玩家无法进服。如果你坚持要使用文件大小超过 2MB 的模型文件，可以安装 [Packet Fixer](https://www.curseforge.com/minecraft/mc-mods/packet-fixer) 模组，它可以解决这一问题。
 
 ![001](https://s2.loli.net/2023/01/01/RAor58n6LBct3kW.jpg)
 
@@ -375,7 +381,10 @@ Yes Steve Model 模组主模型文件命名必须为 `main.json`。其使用的�
 
 但是目前 Blockbench 软件本身并不支持这些自定义内容，所以你需要安装 ysm-utils 插件来做到这一点。
 
-> 插件的下载地址：<https://share.weiyun.com/dZnnjrHb>
+> 插件的下载地址：<https://share.weiyun.com/lRYgIcHc>
+>
+> 1. 当前最新版插件应该为 1.0.4 版本；
+> 2. 如果你需要更新插件，请注意插件不要改名。直接替换原有插件文件，重启 Blockbench 即可；
 
 下载好以后，不要修改文件名，选择一个地方放置此文件。然后打开 Blockbench，依次选择：文件 -> 插件 -> 从文件加载插件。最终加载上 ysm 插件。
 
@@ -385,7 +394,7 @@ Yes Steve Model 模组主模型文件命名必须为 `main.json`。其使用的�
 
 而后随便打开一个基岩版模型文件，依次点击 ”是！史蒂夫“ 菜单、添加信息，你就可以打开如下界面添加额外信息了。填写完毕后点击确认，并且记得再次按下 `Ctrl S` 保存文件。
 
-![7.png](https://s2.loli.net/2023/06/26/rWVOmgHaB2jTpQd.png)
+![20230721234034.jpg](https://s2.loli.net/2023/07/21/Ksy5MASoqbH82IZ.jpg)
 
 ## 十三、相关指令 
 
