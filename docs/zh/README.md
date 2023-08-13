@@ -7,7 +7,7 @@ Yes Steve Model 模组是一个修改原版玩家模型的 `Minecraft Forge` 模
 > **温馨提醒：**
 >
 > - 本模组添加了对[永恒枪械工坊](https://www.curseforge.com/minecraft/mc-mods/timeless-and-classic-guns-tac)模组的兼容，但需要 **0.3.7** 及以上版本的[永恒枪械工坊](https://www.curseforge.com/minecraft/mc-mods/timeless-and-classic-guns-tac)模组才可以，否则游戏内持枪会导致游戏崩溃。
-> - 本模组添加了对[更真实的第一人称模型](https://www.curseforge.com/minecraft/mc-mods/first-person-model)模组的兼容，但是**适用于 Minecraft 1.16.5 版本**的[更真实的第一人称模型](https://www.curseforge.com/minecraft/mc-mods/first-person-model)模组过于陈旧，无法兼容。
+> - 本模组添加了对[更真实的第一人称模型](https://www.curseforge.com/minecraft/mc-mods/first-person-model)模组的兼容。
 > - 模型包文件**不要大于 2MB 大小**，否则服务器同步玩家模型时，会因为包文件过大而导致玩家无法进服。如果你坚持要使用文件大小超过 2MB 的模型文件，可以安装 [Packet Fixer](https://www.curseforge.com/minecraft/mc-mods/packet-fixer) 模组，它可以解决这一问题。
 
 ![001](https://s2.loli.net/2023/01/01/RAor58n6LBct3kW.jpg)
