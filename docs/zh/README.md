@@ -27,6 +27,8 @@ Yes Steve Model 模组考虑到了服务器群体的模组需求，采用了诸�
 
 ## 二、怎么使用此模组
 
+### 1. Forge 版本的说明
+
 当玩家首次进入服务器后等待十几秒（模型同步的耗时），即可使用快捷键 `Alt` + `Y` 打开如下 GUI 界面：
 
 ![1.png](https://s2.loli.net/2023/06/25/Ya7DMmKToSneN6L.png)
@@ -38,6 +40,27 @@ Yes Steve Model 模组考虑到了服务器群体的模组需求，采用了诸�
 **③ 详情界面按钮**：点击可进入模型详情界面，查看模型所有可用材质和动画。中间的预览窗口可以使用鼠标左键拖拽旋转模型、鼠标右键拖拽移动模型、鼠标滚轮滑动缩放模型。点击右侧材质选择框可以选择不同的材质。点击左侧动画列表，可以预览播放不同的动画。
 
 ![3.png](https://s2.loli.net/2023/02/11/UxtCNy9wEg1XjSI.png)
+
+### 2. Fabric 版本的说明
+
+> Fabric 由**番茄布丁**（https://github.com/TomatoPuddin）全力完成迁移工作！请向他表示崇高的敬意！
+
+Fabric 版本绝大部分功能和 Forge 版本**完全保持一致**，并且与 Sodium、Sodium Extra、Iris、Lithium、ModernFix、FerriteCore、ServerCore、Debugify、Carpet（含 FakePlayer 功能）等模组均进行过兼容性测试，稳定性良好。
+
+Fabric 版本需要两个运行前置：
+
+- [Fabric Api](https://www.mcmod.cn/class/3124.html)
+- [Forge Config Api Port](https://www.mcmod.cn/class/5510.html)
+
+同时与两个模组拥有兼容互动内容：
+
+- [First-Person Model](https://www.mcmod.cn/class/4391.html)（添加了更好的第一人称视角兼容）
+- [Amecs](https://www.mcmod.cn/class/2003.html)（支持和 Forge 版本一致的组合快捷键）
+
+Fabric 仅在按键方面与 Forge 版存在些许不同。因为 Fabric 的按键绑定接口不支持 Ctrl / Alt / Shift 组合键，需要安装 [Amecs](https://www.mcmod.cn/class/2003.html) 模组才能支持。但是该模组与常用模组 [Controlling](https://www.mcmod.cn/class/1191.html) 冲突，所以最终将该模组设计为可选模组，交给用户自己选择安装。
+
+- 安装了 Amecs 时通过该模组的接口注册与 Forge 版相同的按键绑定；
+- **未安装该模组时注册不含修饰键的按键绑定。如按 Y 直接打开模型选择页，无需 Alt**。
 
 ## 三、支持什么格式
 
