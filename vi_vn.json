@@ -15,7 +15,7 @@
   "gui.yes_steve_model.model.star": "Đánh dấu model hiện tại",
   "gui.yes_steve_model.model.return": "Quay lại",
   "gui.yes_steve_model.model.ground": "Ẩn/Hiện nền đất",
-  "gui.yes_steve_model.model.reset": "Reset View",
+  "gui.yes_steve_model.model.reset": "Đặt lại chế độ xem",
   "gui.yes_steve_model.model.stop": "Ngừng hoạt ảnh",
   "gui.yes_steve_model.config.disable_self_model": "Tắt Model của bản thân",
   "gui.yes_steve_model.config.disable_other_model": "Tắt Model của người chơi khác",
