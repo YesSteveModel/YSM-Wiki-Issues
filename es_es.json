@@ -142,7 +142,7 @@
   "gui.yes_steve_model.texture.button.swim": "Nadar",
   "gui.yes_steve_model.texture.button.swim.desc": "Animación Reproducida cuando el Jugador está Nadando",
   "gui.yes_steve_model.texture.button.swim_stand": "Swim Stand",
-  "gui.yes_steve_model.texture.button.swim_stand.desc": "Plays when the player is in water",
+  "gui.yes_steve_model.texture.button.swim_stand.desc": "Animación Reproducida cuando el Jugador está en el Agua",
   "gui.yes_steve_model.texture.button.swing_hand": "Agitar mano",
   "gui.yes_steve_model.texture.button.swing_hand.desc": "Animación por defecto de agitar la mano",
   "gui.yes_steve_model.texture.button.tac.aim.fire.pistol": "TAC | Apuntar & Disparar | Pistola",
