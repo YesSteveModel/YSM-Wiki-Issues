@@ -162,7 +162,7 @@
   "gui.yes_steve_model.texture.button.tac.climb.rifle": "TAC | Escalar (Mover) | Rifle",
   "gui.yes_steve_model.texture.button.tac.climb.rifle.desc": "Acciones cuando se arrastra con un Rifle",
   "gui.yes_steve_model.texture.button.tac.climb.rpg": "TAC | Escalar (Mover) | RPG",
-  "gui.yes_steve_model.texture.button.tac.climb.rpg.desc": "Actions when crawling with a RPG",
+  "gui.yes_steve_model.texture.button.tac.climb.rpg.desc": "Acciones cuando se arrastra con un RPG",
   "gui.yes_steve_model.texture.button.tac.climbing.fire.pistol": "TAC | Escalar & Disparar | Pistola",
   "gui.yes_steve_model.texture.button.tac.climbing.fire.pistol.desc": "Acciones al sostener una pistola y disparar tumbado",
   "gui.yes_steve_model.texture.button.tac.climbing.fire.rifle": "TAC | Escalar & Disparar | Rifle",
