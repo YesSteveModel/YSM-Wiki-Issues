@@ -2,13 +2,13 @@
 
 ## 一、简介
 
-Yes Steve Model 模组是一个修改原版玩家模型的 `Minecraft Forge` 模组，它能够使用 Minecraft 基岩版模型和动画文件。从而使玩家能够随心所欲的自定义玩家模型和动画。
+Yes Steve Model 模组是一个修改原版玩家模型的 `Minecraft Forge 和 Fabric` 模组，它能够使用 Minecraft 基岩版模型和动画文件。从而使玩家能够随心所欲的自定义玩家模型和动画。
 
 > **温馨提醒：**
 >
 > - 本模组添加了对[永恒枪械工坊](https://www.curseforge.com/minecraft/mc-mods/timeless-and-classic-guns-tac)模组的兼容，但需要 **0.3.7** 及以上版本的[永恒枪械工坊](https://www.curseforge.com/minecraft/mc-mods/timeless-and-classic-guns-tac)模组才可以，否则游戏内持枪会导致游戏崩溃。
-> - 本模组添加了对[更真实的第一人称模型](https://www.curseforge.com/minecraft/mc-mods/first-person-model)模组的兼容。
-> - 模型包文件**不要大于 2MB 大小**，否则服务器同步玩家模型时，会因为包文件过大而导致玩家无法进服。如果你坚持要使用文件大小超过 2MB 的模型文件，可以安装 [Packet Fixer](https://www.curseforge.com/minecraft/mc-mods/packet-fixer) 模组，它可以解决这一问题。
+> - 本模组虽然添加了对[更真实的第一人称模型](https://www.curseforge.com/minecraft/mc-mods/first-person-model)模组的兼容，但仍旧存在些许渲染错误问题。
+> - 最新版（1.2.0 版本）解决了模型包文件过大的问题，现在你可以放心使用大于 2MB 大小的模型包了。
 
 ![001](https://s2.loli.net/2023/01/01/RAor58n6LBct3kW.jpg)
 
@@ -24,6 +24,14 @@ Yes Steve Model 模组考虑到了服务器群体的模组需求，采用了诸�
 - 与[永恒枪械工坊（Timeless and Classics Guns）](https://www.curseforge.com/minecraft/mc-mods/timeless-and-classic-guns-tac)模组的兼容：可以完美的兼容该模组的持枪、换弹、瞄准、开火等诸多动作。
 
 ![2023-07-20_18.jpg](https://s2.loli.net/2023/07/20/N6sOS9ea5xwfn8t.jpg)
+
+- 本模组添加了对[Carry On](https://www.curseforge.com/minecraft/mc-mods/carry-on)模组的兼容，能够在玩家抱起其他方块实体时播放对应动画。1.19.2 和 1.20 版本的 Carry On 模组甚至可以抱起玩家，所以你可以在服务器与你的好友培养感情。
+
+![2.jpg](https://s2.loli.net/2024/02/14/71QyVR6NSHmbdo3.jpg)
+
+- 本模组添加了对[拔刀剑](https://www.curseforge.com/minecraft/mc-mods/slashblade)模组的兼容，可以渲染特定的主副手拔刀剑。
+
+![1.jpg](https://s2.loli.net/2024/02/14/LfQxMCZKNAtzsOG.jpg)
 
 ## 二、怎么使用此模组
 
@@ -95,17 +103,22 @@ Yes Steve Model 模组采用了 `geckolib` 作为核心，所以它支持 `gecko
 ```
 custom （或 auth）文件夹
 │
-└─default                  模型包文件夹，游戏将会以此文件夹名作为模型 ID
+└─default                    模型包文件夹，游戏将会以此文件夹名作为模型 ID
     │ 
-    ├─main.json            主模型文件（固定名称）
-    ├─arm.json             手臂模型文件，用于第一人称手臂的显示（固定名称）
-    ├─main.animation.json  主模型文件的动画文件（固定名称）
-    ├─extra.animation.json 轮盘动画文件（固定名称）
-    ├─arm.animation.json   手部动画文件（固定名称）
-    ├─tac.animation.json   与永恒枪械模组的兼容动画文件（固定名称）
-    ├─happy_skin.png       主模型文件贴图1（名称可自定义，会作为游戏内显示名称）
-    ├─...                  任意多个贴图文件
-    └─good_cloth_12.png    主模型文件贴图2（名称可自定义，会作为游戏内显示名称）    
+    ├─info.json              信息文件，用来在游戏内显示作者、名称、授权等信息
+    ├─main.json              主模型文件（固定名称）
+    ├─arm.json               手臂模型文件，用于第一人称手臂的显示（固定名称）
+    ├─arrow.json             箭模型文件，如果有这个文件，会替换玩家射出的箭的模型（固定名称）
+    ├─main.animation.json    主模型文件的动画文件（固定名称）
+    ├─extra.animation.json   轮盘动画文件（固定名称）
+    ├─arm.animation.json     手部动画文件（固定名称）
+    ├─arrow.animation.json   箭的动画文件（固定名称）
+    ├─tac.animation.json     与永恒枪械模组的兼容动画文件（固定名称）
+    ├─carryon.animation.json 与 Carry On 模组的兼容动画文件（固定名称）
+    ├─arrow.png              箭的贴图（固定名称）
+    ├─happy_skin.png         主模型文件贴图1（名称可自定义，会作为游戏内显示名称）
+    ├─...                    任意多个贴图文件
+    └─good_cloth_12.png      主模型文件贴图2（名称可自定义，会作为游戏内显示名称）    
 ```
 
 自定义模型、动画、材质文件均需放置在一个文件夹中。文件夹、材质名称等只能使用 `小写英文字符、数字、下划线` 等字符。
@@ -115,6 +128,12 @@ custom （或 auth）文件夹
 你也可以把这些自定义模型、动画、材质文件全部打包成 zip 格式的文件**（不要错误的打包了文件夹）**，文件名还是需要遵循上述规定。
 
 在游戏内输入`/ysm export <model_id>` 指令，即可将某个文件夹格式的模型导出成 ysm 专属模型格式。这个模型格式进行了一些简单加密，可以有效避免模型被第三方人员破解。
+
+ysm 模型格式遵循**向下兼容**的原则，即新版本模组可以加载旧版本 ysm 格式文件，但旧版本模组不会加载新版 ysm 格式文件。
+
+当你用原版记事本打开新版本模组（1.2.0 及以后版本）导出的 ysm 文件，你可以看到如下信息。这些信息无法被修改，如果强行修改，模组会拒绝加载此文件。
+
+![2.png](https://s2.loli.net/2024/02/14/xKGce38hmoJtMEQ.png)
 
 ## 七、主模型的制作
 
@@ -131,6 +150,8 @@ Yes Steve Model 模组主模型文件命名必须为 `main.json`。其使用的�
 |                      `LeftHandLocator`                       | 左手手持物品的定位组<br/>没有此组就不会渲染副手物品<br>由`LeftHandLocator`的旋转点定位手持物品，对其应用缩放、旋转和位移动画可以修改手持物品的大小、朝向和位置 |
 |                      `RightHandLocator`                      | 右手手持物品的定位组<br/>没有此组就不会渲染主手物品<br/>由`RightHandLocator`的旋转点定位手持物品，对其应用缩放、旋转和位移动画可以修改手持物品的大小、朝向和位置 |
 |                       `ElytraLocator`                        | 鞘翅的定位组<br/>没有此组就不会渲染鞘翅<br/>由`ElytraLocator`的旋转点定位鞘翅，对其应用缩放、旋转和位移动画可以修改鞘翅的大小、朝向和位置 |
+|                      `LeftWaistLocator`                      | 主手（我没写错）持有拔刀剑时，拔刀剑的渲染定位组<br>没有此组将不会显示主手拔刀剑 |
+|                     `RightWaistLocator`                      | 副手（我没写错）持有拔刀剑时，拔刀剑的渲染定位组<br>没有此组将不会显示副手拔刀剑 |
 |                       `PistolLocator`                        | 当玩家安装了[永恒枪械工坊（Timeless and Classics Guns）](https://www.curseforge.com/minecraft/mc-mods/timeless-and-classic-guns-tac)模组后，副手持有手枪时，会渲染一个插在腰部的手枪模型<br/>这是此手枪模型的定位组<br/>没有此组就不会渲染插在腰间的枪械模型<br/>由`PistolLocator`的旋转点定位手枪模型的位置，对其应用缩放、旋转和位移动画可以修改手枪模型的大小、朝向和位置 |
 |                        `RifleLocator`                        | 当玩家安装了[永恒枪械工坊（Timeless and Classics Guns）](https://www.curseforge.com/minecraft/mc-mods/timeless-and-classic-guns-tac)模组后，副手持有步枪或火箭筒时，会渲染一个背在背上的步枪或火箭筒模型<br/>这是此模型的定位组<br/>没有此组就不会渲染背在背上的模型<br/>由`RifleLocator`的旋转点定位模型的位置，对其应用缩放、旋转和位移动画可以修改模型的大小、朝向和位置 |
 |                        `ViewLocator`                         | [更真实的第一人称模型（First-person Model）](https://www.curseforge.com/minecraft/mc-mods/first-person-model)模组中，玩家头部的高低由此组旋转点的 Y 值决定 |
@@ -156,14 +177,33 @@ Yes Steve Model 模组主模型文件命名必须为 `main.json`。其使用的�
 
 >第一人称手部模型目前还不支持基岩版动画，但可以完美兼容永恒枪械工坊模组
 
-## 九、贴图文件的制作
+## 九、自定义箭模型的制作
+
+1.2.0 及以后的版本中新增了自定义箭模型的功能，玩家切换模型时，射出的箭（弩箭也一样）会被替换成自定义的模型。如果没有此自定义模型，那么还是会显示为原版箭模型。
+
+箭相关文件名称固定，模型为 `arrow.json`，贴图为 `arrow.png`，动画为 `arrow.animation.json`。其中动画文件可以不添加，将会自动调用默认动画（但是默认动画也是空的……）。
+
+`arrow.animation.json` 动画文件中包含了如下几个动画：
+
+|                             名称                             |           作用           |        备注        |
+| :----------------------------------------------------------: | :----------------------: | :----------------: |
+|                           `water`                            |    当箭射入水中时播放    |      循环播放      |
+|                            `fire`                            | 当箭射入熔岩，火中时播放 |      循环播放      |
+|                           `ground`                           |    当箭插入地面时播放    |      循环播放      |
+|                            `air`                             | 当箭正常在空中飞行时播放 |      循环播放      |
+| `parallel0` `parallel1`<br/>`parallel2` `parallel3`<br/>`parallel4` `parallel5`<br/>`parallel6` `parallel7` |         并行动画         | 独立动画，循环播放 |
+
+箭矢动画可以使用和玩家动画相同的 molang 参数，但是不一定都有意义。
+
+## 十、贴图文件的制作
 
 - 材质使用 `png` 格式材质，不建议使用**半透明**贴图，这会造成各种渲染错误；
 
 - 材质文件名只能使用 `小写英文字符、数字、下划线` 等字符，其他没有限制；
 - 模型支持多个贴图，你可以放置若干份贴图文件，游戏均会智能识别。
+- 名称为 `arrow.png` 的贴图是专为箭提供的贴图，固定名称，不可修改。
 
-## 十、动画文件的制作
+## 十一、动画文件的制作
 
 动画文件是可选选项。没有动画文件，或者缺失部分动画时，游戏均会智能调用默认的动画文件。如果你的模型是按照默认模型二次修改的，那么即可完美兼容。
 
@@ -177,31 +217,33 @@ Yes Steve Model 模组主模型文件命名必须为 `main.json`。其使用的�
 
 如下动画是自定义的主动画,放置于 `main.animation.json` 文件中，可进行二次修改：
 
-|     名称     |               作用               |        备注        |
-| :----------: | :------------------------------: | :----------------: |
-|     walk     |      在玩家普通行走时的动画      |      循环播放      |
-|     run      |        在玩家疾跑时的动画        |      循环播放      |
-|   climbing   |       玩家在活板门下的动画       |      循环播放      |
-|    climb     |  玩家在活板门下，并且爬行的动画  |      循环播放      |
-|   sneaking   |    玩家潜行，但不移动时的动画    |      循环播放      |
-|    sneak     |    玩家潜行，并且行走时的动画    |      循环播放      |
-|     swim     |         玩家游泳时的动画         |      循环播放      |
-|  swim_stand  |    玩家在水中站立式游泳的动画    |      循环播放      |
-|   attacked   |        玩家被攻击时的动画        |      单次播放      |
-|     jump     |         玩家跳跃时的动画         |      循环播放      |
-|     fly      |  玩家在创造模式飞行时播放的动画  |      循环播放      |
-|  elytra_fly  |     玩家鞘翅飞行时播放的动画     |      循环播放      |
-|     boat     |       玩家坐在船上时的动画       |      循环播放      |
-| use_mainhand | 玩家使用右手时播放的动画（右键） |      单次播放      |
-| use_offhand  | 玩家使用左手时播放的动画（右键） |      单次播放      |
-|  swing_hand  | 玩家挥动手臂时播放的动画（左键） |      单次播放      |
-|    sleep     |         玩家睡觉时的动画         |      循环播放      |
-|     ride     |      玩家骑马（驴）时的动画      |      循环播放      |
-|   ride_pig   |         玩家骑猪时的动画         |      循环播放      |
-|     sit      |         玩家坐下时的动画         |      循环播放      |
-|     idle     |        无任何操作时的动画        |      循环播放      |
-|   riptide    |   玩家使用“激流”三叉戟时的动画   |      循环播放      |
-|    death     |         玩家死亡时的动画         | 单次播放，1 秒时长 |
+|     名称      |                 作用                 |        备注        |
+| :-----------: | :----------------------------------: | :----------------: |
+|     empty     |    调试动画，**不要进行任何修改**    |       空动画       |
+|     walk      |        在玩家普通行走时的动画        |      循环播放      |
+|      run      |          在玩家疾跑时的动画          |      循环播放      |
+|   climbing    |         玩家在活板门下的动画         |      循环播放      |
+|     climb     |    玩家在活板门下，并且爬行的动画    |      循环播放      |
+|   sneaking    |      玩家潜行，但不移动时的动画      |      循环播放      |
+|     sneak     |      玩家潜行，并且行走时的动画      |      循环播放      |
+|     swim      |           玩家游泳时的动画           |      循环播放      |
+|  swim_stand   |      玩家在水中站立式游泳的动画      |      循环播放      |
+|   attacked    |          玩家被攻击时的动画          |      单次播放      |
+|     jump      |           玩家跳跃时的动画           |      循环播放      |
+|      fly      |    玩家在创造模式飞行时播放的动画    |      循环播放      |
+|  elytra_fly   |       玩家鞘翅飞行时播放的动画       |      循环播放      |
+|     boat      |         玩家坐在船上时的动画         |      循环播放      |
+| use_mainhand  |   玩家使用右手时播放的动画（右键）   |      单次播放      |
+|  use_offhand  |   玩家使用左手时播放的动画（右键）   |      单次播放      |
+|  swing_hand   |   玩家挥动主手时播放的动画（左键）   |      单次播放      |
+| swing_offhand | 玩家挥动副手时播放的动画（副手左键） |      单次播放      |
+|     sleep     |           玩家睡觉时的动画           |      循环播放      |
+|     ride      |        玩家骑马（驴）时的动画        |      循环播放      |
+|   ride_pig    |           玩家骑猪时的动画           |      循环播放      |
+|      sit      |           玩家坐下时的动画           |      循环播放      |
+|     idle      |          无任何操作时的动画          |      循环播放      |
+|    riptide    |     玩家使用“激流”三叉戟时的动画     |      循环播放      |
+|     death     |           玩家死亡时的动画           | 单次播放，1 秒时长 |
 
 ### 2. 手部动画
 
@@ -212,7 +254,7 @@ Yes Steve Model 模组主模型文件命名必须为 `main.json`。其使用的�
 - 主手：英文为 mainhand，在游戏内默认为右手；
 - 副手：英文为 offhand，在游戏内默认为左手；
 - 使用：英文为 use，部分物品在玩家手持时，按下右键能够使用。比如食物、药水、弓箭、盾牌等。只要是能够使用的物品，无论在左手还是右手、均可以鼠标右键触发使用；
-- 挥动：英文为 swing，玩家鼠标左键点击即会触发挥动。玩家**只能挥动主手**。
+- 挥动：英文为 swing，玩家鼠标左键点击即会触发挥动。玩家大部分情况下**只能挥动主手**。
 - 持有：英文为 hold，玩家主手或副手持有任何物品，且不进行任何操作时，即为持有状态。
 - 物品 ID：在游戏内按下 `F3 H` 快捷键就能打开物品 ID 显示，如下图所示。原版每种物品都有自己的 ID；
 
@@ -224,13 +266,14 @@ Yes Steve Model 模组主模型文件命名必须为 `main.json`。其使用的�
 
 #### a. 使用动画
 
-使用动画默认自带了 9 个原版分类动画：
+使用动画默认自带了 10 个内部分类动画，这些动画一般情况下能兼容其他模组：
 
 |                       名称                        |                      作用                      |
 | :-----------------------------------------------: | :--------------------------------------------: |
 |       `use_mainhand:eat`、`use_offhand:eat`       |           食用食物时播放，约 1.5 秒            |
-|     `use_mainhand:drink`、`use_offhand:drink`     |           饮用药水时播放，约 1.5 秒            |
-|     `use_mainhand:block`、`use_offhand:block`     |                 放置方块时播放                 |
+|     `use_mainhand:drink`、`use_offhand:drink`     |      饮用药水、牛奶桶等时播放，约 1.5 秒       |
+|   `use_mainhand:shield`、`use_mainhand:shield`    |               玩家使用盾牌时播放               |
+|     `use_mainhand:block`、`use_offhand:block`     |     玩家处于防御状态（比如使用盾牌）时播放     |
 |       `use_mainhand:bow`、`use_offhand:bow`       |  使用弓箭时播放，建议 60 秒以上时长或静态动画  |
 |     `use_mainhand:spear`、`use_offhand:spear`     | 使用三叉戟时播放，建议 60 秒以上时长或静态动画 |
 |  `use_mainhand:crossbow`、`use_offhand:crossbow`  | 使用十字弓时播放，建议 60 秒以上时长或静态动画 |
@@ -249,26 +292,56 @@ Yes Steve Model 模组主模型文件命名必须为 `main.json`。其使用的�
 
 #### b. 挥动动画
 
-因为原版中，玩家只能左键挥动主手，故左键挥动不区分左右，统一以 `swing` 开头，后面可以通过 `$` 加物品 ID 或者 `#` 加物品标签的方式添加挥动动画。
+因为原版中，玩家只能左键大部分情况下只能挥动主手，故左键挥动名称有所不同。主手的挥动统一以 `swing` 开头，后面可以通过 `$` 加物品 ID 或者 `#` 加物品标签的方式添加挥动动画。副手则是以 `swing_offhand` 开头。
 
-这里只给出几个示例，你可以添加无限多个自定义动画：
+挥动动画播放较为特殊，**即使玩家停止挥动，挥动动画也不会中断**，直至播放完毕。
+
+挥动动画默认自带了 6 个内部分类动画，这些动画一般情况下能兼容其他模组：
+|                        名称                        |         作用         |
+| :------------------------------------------------: | :------------------: |
+|          `swing:axe`、`swing_offhand:axe`          |    挥动斧子时播放    |
+|      `swing:pickaxe`、`swing_offhand:pickaxe`      |    挥动镐子时播放    |
+|       `swing:shovel`、`swing_offhand:shovel`       |    挥动铲子时播放    |
+|          `swing:hoe`、`swing_offhand:hoe`          |    挥动锄头时播放    |
+|       `swing:shield`、`swing_offhand:shield`       |    挥动盾牌时播放    |
+| `swing:throwable_potion`、`swing:throwable_potion` | 丢出投掷型药水时播放 |
+
+挥动动画还支持通过物品 ID 或者标签来制作自定义动画。这里只给出几个示例，你可以添加无限多个自定义动画：
+
 |           名称           |                             作用                             | 备注           |
 | :----------------------: | :----------------------------------------------------------: | -------------- |
-| `swing$minecraft:shield` | 手持物品 ID 为 minecraft:shield （其实就是原版盾牌）左键挥动时播放 | `$` 加物品 ID  |
-|  `swing#minecraft:dirt`  | 手持标签为 minecraft:dirt （原版的泥土、草方块均有此标签）左键挥动时播放 | `#` 加物品标签 |
+| `swing$minecraft:shield` | 手持物品 ID 为 minecraft:shield <br>（其实就是原版盾牌）挥动时播放 | `$` 加物品 ID  |
+|  `swing#minecraft:dirt`  | 手持标签为 minecraft:dirt <br/>（原版的泥土、草方块均有此标签）挥动时播放 | `#` 加物品标签 |
 
 #### c. 持有动画
 
-持有动画会在玩家持有物品（此时物品没有使用或挥动）时播放。挥动动画有主手副手之分，以 `hold_mainhand` 或 `hold_offhand` 开头，**遵循主手优先原则**。后面通过 `$` 加物品 ID 或者 `#` 加物品标签的方式添加持有动画。
+持有动画会在玩家持有物品（此时物品没有使用或挥动）时播放。当玩家切换不同的物品时，持有动画都会从头播放一次，从而做出切换武器的动画效果。建议使用较长时长的动画。
 
-由于原版的充能十字弓和抛出的鱼竿比较特殊，无法通过物品 ID 或者物品 tag 识别，故特意为其添加了固定名称的动画：
+持有动画有主手副手之分，以 `hold_mainhand` 或 `hold_offhand` 开头，**可以同时播放**。后面通过 `$` 加物品 ID 或者 `#` 加物品标签的方式添加持有动画。
 
-|                             名称                             |          作用          |
-| :----------------------------------------------------------: | :--------------------: |
-| `hold_mainhand:charged_crossbow`、`hold_offhand:charged_crossbow` | 手持充能十字弓时的动画 |
-|                   `hold_mainhand:fishing`                    |   抛出钓鱼竿后的动画   |
+由于原版的充能十字弓和抛出的鱼竿比较特殊，无法通过物品 ID 或者物品 tag 识别，故特意为其添加了固定名称的动画。我们还为原版一些特殊物品增加了内部分类，一并列入其中：
 
-这里给出几个持有物品动画的示例，你可以添加无限多个自定义动画：
+|                             名称                             |            作用            |
+| :----------------------------------------------------------: | :------------------------: |
+|         `hold_mainhand:empty`、`hold_offhand:empty`          | 不持有任何东西时播放的动画 |
+| `hold_mainhand:charged_crossbow`、`hold_offhand:charged_crossbow` |   手持充能十字弓时的动画   |
+|                   `hold_mainhand:fishing`                    |     抛出钓鱼竿后的动画     |
+|           `hold_mainhand:axe`、`hold_offhand:axe`            |       持有斧子时播放       |
+|       `hold_mainhand:pickaxe`、`hold_offhand:pickaxe`        |       持有镐子时播放       |
+|        `hold_mainhand:shovel`、`hold_offhand:shovel`         |       持有铲子时播放       |
+|           `hold_mainhand:hoe`、`hold_offhand:hoe`            |       持有锄头时播放       |
+|        `hold_mainhand:shield`、`hold_offhand:shield`         |       持有盾牌时播放       |
+| `hold_mainhand:throwable_potion`、`hold_offhand:throwable_potion` |    持有投掷型药水时播放    |
+|           `hold_mainhand:eat`、`hold_offhand:eat`            |       持有食物时播放       |
+|         `hold_mainhand:drink`、`hold_offhand:drink`          |  持有药水、牛奶桶等时播放  |
+|           `hold_mainhand:bow`、`hold_offhand:bow`            |       持有弓箭时播放       |
+|         `hold_mainhand:spear`、`hold_offhand:spear`          |      持有三叉戟时播放      |
+|      `hold_mainhand:crossbow`、`hold_offhand:crossbow`       | 持有十字弓（未充能）时播放 |
+|      `hold_mainhand:spyglass`、`hold_offhand:spyglass`       |      持有望远镜时播放      |
+|     `hold_mainhand:toot_horn`、`hold_offhand:toot_horn`      |      持有山羊角时播放      |
+|         `hold_mainhand:brush`、`hold_offhand:brush`          |       持有刷子时播放       |
+
+持有动画还支持通过物品 ID 或者标签来制作自定义动画。这里给出几个持有物品动画的示例，你可以添加无限多个自定义动画：
 |                             名称                             |                             作用                             | 备注           |
 | :----------------------------------------------------------: | :----------------------------------------------------------: | -------------- |
 | `hold_mainhand$minecraft:shield`、`hold_offhand$minecraft:shield` | 手持物品 ID 为 minecraft:shield （其实就是原版盾牌）无任何操作时播放 | `$` 加物品 ID  |
@@ -382,13 +455,19 @@ Yes Steve Model 模组主模型文件命名必须为 `main.json`。其使用的�
 | `tac:mainhand:grenade` | 玩家主手投雷时的动画 |
 | `tac:offhand:grenade`  | 玩家副手投雷时的动画 |
 
-## 十一、更真实的第一人称模型的兼容
+#### e. 特殊枪械动画
+
+前面的所有动画都以 `pistol` `rifle` `rpg` 结尾，对应特定武器的大分类。但是如果我们想给特定的枪械单独做一套 TAC 动画，该怎么办呢？
+
+你只需要把结尾的 `:pistol` `:rifle` `:rpg` 换成 `$ `+ 枪械的物品 ID 即可。比如你想要给 AK47 单独做一个手持瞄准开火的动画时，只需要命名为 `tac:aim:fire$tac:ak47`即可。
+
+## 十二、更真实的第一人称模型的兼容
 
 [更真实的第一人称模型（First-person Model）](https://www.curseforge.com/minecraft/mc-mods/first-person-model)模组是一个模仿传统 3D 游戏中玩家视角的模组，它替换了原版的第一人称视角，使其更加的真实有趣。
 
 ![2023-07-21_00.18.jpg](https://s2.loli.net/2023/07/21/25SgTJLdlU1iYCQ.jpg)
 
-> 请注意：因为 1.16.5 版本[更真实的第一人称模型（First-person Model）](https://www.curseforge.com/minecraft/mc-mods/first-person-model)模组并未开放 API，所以本模组**<u>仅不兼容</u>**此版本。
+> 请注意：[更真实的第一人称模型（First-person Model）](https://www.curseforge.com/minecraft/mc-mods/first-person-model)模组我们只能做最低限度的兼容，所以还是会偶发性的出现一些玩家头部消失的小问题……
 
 组名为 `AllHead` 的模型，会在渲染第一人称视角玩家时自动隐藏。如果你有帽子或者其他会阻挡第一人称视角的模型，均应放置在此组下。
 
@@ -396,13 +475,47 @@ Yes Steve Model 模组主模型文件命名必须为 `main.json`。其使用的�
 
 此外，我们还提供了 `ysm.first_person_mod_hide` molang 参数。当玩家安装[更真实的第一人称模型（First-person Model）](https://www.curseforge.com/minecraft/mc-mods/first-person-model)模组，且需要隐藏玩家头部时，此参数返回为 true，否者返回 false。你可以通过它制作更复杂的第一人称隐藏功能。
 
-## 十二、额外的配置参数
+## 十三、Carry On 模组的兼容
+
+[Carry On 模组](https://curseforge.com/minecraft/mc-mods/carry-on)是一个非常有趣的模组，它可以在 Shift 右击的情况下搬起一些方块、生物，乃至是其他玩家。
+
+1.16.5 和 1.18.2 版本的 Carry On 模组只能搬起玩家和方块，且会额外渲染一个玩家手臂模型（需要修改 Carry On 模组自身的配置文件才可以关闭）。只有 1.19.2 和 1.20 版本的 Carry On 模组才可以完美兼容所有功能！
+
+Carry On 模组的兼容动画是一个名为 `carryon.animation.json` 的独立文件，其中包含了四个动画：
+
+|        名称        |                             作用                             |   备注   |
+| :----------------: | :----------------------------------------------------------: | :------: |
+|  `carryon:block`   |                     玩家抱起方块时的动画                     | 循环播放 |
+|  `carryon:entity`  |                     玩家抱起实体时的动画                     | 循环播放 |
+|  `carryon:player`  |       玩家抱起其他玩家时的动画（仅限 1.19.2 和 1.20）        | 循环播放 |
+| `carryon:princess` | 被抱起的那个玩家的动画（仅限 1.19.2 和 1.20）<br>~~所以动画名叫：“公主”~~ | 循环播放 |
+
+## 十四、额外的配置参数
 
 在玩家选择模型时，往往还需要一些额外的配置信息，比如**对模型整体的缩放**，或者给模型添加名称、作者、提示说明、协议等诸多内容（如下图所示）。为此我们设计了额外的配置参数来实现这样的功能。
 
 ![5.png](https://s2.loli.net/2023/06/25/Izugoi8nYCOeVpJ.png)
 
-但是目前 Blockbench 软件本身并不支持这些自定义内容，所以你需要安装 ysm-utils 插件来做到这一点。
+额外配置的参数在新版（1.2.0 往后的版本中）独立成单独的 json 文件（固定名称 `info.json`），其中包含众多可写的参数：
+
+```json
+{
+  // 模型名称
+  "name": "Wine Fox（酒狐）",
+  // 模型描述
+  "tips": "A fox girl who loves to drink wine.\n一只爱喝葡萄酒的狐娘。",
+  // 模型作者
+  "authors": ["哥斯拉", "星屑海螺"],
+  // 模型协议
+  "license": "CC BY-NC-SA 4.0",
+  // 轮盘动画名称
+  "extra_animation_names": ["变身", "打招呼", "鼓掌", "是的", "不行", "卖萌", "御笔摇", "舞蹈"],
+  // 是否强制自由切换，设置为 true 后，即使丢入 auth 文件夹，也可以自由切换
+  "free": true
+}
+```
+
+但是直接让模型作者书写这些 json 文件太过复杂，所以你需要安装 ysm-utils Blockbench 插件来做到这一点。
 
 > 插件的下载地址：<https://share.weiyun.com/lRYgIcHc>
 >
@@ -434,7 +547,7 @@ Yes Steve Model 模组主模型文件命名必须为 `main.json`。其使用的�
 - `/ysm auth <player> remove <model_id>` 清除玩家授权的 xxx 模型；
 - `/ysm export <model_id>` 将某个模型导出成 ysm 专属模型格式。
 
-## 十四、MoLang 语法拓展和介绍
+## 十四、MoLang 语法介绍
 
 MoLang 是 mojang 官方为基岩版动画设计的一种极其简单的语言，我们可以通过 MoLang 实现各种复杂的动画。
 
@@ -479,7 +592,64 @@ MoLang 是 mojang 官方为基岩版动画设计的一种极其简单的语言�
 
 `0`：当玩家俯仰角度小于 0 时（也就是俯视时），我们将其变成 0，这样头发就会随头旋转。
 
-当然，MoLang 本身还有更为复杂的用法，这里我们暂时不再赘述。
+当然，MoLang 本身还有更为复杂的用法，这里我们暂时不再赘述。这里给出官方相关文档：
+
+- [字符串类型](https://bedrock.dev/zh/docs/stable/Molang#Strings)
+- [自定义变量](https://bedrock.dev/zh/docs/stable/Molang#Variables)
+- [空值合并运算符](https://wiki.mcbe-dev.net/zh-cn/Molang#??空值合并运算符)
+- [二元条件运算符](https://wiki.mcbe-dev.net/zh-cn/Molang#关键字)
+- [别名](https://bedrock.dev/zh/docs/stable/Molang#Aliases)
+- [复杂表达式](https://wiki.mcbe-dev.net/zh-cn/Molang#基本语法)
+- [作用域定界符](https://wiki.mcbe-dev.net/zh-cn/Molang#{}花括号作用域定界符)
+- [loop 循环](https://wiki.mcbe-dev.net/zh-cn/Molang#loop)，[continue](https://wiki.mcbe-dev.net/zh-cn/Molang#continue)、[break](https://wiki.mcbe-dev.net/zh-cn/Molang#break)（for_each 也支持，但目前没用到）
+- [结构体](https://wiki.mcbe-dev.net/zh-cn/Molang#结构体)
+- [箭头表达式](https://wiki.mcbe-dev.net/zh-cn/Molang#->指针运算符)
+
+## 十五、模组 MoLang 说明
+
+模组动画基本与基岩版动画行为一致，也支持基岩版所拥有的插值动画，比如**平滑，步帧**等。
+
+### 1. 与基岩版的差异
+
+- 未初始化的变量为 null 值，可以用空值合并运算符识别，参与数值类计算时被视为 0 或 false；
+- 结构体不支持嵌套；
+- 玩家在切换模型、重生、传送至部分维度、退出重进以及其他类似操作后将清空所有变量存储。
+
+### 2. 相关调试指令
+
+在本地玩家身上执行 molang 表达式，并输出结果至聊天框。（仅单人游戏有效）
+
+```
+/ysmclient molang execute <expr>
+```
+向自定义调试屏幕添加 molang 表达式，会实时计算和更新；pre 意为在动画更新前执行，post 在动画更新后执行。（按两次 alt + B 才能进入自定义调试屏幕）
+```
+/ysmclient molang watch add pre/post <name> <expr>
+```
+管理自定义调试屏幕上的条目。
+```
+/ysmclient molang watch remove <name>
+/ysmclient molang watch clear
+```
+
+在指定玩家身上执行 molang；多人游戏下可用，需要管理员权限。（不会输出执行结果）
+```
+/ysm molang execute <player> <expr>
+```
+
+### 3. 函数和变量
+
+#### a. `roaming` 变量
+
+以 `v.roaming.xxx` 格式书写的变量（**不能**简写为 `v.r.xxx`）可以在切换维度、重生、退出重进后恢复。也能在玩家之间同步会，并且会跟随服务端的 cap 写入存档。
+
+但是此变量有一些限制：
+
+- 一个模型最多有 16 个 `roaming` 变量
+- 变量名称的字符数不能大于 16
+- 变量只能存储 `float`
+
+#### b. 模组相关 molang
 
 如果你想知道目前所有可用的 MoLang 变量，直接在游戏内按下 `Alt B` 快捷键，即可打开如下界面（如果显示不下，请在原版游戏设置中设置 GUI 缩放大小）：
 
@@ -551,7 +721,302 @@ MoLang 是 mojang 官方为基岩版动画设计的一种极其简单的语言�
 |          `ysm.food_level`           |                        返回玩家饥饿值                        |
 |     `ysm.first_person_mod_hide`     | 当玩家安装更真实的第一人称模型模组，且需要隐藏玩家头部时为 true，否者为 false |
 
-## 十五、车万女仆模组的兼容
+#### c. 1.2.0 版本新增函数与变量
+
+这些变量与函数是 1.2.0 及以后的版本中添加的：
+
+##### query.debug_output()
+
+- 描述：输出消息至聊天框，仅在动画调试模式下有效；
+- 参数：任意类型，任意数量；
+- 返回值：null 。
+
+例：`query.debug_output('喵', 1, 2, 3)`
+
+聊天框显示： `喵123`
+
+返回：`null`
+
+##### math.min_angle()
+
+- 描述：计算指定角度在 [-180, 180) 内的等效角度；
+
+例：`math.min_angle(780)`
+
+返回：`60`
+
+##### query.cape_flap_amount
+
+- 描述：获取披风飘起的程度，即使玩家没穿披风也有效；
+- 返回值：0 - 1 的数值。0 为完全垂下，1 完全飘起。
+
+例：`q.cape_flap_amount`
+
+返回：`0.35`
+
+##### query.position()
+
+- 描述：获取实体所处的位置坐标；
+- 参数：0-2 的整数，分别指的 X、Y、Z 分量；
+- 返回值：玩家位置坐标的指定分量；
+
+例：`q.position(1)`（获取玩家位置的 Y 坐标）
+
+返回：`1003.23`
+
+##### query.position_delta()
+
+- 描述：获取实体的位置坐标自上次更新动画以来的差值，与帧率有关；
+- 参数/返回值：0-2 的整数，分别指坐标差值的 X、Y、Z 分量；
+- 返回值：玩家位置坐标差值的指定分量。
+
+例1：`q.position_delta(0)`（获取玩家位置差值的 X 分量）
+
+例1返回：`-0.076`
+
+例2：
+
+```plain
+v.time0 > 0 && q.life_time - v.time0 > 0 ? (v.speed_x = (q.position_delta(0) - v.x0) / (q.life_time - v.time0));
+v.x0 = q.position_delta(0);
+v.time0 = q.life_time;
+return v.speed_x;
+```
+
+例2返回：`19.03`
+
+##### ysm.in_ground
+
+- 描述：判断箭矢是否掉在地上
+- 返回：布尔值
+
+例：`ysm.in_ground`
+
+返回：`true`
+
+##### ysm.on_ground_time
+
+- 描述：获取箭矢在地上躺了多久
+- 返回：整数，单位为 tick
+
+##### ysm.is_spectral_arrow
+
+- 描述：判断箭矢是否为光灵箭
+- 返回：布尔值
+
+##### ysm.projectile_owner
+
+- 描述：获取发射该箭矢的玩家实体
+- 返回：玩家实体，可以使用“箭头表达式”查询其属性
+
+例：`v.flame_level ?? (v.flame_level = ysm.projectile_owner->ysm.equipped_enchantment_level('Mainhand', 'minecraft:flame'))`
+
+解释：`将该表达式写在箭矢动画中任意 parallel 动画的指令关键帧的第一帧，能在箭矢射出时获取玩家主手的弓的火矢附魔等级，并存储在 v.flame_level 变量中。不会重复执行。`
+
+返回：`0`
+
+##### ysm.delta_movement_length
+
+- 描述：获取箭矢在两 Tick 之间的位移长度，可以用来判断速度；
+- 返回：数值类型的位移长度。
+
+Tips：如果速度异常，尝试安装 [Fast Projectile Fix](https://www.mcmod.cn/class/8885.html)。
+
+##### ysm.texture_name
+
+- 描述：获取玩家正在使用的材质名称；
+- 返回值：字符串类型的材质名称，含扩展名；
+
+例1：`ysm.texture_name`
+
+例1返回：`'blue.png'`
+
+例2：`ysm.texture_name == 'blue.png'`
+
+例2返回：`true`
+
+##### ysm.mod_version()
+
+- 描述：获取客户端安装的指定模组的版本；
+- 参数：字符串类型的模组 id（注意不是模组名称）；
+- 返回：若已安装该模组则返回版本号字符串，否则返回 null。
+
+例：`ysm.mod_version('tac')`
+
+返回：`'0.3.10.5'`
+
+##### ysm.dump_mods
+
+- 描述：输出已安装的模组信息至聊天框，仅在动画调试模式下有效；
+- 返回：null
+
+##### ysm.dimension_name
+
+- 描述：获取当前维度；
+- 返回：字符串类型的维度 id。
+
+例：`ysm.dimension_name`
+
+返回：`'twilightforest:twilightforest'`（暮色森林）
+
+##### ysm.weather
+
+- 描述：获取当前天气；
+- 返回：0：晴天，1：雨或雪，2：雷雨或暴雪。
+
+例：`ysm.weather`
+
+返回：`1`
+
+Tips：下雨还是下雪取决于当前群系以及所处高度，或[静谧四季](https://www.mcmod.cn/class/1132.html)之类的模组；
+
+##### ysm.is_open_air
+
+- 描述：判断玩家是否处于露天区域；
+- 返回：布尔值
+
+Tips：能帮助判断是否正在淋雪，而 `q.is_in_water_or_rain` 不能。
+
+##### query.equipped_item_all_tags()
+
+- 描述：判断玩家装备物品是否包含指定的**所有**物品标签；
+- 参数①：字符串类型的玩家装备槽，参考 [基岩版文档](https://learn.microsoft.com/en-us/minecraft/creator/scriptapi/minecraft/server/equipmentslot?view=minecraft-bedrock-stable)，注意区分大小写；
+- 参数②......：任意数量的字符串类型物品标签；
+- 返回：布尔值
+
+例：`query.equipped_item_all_tags('Mainhand', 'minecraft:tools', 'minecraft:swords')`
+
+返回：`true`
+
+##### query.equipped_item_any_tag()
+
+- 描述：判断玩家装备物品是否包含指定的物品标签中的**任意一个**；
+- 参数①：字符串类型的玩家装备槽，参考 [基岩版文档](https://learn.microsoft.com/en-us/minecraft/creator/scriptapi/minecraft/server/equipmentslot?view=minecraft-bedrock-stable)，注意区分大小写；
+- 参数②......：任意数量的字符串类型物品标签；
+- 返回：布尔值
+
+##### query.is_item_name_any()
+
+- 描述：判断玩家装备物品 id 是否为指定的物品 id 中的**任意一个**；
+- 参数：任意数量的字符串类型物品 id；
+- 返回：布尔值
+
+例：`q.is_item_name_any('Mainhand', 'cooked_beef')`（熟牛排）
+
+返回：`true`
+
+##### ysm.equipped_enchantment_level()
+
+- 描述：获取玩家已装备物品的指定附魔等级；
+- 参数①：字符串类型的玩家装备槽，参考 [基岩版文档](https://learn.microsoft.com/en-us/minecraft/creator/scriptapi/minecraft/server/equipmentslot?view=minecraft-bedrock-stable)，注意区分大小写；
+- 参数②：附魔 ID，参考 [Wiki](https://www.mcmod.cn/item/list/1-5.html)；
+
+![img](https://cdn.nlark.com/yuque/0/2024/png/26380667/1705148312976-4c3be360-981c-4b4d-bbe7-52e0bba62c63.png)
+
+- 返回值：整数类型的附魔等级。如果附魔不存在，则返回 0。
+
+例：`ysm.equipped_enchantment_level('Mainhand', 'minecraft:mending')`（获取主手物品经验修补等级）
+
+返回：`1`
+
+##### ysm.dump_equipped_item()
+
+- 描述：输出玩家已装备物品的信息至聊天框，仅在动画调试模式下有效；
+- 参数①：字符串类型的玩家装备槽，参考 [基岩版文档](https://learn.microsoft.com/en-us/minecraft/creator/scriptapi/minecraft/server/equipmentslot?view=minecraft-bedrock-stable)，注意区分大小写；
+- 返回：null
+
+##### ysm.relative_block_name()
+
+- 描述：获取玩家附近某个方块的 id；
+- 参数①②③：以玩家为中心的目标方块的相对位置坐标；
+- 返回：字符串类型的方块 id。
+
+例：`ysm.relative_block_name(0, -1, 0)`（玩家脚下的方块）
+
+返回：`'minecraft:sand'`
+
+##### query.relative_block_has_all_tags()
+
+- 描述：判断玩家附近某个方块是否包含所有指定的**所有**方块标签；
+- 参数①②③：以玩家为中心的目标方块的相对位置坐标；
+- 参数④......：**任意数量**的字符串类型的方块标签；
+- 返回：布尔值。
+
+例：`q.relative_block_has_all_tags(0, -0.5, 0, 'minecraft:sand', 'minecraft:enderman_holdable')`
+
+返回：`true`
+
+##### query.relative_block_has_any_tag()
+
+- 描述：判断玩家附近某个方块是否包含指定的方块标签中的**任意一个**；
+- 参数①②③：以玩家为中心的目标方块的相对位置坐标；
+- 参数④......：**任意数量**的字符串类型的方块标签；
+- 返回：布尔值。
+
+##### ysm.dump_relative_block
+
+- 描述：输出玩家附近某个方块的信息至聊天框，仅在动画调试模式下有效；
+- 参数①②③：目标方块的以玩家为中心的相对位置坐标；
+- 返回：null
+
+##### ysm.effect_level()
+
+- 描述：获取玩家或箭矢上附加的药水效果等级；
+- 参数①：字符串类型的药水 id；
+- 返回：数值类型的药水效果等级。如果不存在，则返回 0 。
+
+例：`ysm.effect_level('minecraft:regeneration')`（获取目标附加的生命恢复效果的等级）
+
+返回：`0`（目标没有这个效果）
+
+##### ysm.dump_effects
+
+- 描述：输出玩家附加的药水效果的信息至聊天框，仅在动画调试模式下有效；
+- 返回：null
+
+#### d. 行为不一致的的 molang 参数
+
+这些 molang 参数在不同的 Minecraft 版本中结果不一致，请谨慎使用！
+
+##### ysm.biome_category
+
+> 注意！这个变量仅在 1.16.5 和 1.18.2 可以使用
+
+- 描述：获取玩家所处群系的类别；
+- 返回：字符串类型的群系类别。
+
+例：`ysm.biome_category == 'forest'`
+
+返回：`true`
+
+| 群系类别（1.16.5/1.18.2） |   名称   |
+| :-----------------------: | :------: |
+|           taiga           |  针叶林  |
+|       extreme_hills       | 风袭丘陵 |
+|          jungle           |   丛林   |
+|           mesa            |   恶地   |
+|          plains           |   平原   |
+|          savanna          | 热带草原 |
+|            icy            | 冰系群系 |
+|           beach           |   沙滩   |
+|          forest           |   森林   |
+|           ocean           |   海洋   |
+|          desert           |   沙漠   |
+|           river           |   河流   |
+|           swamp           |   沼泽   |
+|         mushroom          |  蘑菇岛  |
+|          nether           |   下界   |
+|          the_end          |   末地   |
+
+##### query.biome_has_all_tags
+
+由于 1.16 版本没有群系标签，所以该函数只是个占位符，用以维持向前兼容性。只能在 1.18 以上的版本可用。
+
+##### query.biome_has_any_tags
+
+也是占位符。只能在 1.18 以上的版本可用。
+
+## 十六、车万女仆模组的兼容
 
 在 Touhou Little Maid 1.1.3 更新中，添加了对 Yes Steve Model 模组模型的兼容，使其可以使用 Yes Steve Model 的未加密模型和动画文件。但是加密的 ysm 格式模型无法使用！
 
@@ -560,7 +1025,7 @@ Touhou Little Maid 支持使用插件来制作模型包，相关插件地址和�
 - 插件网页：<http://page.cfpa.team/TLM-Utils-Plugins/zh/>
 - 插件使用教程：<https://www.bilibili.com/video/BV1LN411G7sU/>
 
-两格模组使用的模型和动画几乎完全兼容，只存在少许不同，这里特此说明。
+两个模组使用的模型和动画几乎完全兼容，只存在少许不同，这里特此说明。
 
 ### 1. 模型
 
