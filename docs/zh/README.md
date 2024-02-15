@@ -517,9 +517,9 @@ Carry On 模组的兼容动画是一个名为 `carryon.animation.json` 的独立
 
 但是直接让模型作者书写这些 json 文件太过复杂，所以你需要安装 ysm-utils Blockbench 插件来做到这一点。
 
-> 插件的下载地址：<https://share.weiyun.com/lRYgIcHc>
+> 插件的下载地址：<https://share.weiyun.com/vzQ5HKvY>
 >
-> 1. 当前最新版插件应该为 1.0.4 版本；
+> 1. 当前最新版插件应该为 1.2.0 版本；
 > 2. 如果你需要更新插件，请注意插件不要改名。直接替换原有插件文件，重启 Blockbench 即可；
 
 下载好以后，不要修改文件名，选择一个地方放置此文件。然后打开 Blockbench，依次选择：文件 -> 插件 -> 从文件加载插件。最终加载上 ysm 插件。
