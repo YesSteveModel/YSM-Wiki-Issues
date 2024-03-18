@@ -2,58 +2,118 @@
 
 ## 1. Introduction
 
-The Yes Steve Model mod is a `Minecraft Forge` mod that modifies the vanilla player model, using `geckolib` as the core, using Minecraft Bedrock Edition models and animation files. This allows players to customize player models and animations as they wish.
+The Yes Steve Model mod is a **Minecraft Forge** and **Fabric** mod that modifies the vanilla player model, using Minecraft Bedrock Edition models and animation files. This allows players to customize player models and animations as they wish.
+
+> **Notes:**
+>
+> - This mod supports [Timeless and Classics Guns](https://www.curseforge.com/minecraft/mc-mods/timeless-and-classic-guns-tac) of version **0.3.7** or higher. Playing with incompatible versions can lead to a crash.
+> - This mod supports [First-person Model](https://www.curseforge.com/minecraft/mc-mods/first-person-model) with limited compatibility. There can be some rendering issues.
+> - In the latest version (1.2.0,) the issue that oversized models (over 2MB) could not be synchronized has been solved.
 
 ![001](https://s2.loli.net/2023/01/01/RAor58n6LBct3kW.jpg)
 
 The Yes Steve Model mod takes into account the mod needs of the server community, and adopts many designs suitable for the server environment, including but not limited to:
 
-- Automatically synchronize client models: When vanilla players enter the server, the server will **automatically** synchronize the models to the player's computer.
-- Encrypted model files: All the models sent to the player client are **encrypted binary files**, effectively avoiding the problem of model theft!
-- Model permission function: models can be individually authorized, and only after the OP input command is authorized, a specific model can be used.
-- Vanilla player model modification: Added default Steve and Alex models, both models can automatically call the player skin display.
-- Simple customization function: The model customization function is extremely simple, you only need to place the model, textures and animation files in a specific folder, and input the reload command in the game to automatically load and synchronize. **No need to write any configuration files**!
+- Automatic client model synchronization: When players enter the server, the server will **automatically** synchronize the models to their clients.
+- Model file encryption: All the models sent to the player client are **encrypted binary files**, effectively avoiding the problem of model theft!
+- Model permission feature: Models can be individually authorized. A player can use a model only after the OP authorizes it with command.
+- Vanilla player model modification: Default Steve and Alex models are included, both of which automatically use the player skin for display.
+- Simple customization feature: The model customization feature is extremely simple. Put the model, textures and animation files in a specific folder, and then input the reload command in the game to automatically load and synchronize them. **No configuration files needed**!
+- Animation roulette feature: Pressing `Z` (default key) opens the animation roulette for playing interesting animations.
+- **Limited** compatibility with [First-person Model](https://www.curseforge.com/minecraft/mc-mods/first-person-model).
+- Compatibility with [Timeless and Classics Guns](https://www.curseforge.com/minecraft/mc-mods/timeless-and-classic-guns-tac): Animations for holding guns, reloading, aiming, firing, etc. are supported perfectly.
+  ![2023-07-20_18.jpg](https://s2.loli.net/2023/07/20/N6sOS9ea5xwfn8t.jpg)
+- Compatibility with [Carry On](https://www.curseforge.com/minecraft/mc-mods/carry-on): Animations for carrying blocks and entities are included. In 1.19.2 and 1.20 you can also carry another player with Carry On. Make sure to try that with your friends in a server.
+  ![2.jpg](https://s2.loli.net/2024/02/14/71QyVR6NSHmbdo3.jpg)
+- Compatibility with [SlashBlade](https://www.curseforge.com/minecraft/mc-mods/slashblade): Blades in main/off hand can be rendered. Custom slashing animation is not supported yet.
+  ![1.jpg](https://s2.loli.net/2024/02/14/LfQxMCZKNAtzsOG.jpg)
 
-For client players, it is also extremely simple to use. When the player waits for more than ten seconds after entering the server for the first time (model synchronization time-consuming), you can use the shortcut key `Alt` + `Y` to open the following GUI:
+## 2. How to Use
 
-![002](https://s2.loli.net/2023/01/01/xGsXkbqe8iHPDOW.png)
+### a) Instructions for Forge Version
 
-**① Model switching button**: Click to switch to the corresponding model. If the icon in the upper right corner of the button is red, it means the model is not authorized. The number in the icon represents the number of textures that the model can switch.
+After entering the server and waiting for a few seconds (for model synchronization,) you can open the following GUI by pressing `Alt` + `Y` (default key):
 
-**② Textures switching button**: For models with multiple textures, click the left and right buttons to switch the model texture.
+![1.png](https://s2.loli.net/2023/06/25/Ya7DMmKToSneN6L.png)
 
-**③ Model category switching button**: You can switch between all models, authorized models and vanilla models (currently only Steve and Alex models)
+**① Model switching button**: Switch to the corresponding model. A grayed-out background indicates an unauthorized model. The number in the top left corner indicates the number of available textures.
 
+**② Model category switching button**: Switch among all models, authorized models and favorite models.
 
+**③ Details button**: Enter the model detail panel displaying all available textures and animations for the model. In the middle preview window, drag with left mouse button to rotate, drag with right mouse button to translate, and scroll to scale the model. Select different textures in the texture selection window on the right. Preview different animations with the animation list on the left.
 
-## 2. How to make a custom model
+![3.png](https://s2.loli.net/2023/02/11/UxtCNy9wEg1XjSI.png)
 
-Yes Steve Model mod uses `geckolib` as core, so it supports `geckolib` compatible `Bedrock Edition 1.12.0` version model files and `Bedrock Edition 1.8.0` version animation files.
+### 2. Instructions for Fabric Version
 
-All custom model files are placed in the `config\yes_steve_model` folder in the main game directory. Three folders are automatically generated under `yes_steve_model`:
+> Shout out to [**番茄布丁**](https://github.com/TomatoPuddin) for porting this mod to Fabric on his own!
 
-- `auth` folder: used to place custom models, the custom models in this location **must be authorized** before they can be used.
+Most features in the Fabric version are **identical** to the Forge version. It has been tested to have stable compatibility with Sodium, Sodium Extra, Iris, Lithium, ModernFix, FerriteCore, ServerCore, Debugify, Carpet (including FakePlayer feature,) etc.
 
-- `cache` folder: the encrypted model file cache folder that the system automatically obtains from the server.
+The Fabric version requires two dependencies:
 
-- `custom` folder: used to place custom models, which can be used **without authorization**.
+- [Fabric API](https://www.curseforge.com/minecraft/mc-mods/fabric-api)
+- [Forge Config API Port](https://www.curseforge.com/minecraft/mc-mods/forge-config-api-port-fabric)
 
-You can choose to place custom model files under the `auth` or `custom` folder, and the file structure is as follows:
+Moreover, it has two optional dependencies:
+
+- [First-person Model](https://www.curseforge.com/minecraft/mc-mods/first-person-model) for displaying the third-person model in first-person camera
+- [Amecs](https://www.curseforge.com/minecraft/mc-mods/amecs) for combined key bind support as in Forge
+
+The Fabric version is only different from the Forge version by its key bindings. Since key bindings in Fabric does not support combinded keys with Ctrl / Alt / Shift without [Amecs](https://www.curseforge.com/minecraft/mc-mods/amecs), which however conflicts with a popular mod [Controlling](https://www.curseforge.com/minecraft/mc-mods/controlling), Amecs is made as an optional dependency of Yes Steve Model, and it is up to you whether to install it.
+
+- With Amecs, Yes Steve Model registers the same key bindings as in the Forge version with the interface of this mod;
+- **Without Amecs, Yes Steve Model registers the key bindings without the modifier keys. For example, pressing `Y` opens the model selecting GUI (instead of `Alt` + `Y`.)**
+
+## 3. What Formats Are Supported
+
+Yes Steve Model uses `geckolib` as its core, so it naturally supports `geckolib`-compatible **Bedrock Edition model file 1.12.0** and **Bedrock Edition animation file 1.8.0**.
+
+Three formats are available. All of them are recognized and loaded by the game when placed in the specified directory:
+
+- Plain folder: Recommended format for model designers, allowing quick modifications and in-game hot reloading for testing;
+- Archive format: **Direct package** of the folder format, allowing easy model sharing;
+- `.ysm` format: **Encrypted package** of the folder format, allowing easy model sharing and preventing modifications to the model file.
+
+## 4. Where Do I Place the Models
+
+All custom model files are placed in the `config\yes_steve_model` folder in the main game directory. Four folders are automatically generated under `yes_steve_model`:
+
+- `auth` folder: For placing custom models. The custom models in this location **must be authorized** before they can be used.
+- `cache` folder: For caching the encrypted model files obtained from servers by the system.
+- `custom` folder: For placing custom models. The custom models in this location can be used **without authorization**.
+- `export` folder: For outputting exported `.ysm` model files when the `/ysm export` command is used in game.
+
+You can choose to place custom model files under either the `auth` or `custom` folder.
+
+## 5. Get Started
+
+As the archive format and `.ysm` format are converted from the folder format, we'll get started from the folder format.
+
+The folder structure is shown below, in which, the only mandatory parts are `main.json`, `arm.json`, plus at least one `.png` texture.
 
 ```
 custom (or auth) folder
 │
 └─default                    // model package folder, the game will use this folder name as the model ID
-     │
-     ├─main.json             // main model file (fixed name)
-     ├─arm.json              // arm model file, used for first-person arm display (fixed name)
-     ├─main.animation.json   // animation file of the main model file (fixed name)
-     ├─light_skin.png        // main model file texture 1 (the name can be customized, it will be used as the display name in the game)
-     ├─...                   // any number of texture files
-     └─dark_skin.png         // main model file texture 2 (the name can be customized and will be used as the display name in the game)
+    │
+    ├─info.json              // information file, used for information display such as author, name, and license
+    ├─main.json              // main model file (fixed name)
+    ├─arm.json               // arm model file, used for first-person arm display (fixed name)
+    ├─arrow.json             // arrow model file, if present, replacing the model of arrows shot by the player (fixed name)
+    ├─main.animation.json    // animation file of the main model file (fixed name)
+    ├─extra.animation.json   // roulette animation file (fixed name)
+    ├─arm.animation.json     // arm animation file (fixed name)
+    ├─arrow.animation.json   // arrow animation file (fixed name)
+    ├─tac.animation.json     // animation file for TAC mod (fixed name)
+    ├─carryon.animation.json // animation file for Carry On mod (fixed name)
+    ├─arrow.png              // arrow texture file (fixed name)
+    ├─light_skin.png         // main model file texture 1 (the name can be customized and will be used as the display name in the game)
+    ├─...                    // any number of texture files
+    └─dark_skin.png          // main model file texture 2 (the name can be customized and will be used as the display name in the game)
 ```
 
-Custom models, animations, and texture files need to be placed in one folder. Folders, texture names, etc. can only use `lowercase English characters, numbers, underscore` characters.
+Custom models, animations, and texture files need to be placed in one folder. The name of folders, texture files, etc. can only use **lowercase English characters, digits, underscore** characters.
 
 ### 1. Production of model files
 
