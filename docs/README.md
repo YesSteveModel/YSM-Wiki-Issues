@@ -44,7 +44,7 @@ After entering the server and waiting for a few seconds (for model synchronizati
 
 ![3.png](https://s2.loli.net/2023/02/11/UxtCNy9wEg1XjSI.png)
 
-### 2. Instructions for Fabric Version
+### b) Instructions for Fabric Version
 
 > Shout out to [**番茄布丁**](https://github.com/TomatoPuddin) for porting this mod to Fabric on his own!
 
