@@ -377,7 +377,7 @@
   "molang.yes_steve_model.pi.desc": "π, константа.",
   "molang.yes_steve_model.e.desc": "Натуральный логарифм, константа.",
   "molang.yes_steve_model.query.actor_count.desc": "Возвращает количество сущностей.",
-  "molang.yes_steve_model.query.anim_time.desc": "Возвращает время в секундах с момента запуска текущей анимации, иначе §f0.0§r, если не вызывается внутри анимации.",
+  "molang.yes_steve_model.query.anim_time.desc": "Возвращает время в секундах с момента запуска текущей анимации, иначе §f0.0§r, если не вызывается в рамках анимации.",
   "molang.yes_steve_model.query.body_x_rotation.desc": "Возвращает угол поворота тела по оси X, если он вызывается у персонажа, иначе возвращается §f0.0§r.",
   "molang.yes_steve_model.query.body_y_rotation.desc": "Возвращает угол поворота тела по оси Y, если он вызывается у персонажа, иначе возвращается §f0.0§r.",
   "molang.yes_steve_model.query.cardinal_facing_2d.desc": "Возвращает текущее направление игрока, игнорируя вертикальное направление (Север=§f2.0§r, Юг=§f3.0§r, Запад=§f4.0§r, Восток=§f5.0§r).",
@@ -415,12 +415,12 @@
   "molang.yes_steve_model.query.modified_distance_moved.desc": "Возвращает общее расстояние, которое сущность преодолела по горизонтали в метрах.",
   "molang.yes_steve_model.query.moon_phase.desc": "Возвращает фазу луны (§f0-7§r).",
   "molang.yes_steve_model.query.player_level.desc": "Возвращает уровень игрока, иначе возвращается §f0§r.",
-  "molang.yes_steve_model.query.time_of_day.desc": "Возвращает время дня (полночь=§f0.0§r, восход=§f0.25§r, полдень=§f0.5§r, закат=§f0.75§r) измерения, в котором находится сущность.",
+  "molang.yes_steve_model.query.time_of_day.desc": "Возвращает время суток (полночь=§f0.0§r, восход=§f0.25§r, полдень=§f0.5§r, закат=§f0.75§r) измерения, в котором находится сущность.",
   "molang.yes_steve_model.query.time_stamp.desc": "Возвращает текущую отметку прошедшего времени.",
   "molang.yes_steve_model.query.vertical_speed.desc": "Возвращает скорость перемещения сущности по вертикали в метрах/секунду, где положительное значение вверх.",
   "molang.yes_steve_model.query.walk_distance.desc": "Возвращает пройдённое расстояние сущностью.",
   "molang.yes_steve_model.query.yaw_speed.desc": "Возвращает скорость вращения по оси Y.",
-  "molang.yes_steve_model.ysm.armor_value.desc": "Возвращает состояние брони (§f0-20§r).",
+  "molang.yes_steve_model.ysm.armor_value.desc": "Возвращает значение брони (§f0-20§r).",
   "molang.yes_steve_model.ysm.has_helmet.desc": "Возвращает §ctrue§r, если игрок с экипированным шлемом, иначе возвращается §afalse§r.",
   "molang.yes_steve_model.ysm.has_chest_plate.desc": "Возвращает §ctrue§r, если игрок с экипированным нагрудником, иначе возвращается §afalse§r.",
   "molang.yes_steve_model.ysm.has_leggings.desc": "Возвращает §ctrue§r, если игрок с экипированными поножами, иначе возвращается §afalse§r.",
@@ -434,5 +434,5 @@
   "molang.yes_steve_model.ysm.elytra_rot_y.desc": "Возвращает поворот сущности на элитрах по оси y.",
   "molang.yes_steve_model.ysm.elytra_rot_z.desc": "Возвращает поворот сущности на элитрах по оси z.",
   "molang.yes_steve_model.ysm.food_level.desc": "Возвращает уровень голода игрока.",
-  "molang.yes_steve_model.ysm.first_person_mod_hide.desc": "Возвращает §ctrue§r если установлен First Person Mod и нужно скрыть голову игрока, иначе возвращается §f0.0§r"
+  "molang.yes_steve_model.ysm.first_person_mod_hide.desc": "Возвращает §ctrue§r если установлен First Person Mod и нужно скрыть голову игрока, иначе возвращается §afalse§r"
 }
