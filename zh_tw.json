@@ -433,6 +433,6 @@
   "molang.yes_steve_model.ysm.elytra_rot_x.desc": "玩家鞘翅的 X 旋轉角度",
   "molang.yes_steve_model.ysm.elytra_rot_y.desc": "玩家鞘翅的 Y 旋轉角度",
   "molang.yes_steve_model.ysm.elytra_rot_z.desc": "玩家鞘翅的 Z 旋轉角度",
-  "molang.yes_steve_model.ysm.food_level.desc": "玩家飢餓值",
-  "molang.yes_steve_model.ysm.first_person_mod_hide.desc": "Return 1.0 if the First Person Mod is installed and player's head needs to be hidden, else it returns 0.0"
+  "molang.yes_steve_model.ysm.food_level.desc": "玩家飽食度",
+  "molang.yes_steve_model.ysm.first_person_mod_hide.desc": "當玩家安裝 First Person Mod 且需要隱藏玩家頭部時為 true，否者為 false"
 }
