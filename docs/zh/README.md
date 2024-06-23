@@ -4,11 +4,19 @@
 
 Yes Steve Model 模组是一个修改原版玩家模型的 `Minecraft Forge 和 Fabric` 模组，它能够使用 Minecraft 基岩版模型和动画文件。从而使玩家能够随心所欲的自定义玩家模型和动画。
 
+> 目前最新版的 Yes Steve Model 版本号为 **2.2.1**
+>
+> 同时支持 1.16.5/1.18.2/1.19.2/1.20.1 Forge，1.16.5/1.18.2/1.19.2/1.20.1/1.21 Fabric 和 1.21 NeoForge 共计十个版本。
+
 > **温馨提醒：**
 >
-> - 本模组添加了对[永恒枪械工坊](https://www.curseforge.com/minecraft/mc-mods/timeless-and-classic-guns-tac)模组的兼容，但需要 **0.3.7** 及以上版本的[永恒枪械工坊](https://www.curseforge.com/minecraft/mc-mods/timeless-and-classic-guns-tac)模组才可以，否则游戏内持枪会导致游戏崩溃。
-> - 本模组虽然添加了对[更真实的第一人称模型](https://www.curseforge.com/minecraft/mc-mods/first-person-model)模组的兼容，但仍旧存在些许渲染错误问题。
-> - 最新版（1.2.0 版本）解决了模型包文件过大的问题，现在你可以放心使用大于 2MB 大小的模型包了。
+> - 本模组 1.16.5/1.18.2 Forge 版本添加了对[永恒枪械工坊](https://www.curseforge.com/minecraft/mc-mods/timeless-and-classic-guns-tac)模组的兼容，但需要 **0.3.7** 及以上版本的[永恒枪械工坊](https://www.curseforge.com/minecraft/mc-mods/timeless-and-classic-guns-tac)模组才可以，否则游戏内持枪会导致游戏崩溃。
+> - 本模组 1.18.2/1.19.2/1.20.1 Forge 版本添加了对[永恒枪械工坊：零](https://www.curseforge.com/minecraft/mc-mods/timeless-and-classics-zero)模组的兼容。
+> - 本模组虽然添加了对[更真实的第一人称模型](https://www.curseforge.com/minecraft/mc-mods/first-person-model)模组的兼容，但仍旧存在些许错误。
+> - 本模组 2.2.1 版本添加了对 Oculus(Forge) 和 Iris(Fabric) 模组 PBR 材质的支持。
+> - 本模组添加了对[拔刀剑](https://www.curseforge.com/minecraft/mc-mods/slashblade)的渲染的支持，2.2.1 版本还支持[拔刀剑：重锋](https://www.curseforge.com/minecraft/mc-mods/slashblade-resharped)。
+> - 2.2.1 版本支持[时装工坊](https://www.curseforge.com/minecraft/mc-mods/armourers-workshop)的盔甲和鞘翅插槽。
+> - 最新版（1.2.0 及以上版本）解决了模型包文件过大的问题，现在你可以放心使用大于 2MB 大小的模型包了。
 
 ![001](https://s2.loli.net/2023/01/01/RAor58n6LBct3kW.jpg)
 
@@ -49,6 +57,10 @@ Yes Steve Model 模组考虑到了服务器群体的模组需求，采用了诸�
 
 ![3.png](https://s2.loli.net/2023/02/11/UxtCNy9wEg1XjSI.png)
 
+2.2.1 版本还添加了作者详情界面，点击模型界面左上角“打开详情界面”按钮，即可打开如下界面：
+
+![2024-06-23_21.24.png](https://s2.loli.net/2024/06/23/5ePDTnrBchwyzq8.png)
+
 ### 2. Fabric 版本的说明
 
 > Fabric 由**番茄布丁**（https://github.com/TomatoPuddin）全力完成迁移工作！请向他表示崇高的敬意！
@@ -58,21 +70,24 @@ Fabric 版本绝大部分功能和 Forge 版本**完全保持一致**，并且�
 Fabric 版本需要两个运行前置：
 
 - [Fabric Api](https://www.mcmod.cn/class/3124.html)
-- [Forge Config Api Port](https://www.mcmod.cn/class/5510.html)
+- [Forge Config Api Port](https://www.mcmod.cn/class/5510.html)（2.2.1 版本起不再需要安装）
 
 同时与两个模组拥有兼容互动内容：
 
 - [First-Person Model](https://www.mcmod.cn/class/4391.html)（添加了更好的第一人称视角兼容）
 - [Amecs](https://www.mcmod.cn/class/2003.html)（支持和 Forge 版本一致的组合快捷键）
+- [Modern KeyBinding](https://www.curseforge.com/minecraft/mc-mods/modern-keybinding-fabric)（另一款支持和 Forge 版本一致的组合快捷键，自 2.2.1 版本起支持）
 
 Fabric 仅在按键方面与 Forge 版存在些许不同。因为 Fabric 的按键绑定接口不支持 Ctrl / Alt / Shift 组合键，需要安装 [Amecs](https://www.mcmod.cn/class/2003.html) 模组才能支持。但是该模组与常用模组 [Controlling](https://www.mcmod.cn/class/1191.html) 冲突，所以最终将该模组设计为可选模组，交给用户自己选择安装。
+
+或者可以选择安装 [Modern KeyBinding](https://www.curseforge.com/minecraft/mc-mods/modern-keybinding-fabric) 模组，该模组不会与 [Controlling](https://www.mcmod.cn/class/1191.html) 冲突。
 
 - 安装了 Amecs 时通过该模组的接口注册与 Forge 版相同的按键绑定；
 - **未安装该模组时注册不含修饰键的按键绑定。如按 Y 直接打开模型选择页，无需 Alt**。
 
 ## 三、支持什么格式
 
-Yes Steve Model 模组采用了 `geckolib` 作为核心，所以它支持 `geckolib` 兼容的`基岩版 1.12.0 `版本模型文件和`基岩版 1.8.0 `版本动画文件。
+Yes Steve Model 模组采用了 `geckolib` 作为核心，所以它支持 `geckolib` 兼容的`基岩版 1.12.0 及以上 `版本模型文件和`基岩版 1.8.0 `版本动画文件。
 
 模型文件有三种格式，这三者放在指定目录下均可被游戏识别加载：
 
@@ -94,14 +109,22 @@ Yes Steve Model 模组采用了 `geckolib` 作为核心，所以它支持 `gecko
 
 你可以选择在 `auth` 或者 `custom` 文件夹下直接放置自定义模型文件。
 
+> 2.2.1 版本开始，为了解决众多玩家喜欢修改文件名，或者目录下套多层文件夹的做法。我们修改了文件读取逻辑。
+>
+> 
+>
+> 现在只要是在 `custom` 或者 `auth` 目录下，无论套几层子文件夹（最大 16 层），无论是文件夹、压缩包、ysm 格式，都能正确识别。同时文件名支持任意字符（包括中文）。
+
 ## 五、如何开始
 
 因为压缩包格式和 ysm 格式的模型都是文件夹格式模型转换而来的，这里我们直接以文件夹形式格式讲解。
 
+### 1.2.0 及以前版本
+
 文件夹格式模型结构如下所示，这其中只有三个部分是必须的：`main.json`，`arm.json`，任意一个 `png` 格式的材质。
 
 ```
-custom （或 auth）文件夹
+custom（或 auth）文件夹
 │
 └─default                    模型包文件夹，游戏将会以此文件夹名作为模型 ID
     │ 
@@ -123,11 +146,171 @@ custom （或 auth）文件夹
 
 自定义模型、动画、材质文件均需放置在一个文件夹中。文件夹、材质名称等只能使用 `小写英文字符、数字、下划线` 等字符。
 
+### 2.2.1 版本及以后
+
+旧版本的设计在文件数量较多时极其混乱。故从 2.2.1 版本起，我们设计了一套新的文件结构，通过目录下的 `ysm.json` 文件统一管理其他资源，推荐的目录结构如下：
+
+```
+模型文件夹
+│
+├───ysm.json                      资源描述文件，固定名称，固定位置 
+│
+├───animations                    动画文件夹，推荐用此名称，支持任意字符，可以自定义
+│      ├─arm.animation.json       各种文件名称没有限制，可以使用任意字符
+│      ├─弓箭动画.json
+│      ├─carryon.animation.json
+│      ├─extra.animation.json
+│      ├─main.animation.json
+│      └─tac.animation.json
+│
+├───avatar                        作者头像文件夹，推荐用此名称，支持任意字符，可以自定义
+│      ├─端木.png
+│      ├─哥斯拉.png
+│      ├─海螺.png
+│      └─甜粽子.png
+│
+├───models                        模型文件夹，推荐用此名称，支持任意字符，可以自定义
+│      ├─arm.json
+│      ├─箭.json
+│      └─main.json
+│
+└───textures                      材质文件夹，推荐用此名称，支持任意字符，可以自定义
+       ├─arrow.png
+       ├─蓝色材质.png
+       └─默认材质.png
+```
+
+除资源描述文件 `ysm.json` 为固定名称，固定位置文件。自定义模型、动画、材质文件等均可以依据所需放置在不同的子文件夹中，文件夹、材质名称等也可以使用任意字符。
+
+新版设计中的资源描述文件 `ysm.json` 支持如下内容：
+
+- 支持设置默认材质和材质文件的展示顺序；
+- 支持设置预览动画，在模型选择界面播放（旧版统一为 idle）；
+- 支持自定义 Extra 动画的数量、顺序、名称（不再限制为 extra+数字）；
+- 支持读取模型目录内的子目录文件。
+- 支持插入作者信息，并分配头像、角色、简介、联系方式
+- 支持插入主页和捐赠网页信息
+- 支持 PBR 材质指定
+
+`ysm.json` 必须放在文件夹根目录下，且需要使用 UTF-8 无 BOM 编码保存，其内容结构如下：
+
+```json
+{
+  // 版本信息字段，当前必须为 2，此版本添加了 PBR 的支持
+  "spec": 2,
+  // 可选字段，会作为游戏内模型切换界面的文本提示和详情界面显示出来
+  "metadata": {
+    // 只有 name 是必选字段，其它都是可选
+    "name": "自定义名称",
+    // 接受用 \n 进行换行
+    "tips": "描述",
+    "license": {
+      // 必选字段
+      "type": "CC 0",
+      // 接受换行
+      "desc:": "更多许可描述"
+    },
+    // 读取时保留顺序
+    "authors": [
+      {
+        // 只有 name 是必选字段，其它都是可选
+        "name": "作者1",
+        // 模型详情页展示作者头像
+        "avatar": "avatar/头像.png",
+        "role": "角色（如：模型/动画）",
+        // 支持任意类型，不局限于给出的这两个。读取时保留顺序
+        "contact": {
+          "qq": "123456789",
+          "email": "123456789@qq.com"
+        },
+        // 不接受换行
+        "comment": "备注"
+      },
+      // 可以添加多个作者
+      {
+        "name": "作者2"
+      }
+    ],
+    // 目前仅支持这两个
+    "link": {
+      "home": "https://主页链接",
+      "donate": "https://捐赠链接"
+    }
+  },
+  // 可选字段，内部所有字段都是可选
+  "properties": {
+    // 模型缩放，默认为 0.7
+    "height_scale": 0.7,
+    // 模型缩放，默认为 0.7
+    "width_scale": 0.7,
+    // 可任意调整数量、顺序和名称（不局限于 extra+数字）。读取时保留顺序
+    // 不限数量，超过 8 个也能正常播放了
+    "extra_animation": {
+      "extra0": "",
+      "extra1": "打招呼",
+      "run": "润",
+      "walk": "跑路",
+      "extra4": "",
+      "extra5": "",
+      "extra6": "",
+      "extra7": ""
+    },
+    // 在模型选择界面播放的预览动画
+    "preview_animation": "idle",
+    // 默认材质名称（不含路径和后缀.png），在模型选择界面展示，以及在玩家切换至该模型时默认使用。
+    "default_texture": "default",
+    // 此字段为 true 后，无法将其设置为授权模型
+    "free": false
+  },
+  // 必须的字段
+  "files": {
+    // 主模型文件
+    "player": {
+      "model": {
+        // 路径和文件名都可以自定义，注意严格区分大小写，即使是在 windows 上
+        "main": "models/main.json",
+        "arm": "models/arm.json"
+      },
+      // 可选字段，内部五个字段也都是可选
+      // 没有的话，会自动调用默认模型
+      "animation": {
+        "main": "animations/main.animation.json",
+        "arm": "animations/arm.animation.json",
+        "extra": "animations/extra.animation.json",
+        "tac": "animations/tac.animation.json",
+        "carryon": "animations/carryon.animation.json"
+      },
+      // 读取时保留顺序
+      "texture": [
+        // 可以直接书写材质路径
+        "textures/default.png",
+        // 也可以写成这样的形式
+        {
+          // 仅 uv 字段必选，以下两种 PBR 材质为可选
+          "uv": "textures/blue.png",
+          // Oculus 和 Iris PBR 支持
+          "normal": "textures/pbr/blue_n.png",
+          "specular": "textures/pbr/blue_s.png"
+        }
+      ]
+    },
+    // 可选字段，替换箭的渲染
+    "arrow": {
+      "model": "models/arrow.json",
+      // 可选字段
+      "animation": "animations/arrow.animation.json",
+      // 同样支持 PBR
+      "texture": "textures/arrow.png"
+    }
+  }
+}
+```
+
 ## 六、其他格式的转换
 
 你也可以把这些自定义模型、动画、材质文件全部打包成 zip 格式的文件**（不要错误的打包了文件夹）**，文件名还是需要遵循上述规定。
 
-在游戏内输入`/ysm export <model_id>` 指令，即可将某个文件夹格式的模型导出成 ysm 专属模型格式。这个模型格式进行了一些简单加密，可以有效避免模型被第三方人员破解。
+在游戏内输入`/ysm export <model_id>` 指令，即可将某个文件夹格式的模型导出成 ysm 专属模型格式。这个模型格式进行了加密，并做了安全性校验，可以有效避免模型被第三方人员破解。
 
 ysm 模型格式遵循**向下兼容**的原则，即新版本模组可以加载旧版本 ysm 格式文件，但旧版本模组不会加载新版 ysm 格式文件。
 
@@ -137,7 +320,9 @@ ysm 模型格式遵循**向下兼容**的原则，即新版本模组可以加载
 
 ## 七、主模型的制作
 
-Yes Steve Model 模组主模型文件命名必须为 `main.json`。其使用的动画文件进行了标准化设计，只需要按照特定的布局方式来制作，即可自动兼容。
+~~Yes Steve Model 模组主模型文件命名必须为 `main.json`。~~ 2.2.1 版本起主模型文件不再有名称限制，使用新版格式时可以随便指定其名称。
+
+其使用的动画文件进行了标准化设计，只需要按照特定的布局方式来制作，即可自动兼容。
 
 在运行游戏后，游戏主目录下的 `config\yes_steve_model\custom\default` 文件夹下会自动生成模型标准模型和动画文件**（该文件夹的模型为 CC 0 协议发布，可以自由修改分发）**，你可以在其基础上进行二次修改和分发。
 
@@ -150,6 +335,7 @@ Yes Steve Model 模组主模型文件命名必须为 `main.json`。其使用的�
 |                      `LeftHandLocator`                       | 左手手持物品的定位组<br/>没有此组就不会渲染副手物品<br>由`LeftHandLocator`的旋转点定位手持物品，对其应用缩放、旋转和位移动画可以修改手持物品的大小、朝向和位置 |
 |                      `RightHandLocator`                      | 右手手持物品的定位组<br/>没有此组就不会渲染主手物品<br/>由`RightHandLocator`的旋转点定位手持物品，对其应用缩放、旋转和位移动画可以修改手持物品的大小、朝向和位置 |
 |                       `ElytraLocator`                        | 鞘翅的定位组<br/>没有此组就不会渲染鞘翅<br/>由`ElytraLocator`的旋转点定位鞘翅，对其应用缩放、旋转和位移动画可以修改鞘翅的大小、朝向和位置 |
+|         `LeftShoulderLocator` `RightShoulderLocator`         | 鹦鹉的定位组<br/>没有此组就不会显示鹦鹉<br/>由这两个组的旋转点定位鹦鹉的渲染，对其应用缩放、旋转和位移动画可以修改鹦鹉的大小、朝向和位置 |
 |                      `LeftWaistLocator`                      | 主手（我没写错）持有拔刀剑时，拔刀剑的渲染定位组<br>没有此组将不会显示主手拔刀剑 |
 |                     `RightWaistLocator`                      | 副手（我没写错）持有拔刀剑时，拔刀剑的渲染定位组<br>没有此组将不会显示副手拔刀剑 |
 |                       `PistolLocator`                        | 当玩家安装了[永恒枪械工坊（Timeless and Classics Guns）](https://www.curseforge.com/minecraft/mc-mods/timeless-and-classic-guns-tac)模组后，副手持有手枪时，会渲染一个插在腰部的手枪模型<br/>这是此手枪模型的定位组<br/>没有此组就不会渲染插在腰间的枪械模型<br/>由`PistolLocator`的旋转点定位手枪模型的位置，对其应用缩放、旋转和位移动画可以修改手枪模型的大小、朝向和位置 |
@@ -198,14 +384,20 @@ Yes Steve Model 模组主模型文件命名必须为 `main.json`。其使用的�
 ## 十、贴图文件的制作
 
 - 材质使用 `png` 格式材质，不建议使用**半透明**贴图，这会造成各种渲染错误；
+- ~~材质文件名只能使用 `小写英文字符、数字、下划线` 等字符，其他没有限制；~~
+  - 2.2.1 版本起，只要使用新版格式，材质名称不再有限制；
 
-- 材质文件名只能使用 `小写英文字符、数字、下划线` 等字符，其他没有限制；
-- 模型支持多个贴图，你可以放置若干份贴图文件，游戏均会智能识别。
-- 名称为 `arrow.png` 的贴图是专为箭提供的贴图，固定名称，不可修改。
+- 模型支持多个贴图，~~你可以放置若干份贴图文件，游戏均会智能识别。~~
+  - 2.2.1 版本起，只要使用新版格式，需要在 `ysm.json` 里指定材质；
+
+- ~~名称为 `arrow.png` 的贴图是专为箭提供的贴图，固定名称，不可修改。~~
+  - 2.2.1 版本起，只要使用新版格式，需要在 `ysm.json` 里指定箭的材质；
 
 ## 十一、动画文件的制作
 
 动画文件是可选选项。没有动画文件，或者缺失部分动画时，游戏均会智能调用默认的动画文件。如果你的模型是按照默认模型二次修改的，那么即可完美兼容。
+
+> 2.2.1 版本起，以`——`开头名称的动画会被认为是注释，不会在游戏内详情界面显示
 
 **游戏内只有一个动画是代码添加的，不可修改**~~（历史遗留问题）~~：
 
@@ -217,33 +409,36 @@ Yes Steve Model 模组主模型文件命名必须为 `main.json`。其使用的�
 
 如下动画是自定义的主动画,放置于 `main.animation.json` 文件中，可进行二次修改：
 
-|     名称      |              作用              |        备注        |
-| :-----------: | :----------------------------: | :----------------: |
-|     empty     | 调试动画，**不要进行任何修改** |       空动画       |
-|     walk      |     在玩家普通行走时的动画     |      循环播放      |
-|      run      |       在玩家疾跑时的动画       |      循环播放      |
-|   climbing    |      玩家在活板门下的动画      |      循环播放      |
-|     climb     | 玩家在活板门下，并且爬行的动画 |      循环播放      |
-|   sneaking    |   玩家潜行，但不移动时的动画   |      循环播放      |
-|     sneak     |   玩家潜行，并且行走时的动画   |      循环播放      |
-|     swim      |        玩家游泳时的动画        |      循环播放      |
-|  swim_stand   |   玩家在水中站立式游泳的动画   |      循环播放      |
-|   attacked    |       玩家被攻击时的动画       |      单次播放      |
-|     jump      |        玩家跳跃时的动画        |      循环播放      |
-|      fly      | 玩家在创造模式飞行时播放的动画 |      循环播放      |
-|  elytra_fly   |    玩家鞘翅飞行时播放的动画    |      循环播放      |
-|     boat      |      玩家坐在船上时的动画      |      循环播放      |
-| use_mainhand  |    玩家使用右手时播放的动画    |      单次播放      |
-|  use_offhand  |    玩家使用左手时播放的动画    |      单次播放      |
-|  swing_hand   |    玩家挥动主手时播放的动画    |      单次播放      |
-| swing_offhand |    玩家挥动副手时播放的动画    |      单次播放      |
-|     sleep     |        玩家睡觉时的动画        |      循环播放      |
-|     ride      |     玩家骑马（驴）时的动画     |      循环播放      |
-|   ride_pig    |        玩家骑猪时的动画        |      循环播放      |
-|      sit      |        玩家坐下时的动画        |      循环播放      |
-|     idle      |       无任何操作时的动画       |      循环播放      |
-|    riptide    |  玩家使用“激流”三叉戟时的动画  |      循环播放      |
-|     death     |        玩家死亡时的动画        | 单次播放，1 秒时长 |
+|       名称       |              作用              |        备注        |
+| :--------------: | :----------------------------: | :----------------: |
+|      empty       | 调试动画，**不要进行任何修改** |       空动画       |
+|       walk       |     在玩家普通行走时的动画     |      循环播放      |
+|       run        |       在玩家疾跑时的动画       |      循环播放      |
+|     climbing     |      玩家在活板门下的动画      |      循环播放      |
+|      climb       | 玩家在活板门下，并且爬行的动画 |      循环播放      |
+|     sneaking     |   玩家潜行，但不移动时的动画   |      循环播放      |
+|      sneak       |   玩家潜行，并且行走时的动画   |      循环播放      |
+|       swim       |        玩家游泳时的动画        |      循环播放      |
+|    swim_stand    |   玩家在水中站立式游泳的动画   |      循环播放      |
+|     attacked     |       玩家被攻击时的动画       |      单次播放      |
+|       jump       |        玩家跳跃时的动画        |      循环播放      |
+|       fly        | 玩家在创造模式飞行时播放的动画 |      循环播放      |
+|    elytra_fly    |    玩家鞘翅飞行时播放的动画    |      循环播放      |
+|       boat       |      玩家坐在船上时的动画      |      循环播放      |
+|   use_mainhand   |    玩家使用右手时播放的动画    |      单次播放      |
+|   use_offhand    |    玩家使用左手时播放的动画    |      单次播放      |
+|    swing_hand    |    玩家挥动主手时播放的动画    |      单次播放      |
+|  swing_offhand   |    玩家挥动副手时播放的动画    |      单次播放      |
+|      sleep       |        玩家睡觉时的动画        |      循环播放      |
+|       ride       |     玩家骑马（驴）时的动画     |      循环播放      |
+|     ride_pig     |        玩家骑猪时的动画        |      循环播放      |
+|       sit        |        玩家坐下时的动画        |      循环播放      |
+|       idle       |       无任何操作时的动画       |      循环播放      |
+|     riptide      |  玩家使用“激流”三叉戟时的动画  |      循环播放      |
+|      death       |        玩家死亡时的动画        | 单次播放，1 秒时长 |
+|    ladder_up     |         爬梯动画，向上         |      循环播放      |
+| ladder_stillness |       爬梯动画，静止不动       |      循环播放      |
+|   ladder_down    |         爬梯动画，向下         |      循环播放      |
 
 ### 2. 手部动画
 
@@ -386,23 +581,42 @@ Yes Steve Model 模组主模型文件命名必须为 `main.json`。其使用的�
 |       `feet#forge:armor/iron`        |      玩家靴子栏穿戴标签为 forge:armor/iron 的物品时播放      | `#` 加物品 ID                      |
 |            `head:default`            | 玩家头盔栏穿戴任何护甲时播放。优先级最低，可以拿来做默认显示 | 同样适用于 `chest`、`legs`和`feet` |
 
-### 5. 额外动画（轮盘动画）
+### 5. 骑乘动画
 
-以下动画是八个额外动画，额外动画需单独放置于 `extra.animation.json` 文件中，这些动画会在使用动画轮盘时进行播放。
+骑乘动画目前没有明确的放置位置，你可以放置在 `main.animation.json` 文件中。骑乘动画会在玩家骑乘其他实体，或者玩家被其他实体骑乘时播放。
 
-**轮盘动画可以自定义快捷键**，直接在原版键位设置中即可添加。
+骑乘动画的命名方式和前述的手部动画几乎完全一致。以 `vehicle` 或 `passenger` 作为前缀，后面通过 `$` 加实体 ID 或者 `#` 加实体标签的方式添加骑乘动画。
 
-|                             名称                             |             作用             |                备注                |
-| :----------------------------------------------------------: | :--------------------------: | :--------------------------------: |
-| `extra0` `extra1`<br>`extra2` `extra3`<br>`extra4` `extra5`<br>`extra6` `extra7` | 使用动画轮盘播放对应额外动画 | 依据动画文件设定的循环类型进行播放 |
+骑乘分两种情况：
 
-### 6. [永恒枪械工坊](https://www.curseforge.com/minecraft/mc-mods/timeless-and-classic-guns-tac)的兼容
+- `vehicle` 表示载具，后面输入实体 ID。
+  - 比如玩家骑在史莱姆上，那么动画名就是`vehicle$minecraft:slime`
+- `passenger` 表示乘客，也就是骑在玩家头上的实体，后面输入实体 ID。
+  - 比如一只狐狸骑在玩家头上，那么动画名就是`passenger$minecraft:fox`
 
-[永恒枪械工坊（Timeless and Classics Guns）](https://www.curseforge.com/minecraft/mc-mods/timeless-and-classic-guns-tac)模组是一个制作精良的枪械类模组，我们为其添加了动画支持。
+### 6. 额外动画（轮盘动画）
+
+~~以下动画是八个额外动画，额外动画需单独放置于 `extra.animation.json` 文件中，这些动画会在使用动画轮盘时进行播放。~~
+
+自 2.2.1 版本起，额外动画将不再有数量限制，你可以添加任意多个额外动画。如果你使用新版文件格式，那么名称也不再固定，可以自定义。
+
+**只有前八个轮盘动画可以自定义快捷键**，直接在原版键位设置中即可添加。
+
+|                             名称                             |             作用             |                             备注                             |
+| :----------------------------------------------------------: | :--------------------------: | :----------------------------------------------------------: |
+| `extra0` `extra1`<br>`extra2` `extra3`<br>`extra4` `extra5`<br>`extra6` `extra7` | 使用动画轮盘播放对应额外动画 | 依据动画文件设定的循环类型进行播放<br>**自 2.2.1 版本起不限名称了** |
+
+### 7. 永恒枪械工坊的兼容
+
+[永恒枪械工坊（Timeless and Classics Guns）](https://www.curseforge.com/minecraft/mc-mods/timeless-and-classic-guns-tac)模组是一个制作精良的枪械类模组，支持 1.16.5/1.18.2 Forge 版本。
+
+[永恒枪械工坊：零（Timeless and Classics Guns: Zero）](https://www.curseforge.com/minecraft/mc-mods/timeless-and-classics-zero)是高版本的续作，支持 1.18.2/1.19.2/1.20.1 Forge 版本。
+
+我们同时为这两个版本的模组都添加了支持。
 
 枪械目前区分了手枪（`pistol`）、步枪（`rifle`）、火箭筒（`rpg`）三种类型，且动画设计上采用了上半身+下半身的设计，大大简化了动画的工作量。
 
-兼容的动画需要放置于 `tac.animation.json` 文件中，这些动画会在玩家持有[永恒枪械工坊（Timeless and Classics Guns）](https://www.curseforge.com/minecraft/mc-mods/timeless-and-classic-guns-tac)模组的枪械时播放。
+兼容的动画需要放置于 `tac.animation.json` 文件中，这些动画会在玩家持有永恒枪械工坊模组的枪械时播放。
 
 #### a. 下半身动画
 |    名称    |              作用              |
@@ -461,13 +675,15 @@ Yes Steve Model 模组主模型文件命名必须为 `main.json`。其使用的�
 
 你只需要把结尾的 `:pistol` `:rifle` `:rpg` 换成 `$ `+ 枪械的物品 ID 即可。比如你想要给 AK47 单独做一个手持瞄准开火的动画时，只需要命名为 `tac:aim:fire$tac:ak47`即可。
 
+永恒枪械工坊：零（TacZ）模组中枪械均为同一个物品，通过 NBT 中的 `GunId` 字段来区分枪械。我们也对其添加了兼容。此时写法和上述一致，只不过 `$` 后需要加枪械 ID（注意名称统一为 tacz 开头了）。
+
 ## 十二、更真实的第一人称模型的兼容
 
 [更真实的第一人称模型（First-person Model）](https://www.curseforge.com/minecraft/mc-mods/first-person-model)模组是一个模仿传统 3D 游戏中玩家视角的模组，它替换了原版的第一人称视角，使其更加的真实有趣。
 
 ![2023-07-21_00.18.jpg](https://s2.loli.net/2023/07/21/25SgTJLdlU1iYCQ.jpg)
 
-> 请注意：[更真实的第一人称模型（First-person Model）](https://www.curseforge.com/minecraft/mc-mods/first-person-model)模组我们只能做最低限度的兼容，所以还是会偶发性的出现一些玩家头部消失的小问题……
+> 请注意：[更真实的第一人称模型（First-person Model）](https://www.curseforge.com/minecraft/mc-mods/first-person-model)模组我们只能做最低限度的兼容，所以还是会偶发性的出现一些玩家头部消失、玩家视角不对的小问题……
 
 组名为 `AllHead` 的模型，会在渲染第一人称视角玩家时自动隐藏。如果你有帽子或者其他会阻挡第一人称视角的模型，均应放置在此组下。
 
@@ -490,7 +706,9 @@ Carry On 模组的兼容动画是一个名为 `carryon.animation.json` 的独立
 |  `carryon:player`  |       玩家抱起其他玩家时的动画（仅限 1.19.2 和 1.20）        | 循环播放 |
 | `carryon:princess` | 被抱起的那个玩家的动画（仅限 1.19.2 和 1.20）<br>~~所以动画名叫：“公主”~~ | 循环播放 |
 
-## 十四、额外的配置参数
+## ~~十四、额外的配置参数（过时）~~
+
+> 从 2.2.1 版本起，额外参数全部由 ysm.json 文件统一管理，此段已经过时！
 
 在玩家选择模型时，往往还需要一些额外的配置信息，比如**对模型整体的缩放**，或者给模型添加名称、作者、提示说明、协议等诸多内容（如下图所示）。为此我们设计了额外的配置参数来实现这样的功能。
 
@@ -974,7 +1192,59 @@ Tips：能帮助判断是否正在淋雪，而 `q.is_in_water_or_rain` 不能。
 - 描述：输出玩家附加的药水效果的信息至聊天框，仅在动画调试模式下有效；
 - 返回：null
 
-#### d. 行为不一致的的 molang 参数
+#### d. 2.2.1 版本新增函数与变量
+
+- 【Forge 1.20】修复了 `ysm.relative_block_name` 结果不正确的问题；
+
+- 修正 `q.body_y_rotation` 不正确的问题
+
+- 爬梯相关 molang 变量：
+
+  1. `ysm.on_ladder`，布尔值，用来判断实体是否在梯子上
+  2. `ysm.ladder_facing` 梯子朝向，输出数字 0-3，分别对应：南-西-北-东
+
+- 原版鹦鹉相关 molang 变量：
+
+  1. `has_left_shoulder_parrot`, `has_right_shoulder_parrot`
+
+  2. `left_shoulder_parrot_variant`，`right_shoulder_parrot_variant`：鹦鹉颜色变种
+
+     > 注意：1.19 及以前版本没有字符串形式的鹦鹉颜色变种，故此变量仅能用于 1.20 及以后版本
+
+- `q.max_durability`和`q.remaining_durability`，需要输入一个槽位字符串参数
+
+  - 举例：`q.max_durability('mainhand')`：返回主手手持物品的最大耐久
+
+  - 参数有 `Mainhand` `Offhand` `Feet` `Legs` `Chest` `Head`
+
+- `ysm.rendering_in_inventory`：无参，返回布尔值，判断玩家是否正在GUI中渲染，可以用来做一些仅在 GUI 中显示的动画；
+
+- `ysm.eye_in_water`：眼部是否在水下，用来判断玩家是否完全浸入水中
+
+- `ysm.frozen_ticks`：细雪中增加此数值到 140
+
+- `ysm.air_supply`：空气值，最大 300
+
+- `ysm.arrow_count`：玩家插在身上的箭的数量
+
+- `ysm.stinger_count`：玩家插在身上的蜜蜂的毒刺的数量
+
+- 以下全是实体相关 Attributes 属性：
+
+  - `ysm.attack_damage`
+  - `ysm.attack_speed`
+  - `ysm.attack_knockback`
+  - `ysm.movement_speed`
+  - `ysm.knockback_resistance`
+  - `ysm.luck`
+  - `ysm.block_reach`
+  - `ysm.entity_reach`
+  - `ysm.swim_speed`
+  - `ysm.entity_gravity`
+  - `ysm.step_height_addition`**（1.18 及以前版本无此参数）**
+  - `ysm.nametag_distance`
+
+#### e. 行为不一致的的 molang 参数
 
 这些 molang 参数在不同的 Minecraft 版本中结果不一致，请谨慎使用！
 
@@ -1016,9 +1286,19 @@ Tips：能帮助判断是否正在淋雪，而 `q.is_in_water_or_rain` 不能。
 
 也是占位符。只能在 1.18 以上的版本可用。
 
+##### ysm.step_height_addition
+
+只能在 1.19 以上的版本可用。
+
+##### left_shoulder_parrot_varian 和 right_shoulder_parrot_variant
+
+只能在 1.20 以上的版本可用。
+
 ## 十六、车万女仆模组的兼容
 
 在 Touhou Little Maid 1.1.3 更新中，添加了对 Yes Steve Model 模组模型的兼容，使其可以使用 Yes Steve Model 的未加密模型和动画文件。但是加密的 ysm 格式模型无法使用！
+
+**限于更新同步相关内容，目前仅支持  Yes Steve Model 1.1.5 版本及以前的 molang 语法，请注意！**
 
 Touhou Little Maid 支持使用插件来制作模型包，相关插件地址和教程地址如下：
 
