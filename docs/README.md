@@ -4,11 +4,19 @@
 
 The Yes Steve Model mod is a **Minecraft Forge** and **Fabric** mod that modifies the vanilla player model, using Minecraft Bedrock Edition models and animation files. This allows players to customize player models and animations as they wish.
 
+> Currently, the latest version of Yes Steve Model is **2.2.1**
+>
+> Supported mod loaders: 1.16.5/1.18.2/1.19.2/1.20.1 Forge, 1.16.5/1.18.2/1.19.2/1.20.1/1.21 Fabric, and 1.21 NeoForge.
+
 > **Notes:**
 >
 > - This mod supports [Timeless and Classics Guns](https://www.curseforge.com/minecraft/mc-mods/timeless-and-classic-guns-tac) of version **0.3.7** or higher. Playing with incompatible versions can lead to a crash.
+> - This mod supports [Timeless and Classics Zero](https://www.curseforge.com/minecraft/mc-mods/timeless-and-classics-zero) in 1.18.2/1.19.2/1.20.1 Forge.
 > - This mod supports [First-person Model](https://www.curseforge.com/minecraft/mc-mods/first-person-model) with limited compatibility. There can be some rendering issues.
-> - In the latest version (1.2.0,) the issue that oversized models (over 2MB) could not be synchronized has been solved.
+> - Since version 2.2.1, this mod has supported PBR textures in Oculus (Forge) and Iris (Fabric.)
+> - This mod supports [SlashBlade](https://www.curseforge.com/minecraft/mc-mods/slashblade) rendering. Since version 2.2.1, [SlashBlade: Resharped](https://www.curseforge.com/minecraft/mc-mods/slashblade-resharped) has been supported as well.
+> - Since version 2.2.1, this mod has supported the armor and elytra slots in [Armourer's Workshop](https://www.curseforge.com/minecraft/mc-mods/armourers-workshop).
+> - In the latest versions (1.2.0 and above,) the issue that oversized models (over 2MB) could not be synchronized has been solved.
 
 ![001](https://s2.loli.net/2023/01/01/RAor58n6LBct3kW.jpg)
 
@@ -44,6 +52,10 @@ After entering the server and waiting for a few seconds (for model synchronizati
 
 ![3.png](https://s2.loli.net/2023/02/11/UxtCNy9wEg1XjSI.png)
 
+Author page has been added in 2.2.1. The following window can be accessed by clicking the "open detials" button on the top left corner in the model window:
+
+![2024-06-23_21.24.png](https://s2.loli.net/2024/06/23/5ePDTnrBchwyzq8.png)
+
 ### b) Instructions for Fabric Version
 
 > Shout out to [**番茄布丁**](https://github.com/TomatoPuddin) for porting this mod to Fabric on his own!
@@ -53,21 +65,24 @@ Most features in the Fabric version are **identical** to the Forge version. It h
 The Fabric version requires two dependencies:
 
 - [Fabric API](https://www.curseforge.com/minecraft/mc-mods/fabric-api)
-- [Forge Config API Port](https://www.curseforge.com/minecraft/mc-mods/forge-config-api-port-fabric)
+- [Forge Config API Port](https://www.curseforge.com/minecraft/mc-mods/forge-config-api-port-fabric) (no longer required since version 2.2.1)
 
 Moreover, it has two optional dependencies:
 
 - [First-person Model](https://www.curseforge.com/minecraft/mc-mods/first-person-model) for displaying the third-person model in first-person camera
 - [Amecs](https://www.curseforge.com/minecraft/mc-mods/amecs) for combined key bind support as in Forge
+- [Modern KeyBinding](https://www.curseforge.com/minecraft/mc-mods/modern-keybinding-fabric) (another mod for combined key bindings like Forge; supported since version 2.2.1)
 
 The Fabric version is only different from the Forge version by its key bindings. Since key bindings in Fabric does not support combinded keys with Ctrl / Alt / Shift without [Amecs](https://www.curseforge.com/minecraft/mc-mods/amecs), which however conflicts with a popular mod [Controlling](https://www.curseforge.com/minecraft/mc-mods/controlling), Amecs is made as an optional dependency of Yes Steve Model, and it is up to you whether to install it.
+
+You can also choose to install [Modern KeyBinding](https://www.curseforge.com/minecraft/mc-mods/modern-keybinding-fabric) instead, which does not conflict with [Controlling](https://www.curseforge.com/minecraft/mc-mods/controlling).
 
 - With Amecs, Yes Steve Model registers the same key bindings as in the Forge version with the interface of this mod;
 - **Without Amecs, Yes Steve Model registers the key bindings without the modifier keys. For example, pressing `Y` opens the model selecting GUI (instead of `Alt` + `Y`.)**
 
 ## 3. What Formats Are Supported
 
-Yes Steve Model uses `geckolib` as its core, so it naturally supports `geckolib`-compatible **Bedrock Edition model file 1.12.0** and **Bedrock Edition animation file 1.8.0**.
+Yes Steve Model uses `geckolib` as its core, so it naturally supports `geckolib`-compatible **Bedrock Edition model file 1.12.0+** and **Bedrock Edition animation file 1.8.0**.
 
 Three formats are available. All of them are recognized and loaded by the game when placed in the specified directory:
 
@@ -86,9 +101,17 @@ All custom model files are placed in the `config\yes_steve_model` folder in the 
 
 You can choose to place custom model files under either the `auth` or `custom` folder.
 
+> As many players want to rename their models and to put their models in nested folders, since version 2.2.1, we have modified the file reading logic.
+>
+> 
+>
+> Now as long as the files are located under the `custom` or `auth` folder, nested (maximum depth 16 folders allowed) or not, they are correctly recognized by the mod. Also all characters (like CJK characters) are now valid.
+
 ## 5. Get Started
 
 As the archive format and `.ysm` format are converted from the folder format, we'll get started from the folder format.
+
+### Version 1.2.0 and Below
 
 The folder structure is shown below, in which, the only mandatory parts are `main.json`, `arm.json`, plus at least one `.png` texture.
 
@@ -115,6 +138,180 @@ custom (or auth) folder
 
 Custom models, animations, and texture files need to be placed in one folder. The name of folders, texture files, etc. can only use **lowercase English characters, digits, underscore** characters.
 
+### Version 2.2.1 and Above
+
+In the earlier versions, it has been a mess to manage the model files when there are too many of them. Therefore in version 2.2.1, we designed a new file structure, where the resources are managed with the `ysm.json` file. Here is the recommended structure:
+
+```
+The model folder
+│
+├───ysm.json                      Resource metadata file; fixed name and location
+│
+├───animations                    Animation folder; recommended name but customizable
+│      ├─arm.animation.json       No limitation to the file names; use any character
+│      ├─弓箭动画.json
+│      ├─carryon.animation.json
+│      ├─extra.animation.json
+│      ├─main.animation.json
+│      └─tac.animation.json
+│
+├───avatar                        Author avatar folder; recommended name but customizable
+│      ├─端木.png
+│      ├─哥斯拉.png
+│      ├─海螺.png
+│      └─甜粽子.png
+│
+├───models                        Model folder; recommended name but customizable
+│      ├─arm.json
+│      ├─箭.json
+│      └─main.json
+│
+└───textures                      Texture folder; recommended name but customizable
+       ├─arrow.png
+       ├─蓝色材质.png
+       └─默认材质.png
+```
+
+`ysm.json` is the only file whose name and location is required to be fixed. All other files such as models, animations, textures, etc. can be named to anything with any character, and can be placed anywhere including subfolders.
+
+The new metadata file `ysm.json` supports:
+
+- Setting the default texture and the displaying order of the textures;
+- Setting the preview animation which is played in the model selection window (was the idle animation before;)
+- Setting the names, the order, and the number of extra animations (no longer limited to the pattern `extraN`;
+- Reading files in subfolders;
+- Attaching the author information, with avatars, roles, introductions, and contacts;
+- Attaching the home page and the donation page;
+- Specifying PBR textures.
+
+`ysm.json` must be placed in the root folder, encoded with UTF-8 without BOM. Its structure looks as follows:
+
+```json
+{
+  // Specification version, currently 2, where PBR support is added
+  "spec": 2,
+  // Optional, the metadata which display as tooltips and details
+  "metadata": {
+    // The only mandatory field in this object
+    "name": "Custom name",
+    // Use \n for line feed
+    "tips": "Description",
+    "license": {
+      // Mandatory
+      "type": "CC 0",
+      // Line feed allowed
+      "desc:": "Extra license description"
+    },
+    // Order maintained
+    "authors": [
+      {
+        // The only mandatory field in this object
+        "name": "Author 1",
+        // The avatar of the author
+        "avatar": "avatar/my_avatar.png",
+        "role": "Role (e.g. Modeler/Animator)",
+        // Arbitrary keys; order maintained
+        "contact": {
+          "qq": "123456789",
+          "email": "123456789@qq.com"
+        },
+        // Line feed not allowed
+        "comment": "Comment"
+      },
+      // Multiple authors allowed
+      {
+        "name": "作者2"
+      }
+    ],
+    // Only these two links are supported for now
+    "link": {
+      "home": "https://my-home-page.example.com",
+      "donate": "https://my-donate-page.example.com"
+    }
+  },
+  // Optional; all the fields in this object are also optional
+  "properties": {
+    // Model scaling, 0.7 by default
+    "height_scale": 0.7,
+    // Model scaling, 0.7 by default
+    "width_scale": 0.7,
+    // Any number, order, and name; order maintained
+    // Number not limited; more than 8 extra animations can be set
+    "extra_animation": {
+      "extra0": "",
+      "extra1": "Wave",
+      "run": "Run",
+      "walk": "Walk",
+      "extra4": "",
+      "extra5": "",
+      "extra6": "",
+      "extra7": ""
+    },
+    // Preview animation played in the model selection window
+    "preview_animation": "idle",
+    // Default texture (path and file extension `.png` excluded,) displayed in the model selection window, and used as default when switched to the model
+    "default_texture": "default",
+    // Set to true to force the model public and unauthorizable
+    "free": false
+  },
+  // Mandatory
+  "files": {
+    // The main model file
+    "player": {
+      "model": {
+        // The path and file name are customizable, but case-sensitive, even on Windows
+        "main": "models/main.json",
+        "arm": "models/arm.json"
+      },
+      // Optional; all the fields in this object are also optional
+      // If absent, the corresponding default animation is used
+      "animation": {
+        "main": "animations/main.animation.json",
+        "arm": "animations/arm.animation.json",
+        "extra": "animations/extra.animation.json",
+        "tac": "animations/tac.animation.json",
+        "carryon": "animations/carryon.animation.json"
+      },
+      // Order maintained
+      "texture": [
+        // A path as a string
+        "textures/default.png",
+        // Or an object like this
+        {
+          // The only mandatory field in this object
+          "uv": "textures/blue.png",
+          // For PBR support in Oculus and Iris
+          "normal": "textures/pbr/blue_n.png",
+          "specular": "textures/pbr/blue_s.png"
+        }
+      ]
+    },
+    // Optional; replaces the arrow model
+    "arrow": {
+      "model": "models/arrow.json",
+      // Optional
+      "animation": "animations/arrow.animation.json",
+      // PBR supported as well
+      "texture": "textures/arrow.png"
+    }
+  }
+}
+```
+
+## 6. Format Conversion
+
+You can pack your models, animations, and textures as a zip file (**pack the files inside the root folder but not the root folder itself**,) the file name also follows the convention described above.
+
+By executing the `/ysm export <model_id>` command in game, you can export a model in the paint folder format as a file of the dedicated ysm format. This format is encrypted and has a checksum, which effectively prevents third-party decryption.
+
+The ysm format is **backward compatible**, that is, new mod version can load old ysm format, but old mod version cannot load new ysm format.
+
+You can see the following information by opening a ysm file exported with 1.2.0 or above with Notepad. These texts are not modifiable. If you do so, the mod will reject the modified model file.
+
+![2.png](https://s2.loli.net/2024/02/14/xKGce38hmoJtMEQ.png)
+
+## 7. Making the Main Model
+
 ### 1. Production of model files
 
 The main model file of the Yes Steve Model mod must be named `main.json`. The animation files used by it have been designed in a standardized manner, and they only need to be produced according to a specific layout method to be automatically compatible.
@@ -123,7 +320,7 @@ After running the game, the model standard model and animation files will be aut
 
 > #### Because the model naming is extremely confusing, the model naming is unified.
 >
-> **Of course, you don't have to follow these standards, and the model can still be loaded safely. **
+> **Of course, you don't have to follow these standards, and the model can still be loaded safely.**
 
 #### ①. Writing format
 
