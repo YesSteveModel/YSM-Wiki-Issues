@@ -28,7 +28,7 @@
   "gui.yes_steve_model.disclaimer.read": "我已经阅读并同意本使用条款",
   "gui.yes_steve_model.disclaimer.close": "关闭",
   "gui.yes_steve_model.open_model_folder.open": "打开模型文件夹",
-  "gui.yes_steve_model.open_model_folder.tips": "可在打开的目录下§4§l直接放置§r如下三种形式的模型文件：\n\n§2§n文件夹：§r文件夹命名必须为§b§n小写英文字符或数字§r§r，文件夹内部应直接含有基岩版模型文件和材质；\n\n§2§nzip 压缩包：§r文件名必须为§b§n小写英文字符或数字§r§r，压缩包内应直接含有基岩版模型文件和材质；\n\n§2§nysm 文件：§r文件名必须为§b§n小写英文字符或数字§r §7§o（该格式为加密文件，无法编辑修改）。",
+  "gui.yes_steve_model.open_model_folder.tips": "可在打开的目录，或者它的子目录下放置如下三种形式的模型文件：\n\n§2§n文件夹：§r文件夹内部应含有基岩版模型文件和材质；\n\n§2§nzip 压缩包：§r压缩包内应直接含有基岩版模型文件和材质；\n\n§2§nysm 文件：§r该格式为加密文件，无法编辑修改。",
   "gui.yes_steve_model.model_manage.custom": "非授权文件",
   "gui.yes_steve_model.model_manage.auth": "授权文件",
   "gui.yes_steve_model.model_manage.action_info": "操作信息",
@@ -443,7 +443,9 @@
   "gui.yes_steve_model.url.home": "主页",
   "gui.yes_steve_model.url.donate": "赞助",
   "gui.yes_steve_model.model.info": "打开详情界面",
+  "gui.yes_steve_model.model.info.contact.click_hint": "滚轮选择，单击复制或打开",
   "gui.yes_steve_model.model.main_model_info": "§6§l➤ %d 骨骼, %d 方块, %d 面",
   "gui.yes_steve_model.model.texture_info": "§6§l➤ %d 材质",
-  "gui.yes_steve_model.roulette.tip": "滑动鼠标滚轮进行翻页"
+  "gui.yes_steve_model.roulette.tip": "滑动鼠标滚轮进行翻页",
+  "message.yes_steve_model.client.ping_result": "§6§l[§aYSM§6§l] §r服务端 YSM 模组版本为 §c§n%s"
 }
