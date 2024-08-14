@@ -4,9 +4,9 @@
 
 Yes Steve Model 模组是一个修改原版玩家模型的 `Minecraft Forge 和 Fabric` 模组，它能够使用 Minecraft 基岩版模型和动画文件。从而使玩家能够随心所欲的自定义玩家模型和动画。
 
-> 目前最新版的 Yes Steve Model 版本号为 **2.2.1**
+> 目前最新版的 Yes Steve Model 版本号为 **2.2.2**
 >
-> 同时支持 1.16.5/1.18.2/1.19.2/1.20.1 Forge，1.16.5/1.18.2/1.19.2/1.20.1/1.21 Fabric 和 1.21 NeoForge 共计十个版本。
+> 同时支持 1.18.2/1.19.2/1.20.1 Forge，1.18.2/1.19.2/1.20.1/1.21 Fabric 和 1.21 NeoForge 共计十个版本。
 
 > **温馨提醒：**
 >
@@ -16,7 +16,9 @@ Yes Steve Model 模组是一个修改原版玩家模型的 `Minecraft Forge 和 
 > - 本模组 2.2.1 版本添加了对 Oculus(Forge) 和 Iris(Fabric) 模组 PBR 材质的支持。
 > - 本模组添加了对[拔刀剑](https://www.curseforge.com/minecraft/mc-mods/slashblade)的渲染的支持，2.2.1 版本还支持[拔刀剑：重锋](https://www.curseforge.com/minecraft/mc-mods/slashblade-resharped)。
 > - 2.2.1 版本支持[时装工坊](https://www.curseforge.com/minecraft/mc-mods/armourers-workshop)的盔甲和鞘翅插槽。
-> - 最新版（1.2.0 及以上版本）解决了模型包文件过大的问题，现在你可以放心使用大于 2MB 大小的模型包了。
+> - 2.2.2 版本支持 [SWEM（马术）](https://www.curseforge.com/minecraft/mc-mods/swem)和 [Parcool（跑酷）](https://www.curseforge.com/minecraft/mc-mods/parcool)模组。
+> - 2.2.2 兼容 [Carpet](https://www.curseforge.com/minecraft/mc-mods/carpet) 和 [Curtain](https://www.curseforge.com/minecraft/mc-mods/curtain) 模组的假人。
+> - 1.2.0 及以上版本解决了模型包文件过大的问题，现在你可以放心使用大于 2MB 大小的模型包了。
 
 ![001](https://s2.loli.net/2023/01/01/RAor58n6LBct3kW.jpg)
 
@@ -40,6 +42,14 @@ Yes Steve Model 模组考虑到了服务器群体的模组需求，采用了诸�
 - [拔刀剑](https://www.curseforge.com/minecraft/mc-mods/slashblade)模组的兼容：可以渲染特定的主副手拔刀剑，但挥动动作还无法自定义。
 
 ![1.jpg](https://s2.loli.net/2024/02/14/LfQxMCZKNAtzsOG.jpg)
+
+- 2.2.2 版本支持 [SWEM（马术）](https://www.curseforge.com/minecraft/mc-mods/swem)模组，新增 11 个动画，可参考默认模型的 `swem.animation.json`。
+
+![swem.jpg](https://s2.loli.net/2024/08/14/jlzG2E5FpvCQyaq.jpg)
+
+- 2.2.2 版本支持 [Parcool（跑酷）](https://www.curseforge.com/minecraft/mc-mods/parcool)模组，新增 35 个动画，可参考默认模型的 `parcool.animation.json`。
+
+![2.jpg](https://s2.loli.net/2024/08/14/aV72OGH8pzrvW5R.jpg)
 
 ## 二、怎么使用此模组
 
@@ -196,115 +206,129 @@ custom（或 auth）文件夹
 
 ```json
 {
-  // 版本信息字段，当前必须为 2，此版本添加了 PBR 的支持
-  "spec": 2,
-  // 可选字段，会作为游戏内模型切换界面的文本提示和详情界面显示出来
-  "metadata": {
-    // 只有 name 是必选字段，其它都是可选
-    "name": "自定义名称",
-    // 接受用 \n 进行换行
-    "tips": "描述",
-    "license": {
-      // 必选字段
-      "type": "CC 0",
-      // 接受换行
-      "desc:": "更多许可描述"
-    },
-    // 读取时保留顺序
-    "authors": [
-      {
+    // 版本信息字段，当前必须为 2，此版本添加了 PBR 的支持
+    "spec": 2,
+    // 可选字段，会作为游戏内模型切换界面的文本提示和详情界面显示出来
+    "metadata": {
         // 只有 name 是必选字段，其它都是可选
-        "name": "作者1",
-        // 模型详情页展示作者头像
-        "avatar": "avatar/头像.png",
-        "role": "角色（如：模型/动画）",
-        // 支持任意类型，不局限于给出的这两个。读取时保留顺序
-        "contact": {
-          "qq": "123456789",
-          "email": "123456789@qq.com"
+        "name": "自定义名称",
+        // 接受用 \n 进行换行
+        "tips": "描述",
+        "license": {
+            // 必选字段
+            "type": "CC 0",
+            // 接受换行
+            "desc:": "更多许可描述"
         },
-        // 不接受换行
-        "comment": "备注"
-      },
-      // 可以添加多个作者
-      {
-        "name": "作者2"
-      }
-    ],
-    // 目前仅支持这两个
-    "link": {
-      "home": "https://主页链接",
-      "donate": "https://捐赠链接"
-    }
-  },
-  // 可选字段，内部所有字段都是可选
-  "properties": {
-    // 模型缩放，默认为 0.7
-    "height_scale": 0.7,
-    // 模型缩放，默认为 0.7
-    "width_scale": 0.7,
-    // 可任意调整数量、顺序和名称（不局限于 extra+数字）。读取时保留顺序
-    // 不限数量，超过 8 个也能正常播放了
-    "extra_animation": {
-      "extra0": "",
-      "extra1": "打招呼",
-      "run": "润",
-      "walk": "跑路",
-      "extra4": "",
-      "extra5": "",
-      "extra6": "",
-      "extra7": ""
-    },
-    // 在模型选择界面播放的预览动画
-    "preview_animation": "idle",
-    // 默认材质名称（不含路径和后缀.png），在模型选择界面展示，以及在玩家切换至该模型时默认使用。
-    "default_texture": "default",
-    // 此字段为 true 后，无法将其设置为授权模型
-    "free": false
-  },
-  // 必须的字段
-  "files": {
-    // 主模型文件
-    "player": {
-      "model": {
-        // 路径和文件名都可以自定义，注意严格区分大小写，即使是在 windows 上
-        "main": "models/main.json",
-        "arm": "models/arm.json"
-      },
-      // 可选字段，内部五个字段也都是可选
-      // 没有的话，会自动调用默认模型
-      "animation": {
-        "main": "animations/main.animation.json",
-        "arm": "animations/arm.animation.json",
-        "extra": "animations/extra.animation.json",
-        "tac": "animations/tac.animation.json",
-        "carryon": "animations/carryon.animation.json"
-      },
-      // 读取时保留顺序
-      "texture": [
-        // 可以直接书写材质路径
-        "textures/default.png",
-        // 也可以写成这样的形式
-        {
-          // 仅 uv 字段必选，以下两种 PBR 材质为可选
-          "uv": "textures/blue.png",
-          // Oculus 和 Iris PBR 支持
-          "normal": "textures/pbr/blue_n.png",
-          "specular": "textures/pbr/blue_s.png"
+        // 读取时保留顺序
+        "authors": [
+            {
+                // 只有 name 是必选字段，其它都是可选
+                "name": "作者1",
+                // 模型详情页展示作者头像
+                "avatar": "avatar/头像.png",
+                "role": "角色（如：模型/动画）",
+                // 支持任意类型，不局限于给出的这两个。读取时保留顺序
+                "contact": {
+                    "qq": "123456789",
+                    "email": "123456789@qq.com"
+                },
+                // 不接受换行
+                "comment": "备注"
+            },
+            // 可以添加多个作者
+            {
+                "name": "作者2"
+            }
+        ],
+        // 目前仅支持这两个
+        "link": {
+            "home": "https://主页链接",
+            "donate": "https://捐赠链接"
         }
-      ]
     },
-    // 可选字段，替换箭的渲染
-    "arrow": {
-      "model": "models/arrow.json",
-      // 可选字段
-      "animation": "animations/arrow.animation.json",
-      // 同样支持 PBR
-      "texture": "textures/arrow.png"
+    // 可选字段，内部所有字段都是可选
+    "properties": {
+        // 模型缩放，默认为 0.7
+        "height_scale": 0.7,
+        // 模型缩放，默认为 0.7
+        "width_scale": 0.7,
+        // 可任意调整数量、顺序和名称（不局限于 extra+数字）。读取时保留顺序
+        // 不限数量，超过 8 个也能正常播放了
+        "extra_animation": {
+            "extra0": "",
+            "extra1": "打招呼",
+            "run": "润",
+            "walk": "跑路",
+            "extra4": "",
+            "extra5": "",
+            "extra6": "",
+            "extra7": ""
+        },
+        // 在模型选择界面播放的预览动画
+        "preview_animation": "idle",
+        // 默认材质名称（不含路径和后缀.png），在模型选择界面展示，以及在玩家切换至该模型时默认使用。
+        "default_texture": "default",
+        // 此字段为 true 后，无法将其设置为授权模型
+        "free": false,
+        // 2.2.2 起新增字段
+        // 默认 false，可指定原版模型层级的渲染是否先于 ysm 模型
+        // 具体作用可参考下章节
+        "render_layers_first": false
+    },
+    // 必须的字段
+    "files": {
+        // 主模型文件
+        "player": {
+            "model": {
+                // 路径和文件名都可以自定义，注意严格区分大小写，即使是在 windows 上
+                "main": "models/main.json",
+                "arm": "models/arm.json"
+            },
+            // 可选字段，内部五个字段也都是可选
+            // 没有的话，会自动调用默认模型
+            "animation": {
+                "main": "animations/main.animation.json",
+                "arm": "animations/arm.animation.json",
+                "extra": "animations/extra.animation.json",
+                "tac": "animations/tac.animation.json",
+                "carryon": "animations/carryon.animation.json",                
+                "swem": "animations/swem.animation.json",
+                "parcool": "animations/parcool.animation.json"
+            },
+            // 读取时保留顺序
+            "texture": [
+                // 可以直接书写材质路径
+                "textures/default.png",
+                // 也可以写成这样的形式
+                {
+                    // 仅 uv 字段必选，以下两种 PBR 材质为可选
+                    "uv": "textures/blue.png",
+                    // Oculus 和 Iris PBR 支持
+                    "normal": "textures/pbr/blue_n.png",
+                    "specular": "textures/pbr/blue_s.png"
+                }
+            ]
+        },
+        // 可选字段，替换箭的渲染
+        "arrow": {
+            "model": "models/arrow.json",
+            // 可选字段
+            "animation": "animations/arrow.animation.json",
+            // 同样支持 PBR
+            "texture": "textures/arrow.png"
+        }
     }
-  }
 }
 ```
+
+### 半透明渲染的说明
+
+2.2.2 版本开始我们尝试兼容半透明渲染，但是半透明一直是 Minecraft 渲染中极为困难的一件事，所以仍然存在些许 bug！比如：模型的半透明部分可能遮挡其他实体，这可以通过安装 oculus/iris 模组解决；
+
+上文的 `render_layers_first` 字段便是用于修改这一块兼容的参数，具体效果如下！
+
+![1.jpg](https://s2.loli.net/2024/08/14/K8hGzydeuHpmxWi.jpg)
 
 ## 六、其他格式的转换
 
@@ -312,11 +336,13 @@ custom（或 auth）文件夹
 
 在游戏内输入`/ysm export <model_id>` 指令，即可将某个文件夹格式的模型导出成 ysm 专属模型格式。这个模型格式进行了加密，并做了安全性校验，可以有效避免模型被第三方人员破解。
 
+从 2.2.2 版本开始，该指令还支持 `/ysm export <model_id> [extra_info]` 形式，你可以在 `extra_info` 处添加自定义的文本信息，这样导出的 ysm 文件中也会附加该名称。
+
 ysm 模型格式遵循**向下兼容**的原则，即新版本模组可以加载旧版本 ysm 格式文件，但旧版本模组不会加载新版 ysm 格式文件。
 
 当你用原版记事本打开新版本模组（1.2.0 及以后版本）导出的 ysm 文件，你可以看到如下信息。这些信息无法被修改，如果强行修改，模组会拒绝加载此文件。
 
-![2.png](https://s2.loli.net/2024/02/14/xKGce38hmoJtMEQ.png)
+![ysm.png](https://s2.loli.net/2024/08/14/MnvVRmLWrGZOija.png)
 
 ## 七、主模型的制作
 
@@ -361,7 +387,9 @@ ysm 模型格式遵循**向下兼容**的原则，即新版本模组可以加载
 
 ![2.png](https://s2.loli.net/2023/02/11/yLC1siW2aFvStXE.png)
 
->第一人称手部模型目前还不支持基岩版动画，但可以完美兼容永恒枪械工坊模组
+>第一人称手部模型目前还不支持基岩版动画，但可以完美兼容永恒枪械工坊模组。
+>
+>**如果你使用永恒枪械工坊第一人称手臂位置不正确时，请联系模型制作者修改手臂文件（一般是向下移动手臂模型），这不是模组 bug！**
 
 ## 九、自定义箭模型的制作
 
@@ -606,11 +634,40 @@ ysm 模型格式遵循**向下兼容**的原则，即新版本模组可以加载
 | :----------------------------------------------------------: | :--------------------------: | :----------------------------------------------------------: |
 | `extra0` `extra1`<br>`extra2` `extra3`<br>`extra4` `extra5`<br>`extra6` `extra7` | 使用动画轮盘播放对应额外动画 | 依据动画文件设定的循环类型进行播放<br>**自 2.2.1 版本起不限名称了** |
 
-### 7. 永恒枪械工坊的兼容
+### 7. 选择界面动画
+
+自 2.2.2 版本起，我们添加了模型选择界面的动画支持，在模型界面鼠标悬停、移出、选中模型按钮时可以播放;
+
+你可以将其放置在 `main.animation.json` 文件中。
+
+#### a. 默认播放动画
+
+默认选择界面的播放动画没有固定的名字，你可以随意新建一个动画名称（比如我们命名为 `gui`），然后修改 `ysm.json` 的 `preview_animation` 字段，将其修改为这个动画名称（如下所示）。
+
+```json
+{
+    "properties": {
+        // 在模型选择界面播放的预览动画
+        "preview_animation": "gui"
+    }
+}
+```
+
+#### b. 其他动画
+
+具体用法可参考模组自带的 `wine_fox_jk` 模型的 `main.animation.json` 文件。
+
+|      名称       |                      作用                      |      备注      |
+| :-------------: | :--------------------------------------------: | :------------: |
+|     `hover`     |         当鼠标悬浮在该模型按钮上时播放         |       -        |
+| `hover_fadeout` |           当鼠标移出该模型按钮时播放           | 用于做移出效果 |
+|     `focus`     | 当选中该模型按钮时播放，仅限 1.20 以上版本适用 |       -        |
+
+### 8. 永恒枪械工坊的兼容
 
 [永恒枪械工坊（Timeless and Classics Guns）](https://www.curseforge.com/minecraft/mc-mods/timeless-and-classic-guns-tac)模组是一个制作精良的枪械类模组，支持 1.16.5/1.18.2 Forge 版本。
 
-[永恒枪械工坊：零（Timeless and Classics Guns: Zero）](https://www.curseforge.com/minecraft/mc-mods/timeless-and-classics-zero)是高版本的续作，支持 1.18.2/1.19.2/1.20.1 Forge 版本。
+[永恒枪械工坊：零（Timeless and Classics Guns: Zero）](https://www.curseforge.com/minecraft/mc-mods/timeless-and-classics-zero)是高版本的续作，支持 1.18.2/1.19.2/1.20.1 Forge 版本和 1.20.1 Fabric 版本。
 
 我们同时为这两个版本的模组都添加了支持。
 
@@ -627,26 +684,29 @@ ysm 模型格式遵循**向下兼容**的原则，即新版本模组可以加载
 
 #### b. 上半身动画
 
-|          名称          |              作用               |
-| :--------------------: | :-----------------------------: |
-| `tac:aim:fire:pistol`  |   玩家手持手枪瞄准开火的动画    |
-|  `tac:aim:fire:rifle`  |   玩家手持步枪瞄准开火的动画    |
-|   `tac:aim:fire:rpg`   |   玩家手持 RPG 瞄准开火的动画   |
-|    `tac:aim:pistol`    |     玩家手持手枪瞄准的动画      |
-|    `tac:aim:rifle`     |     玩家手持步枪瞄准的动画      |
-|     `tac:aim:rpg`      |     玩家手持 RPG 瞄准的动画     |
-| `tac:hold:fire:pistol` |    玩家手持手枪腰射时的动画     |
-| `tac:hold:fire:rifle`  |    玩家手持步枪腰射时的动画     |
-|  `tac:hold:fire:rpg`   |    玩家手持 RPG 腰射时的动画    |
-|   `tac:hold:pistol`    |      玩家手持手枪时的动画       |
-|    `tac:hold:rifle`    |      玩家手持步枪时的动画       |
-|     `tac:hold:rpg`     |      玩家手持 RPG 时的动画      |
-|  `tac:reload:pistol`   |     玩家给手枪换弹时的动画      |
-|   `tac:reload:rifle`   |     玩家给步枪换弹时的动画      |
-|    `tac:reload:rpg`    |     玩家给 RPG 换弹时的动画     |
-|    `tac:run:pistol`    | 玩家手持手枪疾跑时，上半身动画  |
-|    `tac:run:rifle`     | 玩家手持步枪疾跑时，上半身动画  |
-|     `tac:run:rpg`      | 玩家手持 RPG 疾跑时，上半身动画 |
+|          名称          |                  作用                   |
+| :--------------------: | :-------------------------------------: |
+| `tac:aim:fire:pistol`  |       玩家手持手枪瞄准开火的动画        |
+|  `tac:aim:fire:rifle`  |       玩家手持步枪瞄准开火的动画        |
+|   `tac:aim:fire:rpg`   |       玩家手持 RPG 瞄准开火的动画       |
+|    `tac:aim:pistol`    |         玩家手持手枪瞄准的动画          |
+|    `tac:aim:rifle`     |         玩家手持步枪瞄准的动画          |
+|     `tac:aim:rpg`      |         玩家手持 RPG 瞄准的动画         |
+| `tac:hold:fire:pistol` |        玩家手持手枪腰射时的动画         |
+| `tac:hold:fire:rifle`  |        玩家手持步枪腰射时的动画         |
+|  `tac:hold:fire:rpg`   |        玩家手持 RPG 腰射时的动画        |
+|   `tac:hold:pistol`    |          玩家手持手枪时的动画           |
+|    `tac:hold:rifle`    |          玩家手持步枪时的动画           |
+|     `tac:hold:rpg`     |          玩家手持 RPG 时的动画          |
+|  `tac:reload:pistol`   |         玩家给手枪换弹时的动画          |
+|   `tac:reload:rifle`   |         玩家给步枪换弹时的动画          |
+|    `tac:reload:rpg`    |         玩家给 RPG 换弹时的动画         |
+|    `tac:run:pistol`    |     玩家手持手枪疾跑时，上半身动画      |
+|    `tac:run:rifle`     |     玩家手持步枪疾跑时，上半身动画      |
+|     `tac:run:rpg`      |     玩家手持 RPG 疾跑时，上半身动画     |
+|   `tac:melee:pistol`   | 玩家手持手枪使用近战功能时，上半身动画  |
+|   `tac:melee:rifle`    | 玩家手持步枪使用近战功能时，上半身动画  |
+|    `tac:melee:rpg`     | 玩家手持 RPG 使用近战功能时，上半身动画 |
 
 #### c. 全身动画
 
@@ -676,6 +736,178 @@ ysm 模型格式遵循**向下兼容**的原则，即新版本模组可以加载
 你只需要把结尾的 `:pistol` `:rifle` `:rpg` 换成 `$ `+ 枪械的物品 ID 即可。比如你想要给 AK47 单独做一个手持瞄准开火的动画时，只需要命名为 `tac:aim:fire$tac:ak47`即可。
 
 永恒枪械工坊：零（TacZ）模组中枪械均为同一个物品，通过 NBT 中的 `GunId` 字段来区分枪械。我们也对其添加了兼容。此时写法和上述一致，只不过 `$` 后需要加枪械 ID（注意名称统一为 tacz 开头了）。
+
+### 9. SWEM 马术模组动画
+
+SWEM 马术模组是一个非常硬核的马术相关模组，它添加了非常完备的马术动画，可以在游戏内模拟现实中的马术动作，自 2.2.2 版本起我们为其添加了兼容支持！
+
+可参考 MCMOD 百科：<https://www.mcmod.cn/class/7803.html>
+
+你可以参考默认模型动画文件 `swem.animation.json`。同时记得别忘记在 `ysm.json` 文件中声明该文件！
+
+|    名称     |              作用              |
+| :---------: | :----------------------------: |
+| `swem:idle` | 骑上 SWEM 模组的马，静止不动时的玩家动画 |
+|  `swem:walk`  | 慢步 |
+| `swem:trot`  | 快步 |
+| `swem:canter`  | 跑步 |
+| `swem:canter_ext`  | 跑步 |
+| `swem:gallop`  | 袭步 |
+| `swem:jump_lv1` `swem:jump_lv2` <br> `swem:jump_lv3` `swem:jump_lv4`<br> `swem:jump_lv5` | 跳跃，共分五个等级 |
+
+### 10. Parcool 跑酷模组动画
+
+Parcool 模组是一个给玩家添加了各种跑酷动作的模组，自 2.2.2 版本起我们为其添加了兼容支持！
+
+> MCMOD 百科：<https://www.mcmod.cn/class/5958.html>
+>
+> 参考视频：<https://www.bilibili.com/video/BV1xJ4m1h7UH>
+
+由于部分动画是需要具体区分前后左右的，所以你应当参考默认模型动画文件 `parcool.animation.json` 中的动画名，同时记得别忘记在 `ysm.json` 文件中声明该文件！
+
+#### parcool:backward_wall_jump
+
+应该是背着墙跳，但是我试验不出来
+
+#### parcool:wall_jump
+
+瞪墙跳
+
+<https://www.bilibili.com/video/BV1xJ4m1h7UH?t=152.5>
+
+#### parcool:cat_leap
+
+猫扑
+
+<https://www.bilibili.com/video/BV1xJ4m1h7UH?t=74>
+
+![.gif](https://s2.loli.net/2024/08/14/U14VOHA7E2We3w8.gif)
+
+#### parcool:climb_up
+
+爬墙跳
+
+视频里没有
+
+![.gif](https://s2.loli.net/2024/08/14/KnmHXyNi8lBDuJt.gif)
+
+#### parcool:cling_to_cliff
+
+猫挂，可以左右移动
+
+<https://www.bilibili.com/video/BV1xJ4m1h7UH?t=84>
+
+![.png](https://s2.loli.net/2024/08/14/6QLI3nzpgtqdHvk.png)
+
+#### parcool:crawl
+
+爬，和原版爬行一致，不需要新动画
+
+<https://www.bilibili.com/video/BV1xJ4m1h7UH?t=123.4>
+
+#### parcool:dive_animation_host
+
+<https://www.bilibili.com/video/BV1xJ4m1h7UH?t=216.0>
+
+飞跃而下
+
+![.gif](https://s2.loli.net/2024/08/14/L37ftNsS2Oz8YDT.gif)
+
+#### parcool:dive_into_water
+
+跳水，时间非常短
+
+![.gif](https://s2.loli.net/2024/08/14/nHc5toSp2sxOR6f.gif)
+
+#### parcool:dodge
+
+躲闪动画
+
+<https://www.bilibili.com/video/BV1xJ4m1h7UH?t=205.0>
+
+![.gif](https://s2.loli.net/2024/08/14/XknxO7CpmE2YfdH.gif)
+
+#### parcool:fast_running
+
+快速奔跑，比原版奔跑速度稍快
+
+视频：<https://www.bilibili.com/video/BV1xJ4m1h7UH?t=27.5>
+
+![.gif](https://s2.loli.net/2024/08/14/yFjnCDo51SVMZp8.gif)
+
+#### parcool:fast_swim
+
+快速游泳，比一般游泳速度更快一些
+
+![.gif](https://s2.loli.net/2024/08/14/nDfSbzOdFmVluGL.gif)
+
+#### parcool:flipping
+
+空翻
+
+<https://www.bilibili.com/video/BV1xJ4m1h7UH?t=175.0>
+
+#### parcool:horizontal_wall_run
+
+#### parcool:vertical_wall_run
+
+水平跑墙，垂直跑墙
+
+没试出来垂直跑墙
+
+<https://www.bilibili.com/video/BV1xJ4m1h7UH?t=62>
+
+#### parcool:jump_from_bar
+
+查不到！
+
+#### parcool:hang
+
+垂挂
+
+<https://www.bilibili.com/video/BV1xJ4m1h7UH?t=114.5>
+
+#### parcool:kong_vault
+
+视频：<https://www.bilibili.com/video/BV1xJ4m1h7UH?t=37.1>
+
+翻越分两种，金刚撑
+
+![.gif](https://s2.loli.net/2024/08/14/4plmdIjfM1XnkWw.gif)
+
+![Kongvault.webp](https://s2.loli.net/2024/08/14/wGmdXYiEkAOztF9.webp)
+
+#### parcool:speed_vault
+
+翻越
+
+![Speed_Vault.webp](https://s2.loli.net/2024/08/14/kMb2FPGd8KQ5jiz.webp)
+
+#### parcool:roll
+
+差不多，看起来像空翻，但是不是空翻（parcool:flipping）
+
+#### parcool:sliding
+
+滑铲
+
+<https://www.bilibili.com/video/BV1xJ4m1h7UH?t=135.8>
+
+#### parcool:tap
+
+落地缓冲
+
+<https://www.bilibili.com/video/BV1xJ4m1h7UH?t=185.3>
+
+#### parcool:wall_slide
+
+滑墙：离地，触碰墙面时按住滑墙键（默认鼠标右键）来抓着墙面减缓下落速度，以便安全着陆
+
+静态动画
+
+<https://www.bilibili.com/video/BV1xJ4m1h7UH?t=141.4>
+
+![.png](https://s2.loli.net/2024/08/14/tkRG8MiDBqrvAuI.png)
 
 ## 十二、更真实的第一人称模型的兼容
 
@@ -763,7 +995,8 @@ Carry On 模组的兼容动画是一个名为 `carryon.animation.json` 的独立
 - `/ysm auth <player> clear` 清除玩家所有授权模型；
 - `/ysm auth <player> add <model_id>` 向玩家授权 xxx 模型；
 - `/ysm auth <player> remove <model_id>` 清除玩家授权的 xxx 模型；
-- `/ysm export <model_id>` 将某个模型导出成 ysm 专属模型格式。
+- `/ysm export <model_id> [extra_info]` 将某个模型导出成 ysm 专属模型格式，你还可以添加附加信息。
+- `/ysm ping`测试客户端服务端联通性
 
 ## 十四、MoLang 语法介绍
 
@@ -1244,7 +1477,17 @@ Tips：能帮助判断是否正在淋雪，而 `q.is_in_water_or_rain` 不能。
   - `ysm.step_height_addition`**（1.18 及以前版本无此参数）**
   - `ysm.nametag_distance`
 
-#### e. 行为不一致的的 molang 参数
+#### e. 2.2.2 版本新增函数与变量
+
+- 添加 `ysm.bone_pivot_abs`，获取指定骨骼枢轴点于上一帧在模型空间内的坐标。
+
+  > 注意如果父骨骼被隐藏，或缩放 0，则该值不会更新。例: `ysm.bone_pivot_abs('LeftHand').x`;
+
+- 添加 `ysm.bone_[rot/scale/pos]`，用于获取上一帧的骨骼参数。
+
+  > 示例：`ysm.bone_rot('LeftLeg').x`;
+
+#### f. 行为不一致的的 molang 参数
 
 这些 molang 参数在不同的 Minecraft 版本中结果不一致，请谨慎使用！
 

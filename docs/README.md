@@ -4,9 +4,9 @@
 
 The Yes Steve Model mod is a **Minecraft Forge** and **Fabric** mod that modifies the vanilla player model, using Minecraft Bedrock Edition models and animation files. This allows players to customize player models and animations as they wish.
 
-> Currently, the latest version of Yes Steve Model is **2.2.1**
+> Currently, the latest version of Yes Steve Model is **2.2.2**
 >
-> Supported mod loaders: 1.16.5/1.18.2/1.19.2/1.20.1 Forge, 1.16.5/1.18.2/1.19.2/1.20.1/1.21 Fabric, and 1.21 NeoForge.
+> Supported mod loaders: 1.18.2/1.19.2/1.20.1 Forge, 1.18.2/1.19.2/1.20.1/1.21 Fabric, and 1.21 NeoForge.
 
 > **Notes:**
 >
