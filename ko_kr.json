@@ -10,6 +10,8 @@
   "gui.yes_steve_model.download": "다운로드 GUI 열기",
   "gui.yes_steve_model.roulette.path": "Path: root%s",
   "gui.yes_steve_model.roulette.too_long": "The roulette's path is too long",
+  "gui.yes_steve_model.roulette.lock_on": "Lock: ON",
+  "gui.yes_steve_model.roulette.lock_off": "Lock: OFF",
   "gui.yes_steve_model.search": "모델 검색...",
   "gui.yes_steve_model.url.home": "Home Page",
   "gui.yes_steve_model.url.donate": "Donate",
