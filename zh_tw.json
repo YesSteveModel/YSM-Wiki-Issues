@@ -10,6 +10,8 @@
   "gui.yes_steve_model.download": "打開下載介面",
   "gui.yes_steve_model.roulette.path": "Path: root%s",
   "gui.yes_steve_model.roulette.too_long": "The roulette's path is too long",
+  "gui.yes_steve_model.roulette.lock_on": "Lock: ON",
+  "gui.yes_steve_model.roulette.lock_off": "Lock: OFF",
   "gui.yes_steve_model.search": "搜尋模型……",
   "gui.yes_steve_model.url.home": "首頁",
   "gui.yes_steve_model.url.donate": "贊助",
