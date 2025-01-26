@@ -1,5 +1,9 @@
-# vuepress
-node_modules
-.temp
-.cache
-yarn.lock
+**/node_modules
+
+docs/.vuepress/.cache
+docs/.vuepress/.temp
+docs/.vuepress/dist
+
+.DS_Store
+*.log
+.idea
