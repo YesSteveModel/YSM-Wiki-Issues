@@ -13,7 +13,9 @@ const zhNote = defineNoteConfig({
             items: [
                 '简介',
                 "安装使用",
-                "模型格式说明"
+                "模型格式说明",
+                "配置文件说明",
+                "相关指令"
             ],
         },
         {
@@ -22,8 +24,11 @@ const zhNote = defineNoteConfig({
             icon: 'fluent-mdl2:edit-create',
             prefix: '模型包制作',
             items: [
+                '准备工具',
                 '使用插件制作',
-                '项目结构'
+                '视频教程',
+                '项目结构',
+                '模型制作'
             ],
         },
         {

@@ -81,7 +81,7 @@ export default defineUserConfig({
              */
             shiki: {
                 // 强烈建议预设代码块高亮语言，插件默认加载所有语言会产生不必要的时间开销
-                languages: ['jsonc', 'json5'],
+                languages: ['jsonc', 'json5', "toml"],
                 lineNumbers: true, // 启用行号
                 //   twoslash: true, // 启用 twoslash
                 //   whitespace: true, // 启用 空格/Tab 高亮
@@ -121,9 +121,9 @@ export default defineUserConfig({
              */
             markdownPower: {
                 bilibili: true,     // 启用嵌入 bilibili视频 语法 @[bilibili](bid)
+                plot: true,         // 启用隐秘文本语法 !!xxxx!!
                 //   pdf: true,          // 启用 PDF 嵌入 @[pdf](/xxx.pdf)
                 //   caniuse: true,      // 启用 caniuse 语法  @[caniuse](feature_name)
-                //   plot: true,         // 启用隐秘文本语法 !!xxxx!!
                 //   youtube: true,      // 启用嵌入 youtube视频 语法 @[youtube](video_id)
                 //   artPlayer: true,    // 启用嵌入 artPlayer 本地视频 语法 @[artPlayer](url)
                 //   audioReader: true,  // 启用嵌入音频朗读功能 语法 @[audioReader](url)
@@ -166,17 +166,17 @@ export default defineUserConfig({
              * 评论 comments
              * @see https://theme-plume.vuejs.press/guide/features/comments/
              */
-            // comment: {
-            //   provider: '', // "Artalk" | "Giscus" | "Twikoo" | "Waline"
-            //   comment: true,
-            //   repo: '',
-            //   repoId: '',
-            //   category: '',
-            //   categoryId: '',
-            //   mapping: 'pathname',
-            //   reactionsEnabled: true,
-            //   inputPosition: 'top',
-            // },
+            comment: {
+                provider: 'Giscus', // "Artalk" | "Giscus" | "Twikoo" | "Waline"
+                comment: true,
+                repo: 'YesSteveModel/yesstevemodel.github.io',
+                repoId: 'R_kgDONv2plw',
+                category: 'Announcements',
+                categoryId: 'DIC_kwDONv2pl84CmYpW',
+                mapping: 'pathname',
+                reactionsEnabled: true,
+                inputPosition: 'top',
+            },
         },
 
         /**
