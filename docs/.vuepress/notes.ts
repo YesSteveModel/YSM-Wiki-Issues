@@ -28,7 +28,54 @@ const zhNote = defineNoteConfig({
                 '使用插件制作',
                 '视频教程',
                 '项目结构',
-                '模型制作'
+                '模型制作',
+                '贴图制作',
+                '添加音频',
+                '自定义轮盘',
+                '动画控制器'
+            ],
+        },
+        {
+            text: '动画制作',
+            collapsed: false,
+            icon: 'mdi:run',
+            prefix: '动画制作',
+            items: [
+                '动画概述',
+                '玩家主动画',
+                '手部条件动画',
+                '并行动画',
+                '护甲动画',
+                '骑乘动画',
+                '轮盘动画',
+                '选择界面动画',
+                '永恒枪械工坊动画',
+                '马术动画',
+                '跑酷动画',
+                'CarryOn动画',
+                '拔刀剑动画',
+                '更真实的第一人称'
+            ],
+        },
+        {
+            text: 'molang',
+            collapsed: false,
+            icon: 'ix:script-add',
+            prefix: 'molang',
+            items: [
+                '简介',
+                '模组Molang简介',
+                'molang参考表'
+            ],
+        },
+        {
+            text: '模型转换',
+            collapsed: false,
+            icon: 'weui:transfer2-filled',
+            prefix: '模型转换',
+            items: [
+                '中国版YSM组件',
+                '女仆模组'
             ],
         },
         {
