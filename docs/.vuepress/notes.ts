@@ -30,6 +30,7 @@ const zhNote = defineNoteConfig({
                 '项目结构',
                 '模型制作',
                 '贴图制作',
+                "PBR贴图",
                 '添加音频',
                 '自定义轮盘',
                 '动画控制器'
