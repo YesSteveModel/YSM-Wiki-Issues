@@ -21,6 +21,7 @@ export default defineUserConfig({
     head: [
         // 配置站点图标
         ['link', {rel: 'icon', type: 'image/png', href: 'https://theme-plume.vuejs.press/favicon-32x32.png'}],
+        ['link', { rel: 'stylesheet', href: 'https://google-fonts.mirrors.sjtug.sjtu.edu.cn/css2?family=JetBrains+Mono&family=Noto+Sans+SC&family=Noto+Serif+SC:wght@900&display=swap' }]
     ],
 
     bundler: webpackBundler(),
