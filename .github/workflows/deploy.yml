@@ -1,4 +1,6 @@
 name: deploy
+permissions:
+  contents: write
 
 on:
   # 每当 push 到 main 分支时触发部署
