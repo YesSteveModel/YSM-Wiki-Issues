@@ -1,5 +1,5 @@
 ---
-title: 常用molang集合
+title: 常用 molang 集合
 createTime: 2025/01/31 16:27:19
 permalink: /wiki/molang/common/
 icon: ix:ai
@@ -139,3 +139,5 @@ query.is_on_ground = toggle('在地面上')
 - Z：`0`
 
 ::::
+
+TODO 未完成
