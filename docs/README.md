@@ -2,8 +2,7 @@
 pageLayout: home
 externalLinkIcon: false
 config:
-  -
-    type: hero
+  - type: hero
     full: true
     background: 'tint-plate'
     hero:
@@ -11,12 +10,10 @@ config:
       tagline: 是，史蒂夫模型
       text: 一个可以自定义修改玩家模型动画的模组
       actions:
-        -
-          theme: brand
+        - theme: brand
           text: 快速开始 →
           link: /wiki/intro/
-        -
-          theme: alt
+        - theme: alt
           text: Github →
           link: https://github.com/YesSteveModel/YSM-Wiki-Issues
 ---

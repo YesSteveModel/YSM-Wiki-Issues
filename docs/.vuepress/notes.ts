@@ -13,6 +13,7 @@ const zhNote = defineNoteConfig({
             items: [
                 '简介',
                 "安装使用",
+                '常见问题解答',
                 "模型格式说明",
                 "配置文件说明",
                 "相关指令"
