@@ -82,7 +82,7 @@ export default defineUserConfig({
              */
             shiki: {
                 // 强烈建议预设代码块高亮语言，插件默认加载所有语言会产生不必要的时间开销
-                languages: ['jsonc', 'json5', "toml"],
+                languages: ['jsonc', 'json5', "toml", "javascript"],
                 lineNumbers: true, // 启用行号
                 //   twoslash: true, // 启用 twoslash
                 //   whitespace: true, // 启用 空格/Tab 高亮

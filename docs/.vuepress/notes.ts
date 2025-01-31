@@ -66,7 +66,8 @@ const zhNote = defineNoteConfig({
             prefix: 'molang',
             items: [
                 '简介',
-                '模组Molang简介',
+                '模组molang简介',
+                '常用molang集合',
                 'molang参考表'
             ],
         },
