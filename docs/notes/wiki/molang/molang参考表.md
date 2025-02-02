@@ -14,8 +14,8 @@ author: K螺诺亚
 
 |                 Molang                  |                             描述                             |                             备注                             | 版本  |
 | :-------------------------------------: | :----------------------------------------------------------: | :----------------------------------------------------------: | :---: |
-|                `math.pi`                |                           π，常量                            |                   固定为：3.14159265358979                   | 1.1.5 |
-|                `math.e`                 |                        ⾃然对数，常量                        |                   固定为：2.71828182845904                   | 1.1.5 |
+|                `math.pi`                |                           π，常量                            |                  固定为：`3.14159265358979`                  | 1.1.5 |
+|                `math.e`                 |                        ⾃然对数，常量                        |                  固定为：`2.71828182845904`                  | 1.1.5 |
 |           `math.floor(value)`           |                           向下取整                           |                                                              | 1.1.5 |
 |           `math.round(value)`           |                       数字四舍五入取整                       |                                                              | 1.1.5 |
 |           `math.ceil(value)`            |                        数字的向上取整                        |                                                              | 1.1.5 |
@@ -132,6 +132,7 @@ author: K螺诺亚
 |                          `ysm.fps`                           |                         返回游戏帧率                         |                                                              | 1.1.5 |
 |                     `ysm.input_vertical`                     |                   获取玩家移动方向（前后）                   |           前进时大于0，后退时小于0，静止不动时为 0           | 2.3.0 |
 |                    `ysm.input_horizontal`                    |                   获取玩家移动方向（左右）                   |       向右移动时大于0，向左移动时小于0，静止不动时为 0       | 2.3.0 |
+|                      `ysm.person_view`                       |                   返回当前模型所处人称视角                   | 第一人称：0，第三人称背面：1，第三人称正面：2；<br>应该能兼容越肩视角？ | 2.3.1 |
 |                      `ysm.is_passenger`                      |                   与 query.is_riding 相同                    |                                                              | 1.1.5 |
 |                        `ysm.is_sleep`                        |                  与 query.is_sleeping 相同                   |                                                              | 1.1.5 |
 |                        `ysm.is_sneak`                        |                  与 query.is_sneaking 相同                   |                                                              | 1.1.5 |
@@ -151,6 +152,7 @@ author: K螺诺亚
 |                      `ysm.armor_value`                       |                        返回玩家护甲值                        |                                                              | 1.1.5 |
 |                     `ysm.is_close_eyes`                      |            默认为 false，当玩家需要眨眼返回 true             |         眨眼频率大约在 4 秒左右。睡觉时也会返回 true         | 1.1.5 |
 |                 `ysm.rendering_in_inventory`                 | 判断模型是否在 GUI 中渲染（例如：模型选择界面）<br>当模型在这些地方渲染时返回 true |                                                              | 2.2.1 |
+|                 `ysm.rendering_in_paperdoll`                 |                  判断模型是否在纸娃娃中渲染                  |             纸娃娃指的就是左上角那个额外玩家渲染             | 2.3.1 |
 |                       `ysm.on_ladder`                        |               布尔值，⽤来判断实体是否在梯⼦上               |                                                              | 2.2.1 |
 |                     `ysm.ladder_facing`                      |                      实体所爬的梯⼦朝向                      |             输出数字 0-3，分别对应：南-西-北-东              | 2.2.1 |
 |                      `ysm.arrow_count`                       |                    玩家插在⾝上的箭的数量                    |                                                              | 2.2.1 |
@@ -227,7 +229,8 @@ author: K螺诺亚
 |        `ctrl.sneak`         |                      潜行移动时为 true                       |                                                              |  2.3.0   |
 |       `ctrl.sneaking`       |                     潜行不移动时为 true                      |                                                              |  2.3.0   |
 |         `ctrl.run`          |                        跑步时为 true                         |                                                              |  2.3.0   |
-|         `ctrl.walk`         |                       行走时时为 true                        |                                                              |  2.3.0   |
+|         `ctrl.walk`         |                        行走时为 true                         |                                                              |  2.3.0   |
+|         `ctrl.idle`         |                        待命是为 true                         |                                                              |  2.3.1   |
 |  `ctrl.hold(slotType, id)`  |      用法：`ctrl.hold('mainhand', '$minecraft:apple')`       | slotType 参数有：`mainhand` `offhand`<br>第二个参数和原来动画命名有点类似，`$`物品ID，`#`物品tag，`:`特殊类别 |  2.3.0   |
 | `ctrl.swing(slotType, id)`  |       用法：`ctrl.swing('offhand', '#minecraft:axes')`       | slotType 参数有：`mainhand` `offhand`<br/>第二个参数和原来动画命名有点类似，`$`物品ID，`#`物品tag，`:`特殊类别 |  2.3.0   |
 |  `ctrl.use(slotType, id)`   |             用法：`ctrl.use('offhand', ':eat')`              | slotType 参数有：`mainhand` `offhand`<br/>第二个参数和原来动画命名有点类似，`$`物品ID，`#`物品tag，`:`特殊类别 |  2.3.0   |
@@ -633,3 +636,18 @@ Tips：能帮助判断是否正在淋雪，而 `q.is_in_water_or_rain` 不能。
 - 添加专为控制器使用的，以 `ctrl` 开头的 molang
 - 新增 `ysm.input_vertical` `ysm.input_horizontal` 变量，用来查询玩家当前的移动情况
 - 新增 `ysm.first_order` `ysm.second_order` 函数，方便制作物理模拟动画
+
+### 2.3.1 版本新增函数与变量
+
+- 新增 `ysm.rendering_in_paperdoll` 变量专用于纸娃娃
+
+- 新增 `ysm.person_view` 变量，返回数字（第一人称：0，第三人称背面：1，第三人称正面：2；应该能兼容越肩视角）
+
+- 新增 `ctrl.idle` 变量
+- 修正 `ctrl.run` `ctrl.walk` 在潜行和趴下时也为 true 的问题
+
+- 修正 `ctrl.climb` 参数在游泳时也为 true 的问题
+
+- 修正 `ysm.rendering_in_inventory` 部分情况下参数不正确的问题（比如左上角纸娃娃）
+
+- 修正 `q.is_first_person` 和 `ysm.first_person_mod_hide` 部分情况下不正确的问题

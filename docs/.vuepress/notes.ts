@@ -84,13 +84,14 @@ const zhNote = defineNoteConfig({
         {
             text: '更新日志',
             collapsed: false,
-            icon: 'ic:sharp-update',
+            icon: 'ix:log',
             prefix: '更新日志',
             items: [
+                "2.3.1 更新日志",
                 '2.3.0 更新日志',
                 '2.2.2 更新日志',
                 '2.2.1 更新日志',
-                '1.2.0 更新日志',
+                '1.2.0 更新日志'
             ],
         },
     ],
