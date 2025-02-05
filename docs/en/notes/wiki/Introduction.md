@@ -1,0 +1,93 @@
+---
+title: Introduction
+icon: mdi:tooltip-text-outline
+createTime: 2025/02/05 20:41:42
+permalink: /en/wiki/intro/
+tags:
+  - Introduction
+  - Quick Start
+---
+
+Yes Steve Model is a mod that modifies the original player model. It uses the model and animation files of the Minecraft Bedrock Edition and provides many optimization and model encryption features.
+
+![img](https://s2.loli.net/2023/01/01/RAor58n6LBct3kW.jpg)
+
+::: warning
+The latest version of Yes Steve Model is **2.3.1**. Currently, only the 1.20.1 Forge version has been completed, and subsequent versions will be updated continuously.
+:::
+
+::: tip
+Version **2.2.2** supports 1.16.5/1.18.2/1.19.2/1.20.1 Forge, 1.16.5/1.18.2/1.19.2/1.20.1/1.21 Fabric, and 1.21 NeoForge, a total of ten versions.
+:::
+
+## Basic Introduction
+
+The Yes Steve Model mod takes into account the mod requirements of the server community and adopts many designs suitable for the server environment, including but not limited to:
+
+- Automatic synchronization of client models: When ordinary players enter the server, the server will ==automatically== synchronize the models to the players' computers.
+- Encrypted model files: All the models sent to the player clients are ==encrypted binary files==, effectively avoiding model theft!
+- Model permission function: Models can be individually authorized. Only after the OP enters the command to authorize, specific models can be used.
+- Modification of the original player model: The default Steve and Alex models are added, and both models can automatically call the player's skin to display.
+- Animation roulette function: When the `Z` key is pressed, a roulette animation can be opened. Through it, you can conveniently play various interesting animations (such as actions, expressions, etc.).
+
+## Animation Support
+
+<CardGrid>
+  <ImageCard
+    image="https://s2.loli.net/2023/07/21/25SgTJLdlU1iYCQ.jpg"
+    title="First-person Model"
+    description="The mod name is First-person Model, but there are still some errors that are difficult to solve."
+    href="/"
+  />
+  <ImageCard
+    image="https://s2.loli.net/2023/07/20/N6sOS9ea5xwfn8t.jpg"
+    title="TAC/TACZ (Timeless and Classic Guns)"
+    description="It can perfectly be compatible with the gun-holding, reloading, aiming, firing and many other actions of this mod."
+    href="/"
+  />
+  <ImageCard
+    image="https://s2.loli.net/2024/02/14/71QyVR6NSHmbdo3.jpg"
+    title="Carry On"
+    description="It can play the corresponding animation when the player picks up other blocks or entities. The Carry On mod of versions 1.19.2 and 1.20 can even pick up players, so you can cultivate feelings with your friends on the server."
+    href="/"
+  />
+  <ImageCard
+    image="https://s2.loli.net/2024/02/14/LfQxMCZKNAtzsOG.jpg"
+    title="SlashBlade"
+    description="It can render specific main and off-hand Slash Blades. Version 2.3.0 adds compatibility with SlashBlade animations, with 33 new animations. You can refer to the slashblade.animation.json file of the default model."
+    href="/"
+  />
+  <ImageCard
+    image="https://s2.loli.net/2024/08/14/jlzG2E5FpvCQyaq.jpg"
+    title="SWEM (Equestrian)"
+    description="11 new animations are added. You can refer to the swem.animation.json file of the default model."
+    href="/"
+  />
+  <ImageCard
+    image="https://s2.loli.net/2024/08/14/aV72OGH8pzrvW5R.jpg"
+    title="Parcool (Parkour)"
+    description="35 new animations are added. You can refer to the parcool.animation.json file of the default model."
+    href="/"
+  />
+</CardGrid>
+
+## Mod Compatibility
+
+- 1.16.5/1.18.2 Forge
+  Compatibility with the [Timeless and Classic Guns (TAC)](https://www.curseforge.com/minecraft/mc-mods/timeless-and-classic-guns-tac) mod has been added, but you need version **0.3.7** or higher of the [Timeless and Classic Guns (TAC)](https://www.curseforge.com/minecraft/mc-mods/timeless-and-classic-guns-tac) mod. Otherwise, holding a gun in the game will cause the game to crash.
+- 1.18.2/1.19.2/1.20.1 Forge
+  Compatibility with the [Timeless and Classics Zero (TACZ)](https://www.curseforge.com/minecraft/mc-mods/timeless-and-classics-zero) mod has been added.
+- Although compatibility with the [First-person Model](https://www.curseforge.com/minecraft/mc-mods/first-person-model) mod has been added, there are still some errors.
+- Support for PBR materials of the Oculus (Forge) and Iris (Fabric) mods has been added.
+- Support for the animations of [SlashBlade](https://www.curseforge.com/minecraft/mc-mods/slashblade) has been added. Version 2.2.1 also supports [SlashBlade: Resharped](https://www.curseforge.com/minecraft/mc-mods/slashblade-resharped).
+- Armor and elytra slots of [Armourers Workshop](https://www.curseforge.com/minecraft/mc-mods/armourers-workshop) are supported.
+- The [SWEM (Equestrian)](https://www.curseforge.com/minecraft/mc-mods/swem) and [Parcool (Parkour)](https://www.curseforge.com/minecraft/mc-mods/parcool) mods are supported.
+- It is compatible with the mannequins of the [Carpet](https://www.curseforge.com/minecraft/mc-mods/carpet) and [Curtain](https://www.curseforge.com/minecraft/mc-mods/curtain) mods.
+
+## Platform Support
+
+Versions 1.1.5 and earlier were written in pure Java and support the three major mainstream platforms and mobile platforms.
+
+Since the encryption of the old version of Java was quickly cracked, starting from version 1.2.0, the core encryption and rendering parts are all written in C++. This greatly improves the rendering efficiency and security, but the multi-platform support is poor.
+
+Currently, the client only supports the Windows x64 system, and the server supports the Windows and Linux x64 systems. Support for other platforms and architectures is also in progress. Updates will be announced as the completion progresses.
