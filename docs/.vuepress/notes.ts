@@ -116,11 +116,24 @@ const enNote = defineNoteConfig({
             icon: 'carbon:idea',
             items: [
                 'Introduction',
-                "Installation and Usage",
-                //"FAQ",
-                "Model Format Description",
-                "Configuration File Description",
-                "Related Commands"
+                'Installation and Usage',
+                //'FAQ',
+                'Model Format Description',
+                'Configuration File Description',
+                'Related Commands'
+            ],
+        },
+        {
+            text: 'Update Log',
+            collapsed: false,
+            icon: 'ix:log',
+            prefix: 'Update Log',
+            items: [
+                "2.3.1 Update Log",
+                '2.3.0 Update Log',
+                '2.2.2 Update Log',
+                '2.2.1 Update Log',
+                '1.2.0 Update Log'
             ],
         },
     ],
