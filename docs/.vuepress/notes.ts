@@ -111,12 +111,16 @@ const enNote = defineNoteConfig({
     link: '/wiki/',
     sidebar: [
         {
-            text: 'Newcomer',
+            text: 'Getting Started',
             collapsed: false,
             icon: 'carbon:idea',
             items: [
                 'Introduction',
                 "Installation and Usage",
+                //"FAQ",
+                "Model Format Description",
+                "Configuration File Description",
+                "Related Commands"
             ],
         },
     ],
