@@ -65,7 +65,7 @@ The Yes Steve Model mod takes into account the mod requirements of the server co
   />
   <ImageCard
     image="https://s2.loli.net/2024/08/14/aV72OGH8pzrvW5R.jpg"
-    title="Parcool (Parkour)"
+    title="Parcool"
     description="35 new animations are added. You can refer to the parcool.animation.json file of the default model."
     href="/"
   />
@@ -81,7 +81,7 @@ The Yes Steve Model mod takes into account the mod requirements of the server co
 - Support for PBR materials of the Oculus (Forge) and Iris (Fabric) mods has been added.
 - Support for the animations of [SlashBlade](https://www.curseforge.com/minecraft/mc-mods/slashblade) has been added. Version 2.2.1 also supports [SlashBlade: Resharped](https://www.curseforge.com/minecraft/mc-mods/slashblade-resharped).
 - Armor of [Cosmetic Armor](https://www.curseforge.com/minecraft/mc-mods/cosmetic-armor-reworked) and elytra slots are supported.
-- The [SWEM (Equestrian)](https://www.curseforge.com/minecraft/mc-mods/swem) and [Parcool (Parkour)](https://www.curseforge.com/minecraft/mc-mods/parcool) mods are supported.
+- The [SWEM (Equestrian)](https://www.curseforge.com/minecraft/mc-mods/swem) and [Parcool](https://www.curseforge.com/minecraft/mc-mods/parcool) mods are supported.
 - It is compatible with the mannequins of the [Carpet](https://www.curseforge.com/minecraft/mc-mods/carpet) and [Curtain](https://www.curseforge.com/minecraft/mc-mods/curtain) mods.
 
 ## Platform Support

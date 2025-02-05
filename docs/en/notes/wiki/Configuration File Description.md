@@ -52,7 +52,7 @@ Configuration at `config/yes_steve_model-common.toml`. The content of this file 
 	SoundVolume = 100.0
 ```
 
-### Server Configuration (No Restart Required, Automatic Hot Reload)
+### Server Configuration (No Restart Required, Automatic Hot-reload)
 
 Configuration at `Save Directory/serverconfig/yes_steve_model-server.toml`. This file is only available in 2.3.0. Before 2.2.2, this configuration was in `config/yes_steve_model-common.toml`.
 ```toml
