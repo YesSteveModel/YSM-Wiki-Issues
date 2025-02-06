@@ -88,7 +88,8 @@ const zhNote = defineNoteConfig({
             icon: 'ix:log',
             prefix: '更新日志',
             items: [
-                "2.3.1 更新日志",
+                '2.3.2 更新日志',
+                '2.3.1 更新日志',
                 '2.3.0 更新日志',
                 '2.2.2 更新日志',
                 '2.2.1 更新日志',
@@ -129,7 +130,8 @@ const enNote = defineNoteConfig({
             icon: 'ix:log',
             prefix: 'Update Log',
             items: [
-                "2.3.1 Update Log",
+                '2.3.2 Update Log',
+                '2.3.1 Update Log',
                 '2.3.0 Update Log',
                 '2.2.2 Update Log',
                 '2.2.1 Update Log',
