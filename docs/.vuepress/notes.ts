@@ -50,6 +50,7 @@ const zhNote = defineNoteConfig({
                 '护甲动画',
                 '骑乘动画',
                 '轮盘动画',
+                '箭矢动画',
                 '选择界面动画',
                 '永恒枪械工坊动画',
                 '马术动画',
@@ -87,7 +88,8 @@ const zhNote = defineNoteConfig({
             icon: 'ix:log',
             prefix: '更新日志',
             items: [
-                "2.3.1 更新日志",
+                '2.3.2 更新日志',
+                '2.3.1 更新日志',
                 '2.3.0 更新日志',
                 '2.2.2 更新日志',
                 '2.2.1 更新日志',
@@ -105,15 +107,43 @@ export const zhNotes = defineNotesConfig({
 
 /* =================== locale: en-US ======================= */
 
-const enDemoNote = defineNoteConfig({
-    dir: 'demo',
-    link: '/demo',
-    sidebar: ['', 'foo', 'bar'],
+const enNote = defineNoteConfig({
+    dir: 'wiki',
+    link: '/wiki/',
+    sidebar: [
+        {
+            text: 'Getting Started',
+            collapsed: false,
+            icon: 'carbon:idea',
+            items: [
+                'Introduction',
+                'Installation and Usage',
+                //'FAQ',
+                'Model Format Description',
+                'Configuration File Description',
+                'Related Commands'
+            ],
+        },
+        {
+            text: 'Update Log',
+            collapsed: false,
+            icon: 'ix:log',
+            prefix: 'Update Log',
+            items: [
+                '2.3.2 Update Log',
+                '2.3.1 Update Log',
+                '2.3.0 Update Log',
+                '2.2.2 Update Log',
+                '2.2.1 Update Log',
+                '1.2.0 Update Log'
+            ],
+        },
+    ],
 })
 
 export const enNotes = defineNotesConfig({
     dir: 'en/notes',
     link: '/en/',
-    notes: [enDemoNote],
+    notes: [enNote],
 })
 
