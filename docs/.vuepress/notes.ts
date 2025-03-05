@@ -57,6 +57,7 @@ const zhNote = defineNoteConfig({
                 '跑酷动画',
                 'CarryOn动画',
                 '拔刀剑动画',
+                '女仆动画',
                 '更真实的第一人称'
             ],
         },
