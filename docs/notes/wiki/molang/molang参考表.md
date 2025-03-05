@@ -193,6 +193,15 @@ author: K螺诺亚
 |                 `ysm.bone_pivot_abs(name).x`                 |             获取特定组名在模型绝对空间的X轴位置              |                                                              | 2.2.2 |
 |                 `ysm.bone_pivot_abs(name).y`                 |             获取特定组名在模型绝对空间的Y轴位置              |                                                              | 2.2.2 |
 |                 `ysm.bone_pivot_abs(name).z`                 |             获取特定组名在模型绝对空间的Z轴位置              |                                                              | 2.2.2 |
+|                      `ysm.entity_type`                       |    返回当前渲染实体的类型，因为现在渲染不仅仅可以用于玩家    |                  返回 `player` 或者 `maid`                   | 2.4.0 |
+|                       `ysm.is_player`                        |                    当前渲染对象是否是玩家                    |                                                              | 2.4.0 |
+|                        `ysm.is_maid`                         |                    当前渲染对象是否是女仆                    |                                                              | 2.4.0 |
+| `ysm.particle('id', x, y, z, dx, dy, dz, speed, count, life_time)` | 生成粒子，该函数参数和原版 `particle` 指令参数完全一致，仅仅多出了 `life_time` 参数 | 可参考官方 wiki：[粒子指令](https://zh.minecraft.wiki/w/%E5%91%BD%E4%BB%A4/particle) | 2.4.0 |
+| `ysm.abs_particle('id', x, y, z, dx, dy, dz, speed, count, life_time)` | 生成粒子，该函数参数和原版 `particle` 指令参数完全一致，仅仅多出了 `life_time` 参数 | 该函数生成的粒子不会随玩家朝向而改变位置，可以理解为绝对坐标生成粒子 | 2.4.0 |
+|               `ysm.mainhand_charged_crossbow`                |                     主手是否持有充能弩箭                     |                                                              | 2.4.0 |
+|                `ysm.offhand_charged_crossbow`                |                     副手是否持有充能弩箭                     |                                                              | 2.4.0 |
+|                       `ysm.is_fishing`                       |                      玩家是否在抛出鱼漂                      |                         也适用于女仆                         | 2.4.0 |
+|              `ysm.perlin_noise(seed, x, y, z)`               |           柏林噪声函数，返回一个 0-1 之间的浮点数            | 可以看看可汗学院的这个教程：[柏林噪声](https://zh.khanacademy.org/computing/computer-programming/programming-natural-simulations/programming-noise/a/perlin-noise) | 2.4.0 |
 
 
 ### ysm 箭矢相关
@@ -250,6 +259,29 @@ author: K螺诺亚
 |     `ctrl.tac_is_melee`     |                   玩家是否正在近战（刺刀）                   |                          返回布尔值                          |  2.3.0   |
 |     `ctrl.tac_is_draw`      |                       玩家是否正在切枪                       |                          返回布尔值                          |  2.3.0   |
 | `ctrl.slashblade_animation` |                    玩家当前打出的剑技名称                    |      返回字符串<br/>如果没有打出任何剑技，返回空字符串       |  2.3.0   |
+
+### TLM 部分
+
+这部分 molang 一般只能用于女仆。
+
+|          Molang          |                  描述                   |                             备注                             | 适用版本 |
+| :----------------------: | :-------------------------------------: | :----------------------------------------------------------: | :------: |
+|     `tlm.is_begging`     | 女仆处于祈求状态时为 true，否则为 false |                                                              |  2.4.0   |
+|     `tlm.is_sitting`     | 女仆处于待命状态时为 true，否则为 false |                                                              |  2.4.0   |
+|    `tlm.has_backpack`    |   女仆背有背包时为 true，否则为 false   |                                                              |  2.4.0   |
+| `tlm.favorability_point` |             女仆好感度点数              |                        返回值：0-384                         |  2.4.0   |
+| `tlm.favorability_level` |             女仆好感度等级              |                        返回值：0-384                         |  2.4.0   |
+|      `tlm.task_id`       |             女仆工作模式 id             |                           是字符串                           |  2.4.0   |
+|      `tlm.schedule`      |              女仆工作日程               | 返回值：`day`、`night`、`all`<br>分别对应：白班、夜班、全天  |  2.4.0   |
+|      `tlm.activity`      |              女仆当前活动               | 返回值：`work`、`idle`、`reset`<br/>分别对应：上班、下班、睡觉 |  2.4.0   |
+|  `tlm.gomoku_win_count`  |         女仆五子棋赢棋总回合数          |                      目前仅记录了五子棋                      |  2.4.0   |
+|    `tlm.gomoku_rank`     |             女仆五子棋段位              |                       1-4，==没有 0==                        |  2.4.0   |
+|    `tlm.game_statue`     |                棋局状态                 |              返回值：`win`、`lost`或者空字符串               |  2.4.0   |
+|   `tlm.backpack_type`    |               女仆背包 ID               |                  女仆可以装备多种类型的背包                  |  2.4.0   |
+|     `tlm.is_entity`      |              渲染女仆实体               |      女仆可以被做成雕像、手办，这个变量就用来区分这几者      |  2.4.0   |
+|     `tlm.is_statue`      |                渲染雕像                 |      女仆可以被做成雕像、手办，这个变量就用来区分这几者      |  2.4.0   |
+|   `tlm.is_garage_kit`    |                渲染手办                 |      女仆可以被做成雕像、手办，这个变量就用来区分这几者      |  2.4.0   |
+|     `tlm.show_item`      |          女仆装饰槽位的物品 ID          | 女仆物品栏的最后一格会有特殊显示，这个就记录了物品栏最后一格的物品 ID |  2.4.0   |
 
 ## 行为不一致的预设 molang
 
@@ -651,3 +683,47 @@ Tips：能帮助判断是否正在淋雪，而 `q.is_in_water_or_rain` 不能。
 - 修正 `ysm.rendering_in_inventory` 部分情况下参数不正确的问题（比如左上角纸娃娃）
 
 - 修正 `q.is_first_person` 和 `ysm.first_person_mod_hide` 部分情况下不正确的问题
+
+### 2.4.0 版本新增函数与变量
+
+- 新增女仆相关 molang 变量：
+
+  - `ysm.entity_type` 返回 player 和 maid
+
+  - `ysm.is_player` 布尔值
+
+  - `ysm.is_maid` 布尔值
+
+  - `tlm.favorability_point` 好感度点数，0-384
+
+  - `tlm.favorability_level` 好感度等级：0-3
+
+  - `tlm.task_id` 工作模式 id，字符串
+
+  - `tlm.schedule` 工作日程，day night all，白班夜班全天
+
+  - `tlm.activity` 活动，work idle reset 上班，下班，睡觉
+
+  - `tlm.gomoku_win_count` 五子棋赢棋总回合数
+
+  - `tlm.gomoku_rank` 五子棋段位，1-4，没有 0
+
+  - `tlm.game_statue` 棋局状态，win lost 空字符串
+
+  - `tlm.backpack_type` 背包 ID
+
+  - `tlm.is_entity` 渲染女仆实体
+
+  - `tlm.is_statue` 渲染雕像
+
+  - `tlm.is_garage_kit` 渲染手办
+
+  - `tlm.show_item` 那个装饰槽位的物品 ID
+
+- 添加粒子生成的 molang：
+  - `ysm.particle('id', x, y, z, dx, dy, dz, speed, count, life_time)`
+  - `ysm.abs_particle('id', x, y, z, dx, dy, dz, speed, count, life_time)`
+
+- `ysm.mainhand_charged_crossbow`
+- `ysm.offhand_charged_crossbow`
+- `ysm.is_fishing`
