@@ -33,6 +33,9 @@ These commands can be executed on both the server and the client.
 
 These commands are only executed on the client and are used by model creators to debug animations.
 
+- `/ysmclient watch var <expr>` 2.4.0 Added simplified command, which can quickly add molang expressions to the custom debug screen, which will be calculated and updated in real time;
+- `/ysmclient watch state <controller>` 2.4.0 Added command, which can quickly monitor the current state of the controller on the custom debug screen, which will be calculated and updated in real time;
+- `/ysmclient watch clear` 2.4.0 Added simplified command, clear all previously added molang and controller monitoring
 - `/ysmclient molang execute <expr>` Execute a molang expression on the local player and output the result to the chat box.
 - `/ysmclient molang watch add [pre|post] <name> <expr>` Add a molang expression to the custom debug screen, which will be calculated and updated in real time.
     - `pre` is executed before the animation is updated, and `post` is executed after the animation is updated.
