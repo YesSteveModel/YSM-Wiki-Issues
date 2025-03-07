@@ -17,7 +17,7 @@ The latest version of Yes Steve Model is **2.4.0**.
 :::
 
 ::: tip
-Version **2.3.2** supports 1.16.5/1.18.2/1.19.2/1.20.1 Forge, 1.16.5/1.18.2/1.19.2/1.20.1/1.21.1 Fabric, and 1.21.1 NeoForge, a total of ten versions.
+Version **2.4.0** supports 1.16.5/1.18.2/1.19.2/1.20.1 Forge, 1.16.5/1.18.2/1.19.2/1.20.1/1.21/1.21.1 Fabric, and 1.21/1.21.1 NeoForge, a total of 12 versions.
 :::
 
 ## Basic Introduction
@@ -29,6 +29,7 @@ The Yes Steve Model mod takes into account the mod requirements of the server co
 - Model permission function: Models can be individually authorized. Only after the OP enters the command to authorize, specific models can be used.
 - Modification of the original player model: The default Steve and Alex models are added, and both models can automatically call the player's skin to display.
 - Animation roulette function: When the `Z` key is pressed, a roulette animation can be opened. Through it, you can conveniently play various interesting animations (such as actions, expressions, etc.).
+- Maid model rendering support: Use Yes Steve Model mod version 2.4.0 and later and Touhou Little Maid mod version 1.2.0 and later to use the corresponding models and animations for maids.
 
 ## Animation Support
 
@@ -69,6 +70,18 @@ The Yes Steve Model mod takes into account the mod requirements of the server co
     description="35 new animations are added. You can refer to the parcool.animation.json file of the default model."
     href="/"
   />
+  <ImageCard
+  image="https://s2.loli.net/2025/03/05/WoZCTghkiP1pr2S.jpg"
+  title="Touhou Little Maid"
+  description="15 new animations are added. You can refer tlm.animation.json file of the default model."
+  href="/"
+  />
+  <ImageCard
+  image="https://s2.loli.net/2025/03/05/8Wzm6vdPlyDeYBC.jpg"
+  title="Sophisticated Backpacks"
+  description="Support Sophisticated Backpacks's render"
+  href="/"
+  />
 </CardGrid>
 
 ## Mod Compatibility
@@ -83,6 +96,8 @@ The Yes Steve Model mod takes into account the mod requirements of the server co
 - Armor of [Cosmetic Armor](https://www.curseforge.com/minecraft/mc-mods/cosmetic-armor-reworked) and elytra slots are supported.
 - The [SWEM (Equestrian)](https://www.curseforge.com/minecraft/mc-mods/swem) and [Parcool](https://www.curseforge.com/minecraft/mc-mods/parcool) mods are supported.
 - It is compatible with the mannequins of the [Carpet](https://www.curseforge.com/minecraft/mc-mods/carpet) and [Curtain](https://www.curseforge.com/minecraft/mc-mods/curtain) mods.
+- Compatible with [Touhou Little Maid](https://www.curseforge.com/minecraft/mc-mods/touhou-little-maid), which can replace the rendering model of the maid in this mod. Requires to use Maid mod version 1.2.0 or above.
+- Compatible with [Sophisticated Backpacks](https://modrinth.com/mod/sophisticated-backpacks), which can render the backpack of this mod.
 
 ## Platform Support
 
