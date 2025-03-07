@@ -1,4 +1,4 @@
-import {defineNoteConfig, defineNotesConfig} from 'vuepress-theme-plume'
+import {defineNoteConfig, defineNotesConfig, NoteItem} from 'vuepress-theme-plume'
 
 /* =================== locale: zh-CN ======================= */
 
@@ -13,6 +13,7 @@ const zhNote = defineNoteConfig({
             items: [
                 '简介',
                 "安装使用",
+                '服务端插件',
                 '常见问题解答',
                 "模型格式说明",
                 "配置文件说明",
