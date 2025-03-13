@@ -1,19 +1,29 @@
 ---
-title: 服务端插件
+title: Freesia 插件
 createTime: 2025/03/07 21:50:16
-permalink: /wiki/server-plugin/
-icon: grommet-icons:install
+permalink: /wiki/freesia-plugin/
+icon: clarity:plugin-solid
 author: 嗨皮重生锚
 tags:
   - 安装
 ---
 
-Freesia 是一个服务端代理插件，使插件服务器能够支持 YSM。
+::: caution 提示
+**Freesia 插件不是 YSM 官方作品**，它使用 [Mozilla Public License Version 2.0](https://github.com/YesSteveModel/Freesia/blob/main/LICENSE) 开源协议进行发布！
+:::
 
-Freesia 分为三个部分：Velocity、Worker与安装了 Backend 的插件子服。
-Velocity负责转发并处理YSM的数据包，Worker负责模型同步与数据生成，子服负责被玩家游玩。
+::: tip
+Freesia 插件原作者为 [MrHua269](https://github.com/MrHua269)，现由 [HappyRespawnanchor](https://github.com/HappyRespawnanchor) 进行维护，在这里对几位作者表示感谢。
+:::
 
-请在[此处](https://github.com/YesSteveModel/Freesia/releases)获取 Freesia 的最新版本。
+Freesia 是一个服务端代理插件，使插件服务器能够支持 Yes Steve Model。
+
+Freesia 分为三个部分：`Velocity`、`Worker` 与安装了 `Backend` 的插件子服。`Velocity` 负责转发并处理 YSM 的数据包，`Worker` 负责模型同步与数据生成，子服负责被玩家游玩。
+
+可在[此处](https://github.com/YesSteveModel/Freesia/releases)获取 Freesia 的最新版本。
+
+<RepoCard repo="YesSteveModel/Freesia" />
+
 ## Velocity
 在 Velocity 端，涉及两个主要组件：`master_control_service`和 `msession`。  
 - `master_control_service`：用于 Velocity 与 Worker 节点之间的通信，以控制其行为。  
@@ -25,7 +35,7 @@ Velocity负责转发并处理YSM的数据包，Worker负责模型同步与数据
 :::
 
 
-### 配置文件示例：
+### 配置文件示例
 ```toml
 [functions]
 # 是否踢出未安装 YSM 模组的玩家
@@ -74,8 +84,3 @@ server-port=19199
 
 ## 子服
 子服主要负责处理来自 Velocity 端的玩家 Tracker 检查请求，并通知 Velocity 更新玩家 Tracker。因此，**子服必须安装 `Freesia-Backend`**。
-
-<!--
-## 其他
-如果仍有疑问，可使用以下脚本获取示例配置。
--->
