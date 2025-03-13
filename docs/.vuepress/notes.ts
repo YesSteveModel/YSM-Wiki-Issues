@@ -1,4 +1,4 @@
-import {defineNoteConfig, defineNotesConfig} from 'vuepress-theme-plume'
+import {defineNoteConfig, defineNotesConfig, NoteItem} from 'vuepress-theme-plume'
 
 /* =================== locale: zh-CN ======================= */
 
@@ -16,7 +16,8 @@ const zhNote = defineNoteConfig({
                 '常见问题解答',
                 "模型格式说明",
                 "配置文件说明",
-                "相关指令"
+                "相关指令",
+                'Freesia插件',
             ],
         },
         {
