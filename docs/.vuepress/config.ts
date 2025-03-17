@@ -169,7 +169,7 @@ export default defineUserConfig({
              */
             comment: {
                 provider: 'Giscus', // "Artalk" | "Giscus" | "Twikoo" | "Waline"
-                comment: true,
+                comment: false,
                 repo: 'YesSteveModel/yesstevemodel.github.io',
                 repoId: 'R_kgDONv2plw',
                 category: 'Announcements',
