@@ -31,6 +31,10 @@ All custom model files are placed in the `config/yes_steve_model` folder under t
 
 You can choose to place custom model files directly either in the `auth` or the `custom` folder.
 
+::: warning
+Some models are set to be forced free. They can always be used without authorization even if put under the `auth` folder.
+:::
+
 ::: tip
 Starting from version 2.2.1, in order to address the practice of many players who like to modify file names or create multiple layers of folders in the directory, we have modified the file reading logic.
 
