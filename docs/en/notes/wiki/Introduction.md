@@ -92,7 +92,7 @@ The Yes Steve Model mod takes into account the mod requirements of the server co
   Compatibility with the [Timeless and Classics Zero (TACZ)](https://www.curseforge.com/minecraft/mc-mods/timeless-and-classics-zero) mod has been added.
 - Although compatibility with the [First-person Model](https://www.curseforge.com/minecraft/mc-mods/first-person-model) mod has been added, there are still some errors.
 - Support for PBR materials of the Oculus (Forge) and Iris (Fabric) mods has been added.
-- Support for the animations of [SlashBlade](https://www.curseforge.com/minecraft/mc-mods/slashblade) has been added. Version 2.2.1 also supports [SlashBlade: Resharped](https://www.curseforge.com/minecraft/mc-mods/slashblade-resharped).
+- Support for the animations of [SlashBlade](https://www.curseforge.com/minecraft/mc-mods/slashblade) has been added. Version 2.2.1 also supports [SlashBlade: Resharped](https://www.curseforge.com/minecraft/mc-mods/slashblade-resharped). Version 2.4.0 supports the animations of some Japanese blade addons.
 - Armor of [Cosmetic Armor](https://www.curseforge.com/minecraft/mc-mods/cosmetic-armor-reworked) and elytra slots are supported.
 - The [SWEM (Equestrian)](https://www.curseforge.com/minecraft/mc-mods/swem) and [Parcool](https://www.curseforge.com/minecraft/mc-mods/parcool) mods are supported.
 - Compatible with the fake players of the [Carpet](https://www.curseforge.com/minecraft/mc-mods/carpet) and [Curtain](https://www.curseforge.com/minecraft/mc-mods/curtain) mods.
