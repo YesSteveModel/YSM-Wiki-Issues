@@ -43,7 +43,7 @@ Version 2.2.1 also added an Author Details menu. Click the "Open Details" button
 
 ## Notes on Fabric Versions
 
-::: warning
+::: tip
 The migration work for the Fabric version was fully completed by **TomatoPuddin** (https://github.com/TomatoPuddin)! Please show him your utmost respect!
 :::
 
