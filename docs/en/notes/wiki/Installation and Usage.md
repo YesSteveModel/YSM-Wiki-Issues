@@ -8,13 +8,13 @@ tags:
   - Usage Introduction
 ---
 
-Yes Steve Model requires both the client and the server to be installed in order to use all functions normally.
+Yes Steve Model needs to be installed on both the client and the server in order to use all functions normally.
 
 If you **only install it on the client**, you need to enter the single-player game and load the model before you can use it on the server!
 
 ## Platform and JVM Support
 
-Versions 1.1.5 and earlier support major mainstream platforms such as Windows, Linux, MacOS, Android, and IOS (Pojav and other related launchers). However, since version 1.2.0 and subsequent versions, only Windows (client and server) and Linux (server) are temporarily supported. Support for other platforms is still under development.
+Versions 1.1.5 and earlier support major mainstream platforms such as Windows, Linux, MacOS, Android, and iOS (Pojav and other related launchers). However, since version 1.2.0, only Windows (client and server) and Linux (server) are supported. Support for other platforms is still under development.
 
 We have tested JVMs such as Oracle, Azul Zulu, Microsoft, and Dragonwell. If you encounter the error `Exception message: java.lang.RuntimeException: err: 54` when running YSM, you can switch to one of the above JVMs.
 
@@ -25,19 +25,19 @@ We have tested JVMs such as Oracle, Azul Zulu, Microsoft, and Dragonwell. If you
 
 ## Notes on NeoForge / Forge Versions
 
-When a player enters the server for the first time, they need to wait for about ten seconds (the time required for model synchronization, which varies depending on the number of models on the server). Then they can use the shortcut key `Alt` + `Y` to open the following GUI interface:
+When a player enters the server for the first time, they need to wait for about ten seconds (the time required for model synchronization, which varies depending on the number of models on the server). Then they can use the shortcut key `Alt` + `Y` to open the following menu:
 
 ![1.png](https://s2.loli.net/2023/06/25/Ya7DMmKToSneN6L.png)
 
-**① Model Switching Button**: Click to switch to the corresponding model. If the button background is gray, it means the model is not authorized. The number in the upper left corner represents the number of materials that can be switched for this model.
+**① Model Switching Button**: Click to switch to the corresponding model. If the button background is gray, it means the model is not authorized. The number in the upper left corner represents the number of textures that can be switched for this model.
 
 **② Model Category Switching Button**: You can switch between all models, authorized models, and favorite models.
 
-**③ Details Interface Button**: Click to enter the model details interface and view all available materials and animations of the model. In the middle preview window, you can use the left mouse button to drag and rotate the model, the right mouse button to drag and move the model, and the mouse scroll wheel to zoom in and out of the model. Click the material selection box on the right to select different materials. Click the animation list on the left to preview and play different animations.
+**③ Details Button**: Click to enter the Model Details menu and view all available textures and animations of the model. In the middle preview window, you can use the left mouse button to drag and rotate the model, the right mouse button to drag and move the model, and the mouse scroll wheel to zoom in and out of the model. Click the material selection box on the right to select different textures. Click the animation list on the left to preview different animations.
 
 ![3.png](https://s2.loli.net/2023/02/11/UxtCNy9wEg1XjSI.png)
 
-Version 2.2.1 also added an author details interface. Click the "Open Details Interface" button in the upper left corner of the model interface to open the following interface:
+Version 2.2.1 also added an Author Details menu. Click the "Open Details" button in the upper left corner of the Select Model menu to open the following menu:
 
 ![2024-06-23_21.24.png](https://s2.loli.net/2024/06/23/5ePDTnrBchwyzq8.png)
 

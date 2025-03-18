@@ -27,9 +27,9 @@ The Yes Steve Model mod takes into account the mod requirements of the server co
 - Automatic synchronization of client models: When ordinary players enter the server, the server will ==automatically== synchronize the models to the players' computers.
 - Encrypted model files: All the models sent to the player clients are ==encrypted binary files==, effectively avoiding model theft!
 - Model permission function: Models can be individually authorized. Only after the OP enters the command to authorize, specific models can be used.
-- Modification of the original player model: The default Steve and Alex models are added, and both models can automatically call the player's skin to display.
-- Animation roulette function: When the `Z` key is pressed, a roulette animation can be opened. Through it, you can conveniently play various interesting animations (such as actions, expressions, etc.).
-- Maid model rendering support: Use Yes Steve Model mod version 2.4.0 and later and Touhou Little Maid mod version 1.2.0 and later to use the corresponding models and animations for maids.
+- Modification of the original player model: The default Steve and Alex models are added, and both models can automatically use the player's skin as their textures.
+- Animation roulette function: When the `Z` key is pressed, an animation roulette is opened, where you can conveniently play various interesting animations (such as motions, expressions, etc.)
+- Maid model rendering support: Installing Touhou Little Maid mod version 1.2.0+ with Yes Steve Model mod version 2.4.0+ allows you to use YSM models and animations on maids.
 
 ## Animation Support
 
@@ -43,19 +43,19 @@ The Yes Steve Model mod takes into account the mod requirements of the server co
   <ImageCard
     image="https://s2.loli.net/2023/07/20/N6sOS9ea5xwfn8t.jpg"
     title="TAC/TACZ (Timeless and Classic Guns)"
-    description="It can perfectly be compatible with the gun-holding, reloading, aiming, firing and many other actions of this mod."
+    description="Perfectly compatible with the gun-holding, reloading, aiming, firing and many other motions of this mod."
     href="/"
   />
   <ImageCard
     image="https://s2.loli.net/2024/02/14/71QyVR6NSHmbdo3.jpg"
     title="Carry On"
-    description="It can play the corresponding animation when the player picks up other blocks or entities. The Carry On mod of versions 1.19.2 and 1.20 can even pick up players, so you can cultivate feelings with your friends on the server."
+    description="Capable of playing the corresponding animation when the player picks up other blocks or entities. With the Carry On mod for Minecraft 1.19.2 and 1.20 you can even pick up other players, so you can cultivate feelings with your friends on the server."
     href="/"
   />
   <ImageCard
     image="https://s2.loli.net/2024/02/14/LfQxMCZKNAtzsOG.jpg"
     title="SlashBlade"
-    description="It can render specific main and off-hand Slash Blades. Version 2.3.0 adds compatibility with SlashBlade animations, with 33 new animations. You can refer to the slashblade.animation.json file of the default model."
+    description="Capable of rendering some specific main and off-hand Slash Blades. Version 2.3.0 adds compatibility with SlashBlade animations, with 33 new animations. You can refer to the slashblade.animation.json file of the default model."
     href="/"
   />
   <ImageCard
@@ -71,16 +71,16 @@ The Yes Steve Model mod takes into account the mod requirements of the server co
     href="/"
   />
   <ImageCard
-  image="https://s2.loli.net/2025/03/05/WoZCTghkiP1pr2S.jpg"
-  title="Touhou Little Maid"
-  description="15 new animations are added. You can refer tlm.animation.json file of the default model."
-  href="/"
+    image="https://s2.loli.net/2025/03/05/WoZCTghkiP1pr2S.jpg"
+    title="Touhou Little Maid"
+    description="15 new animations are added. You can refer to the tlm.animation.json file of the default model."
+    href="/"
   />
   <ImageCard
-  image="https://s2.loli.net/2025/03/05/8Wzm6vdPlyDeYBC.jpg"
-  title="Sophisticated Backpacks"
-  description="Support Sophisticated Backpacks's render"
-  href="/"
+    image="https://s2.loli.net/2025/03/05/8Wzm6vdPlyDeYBC.jpg"
+    title="Sophisticated Backpacks"
+    description="Capable of rendering Sophisticated Backpacks"
+    href="/"
   />
 </CardGrid>
 
@@ -95,7 +95,7 @@ The Yes Steve Model mod takes into account the mod requirements of the server co
 - Support for the animations of [SlashBlade](https://www.curseforge.com/minecraft/mc-mods/slashblade) has been added. Version 2.2.1 also supports [SlashBlade: Resharped](https://www.curseforge.com/minecraft/mc-mods/slashblade-resharped).
 - Armor of [Cosmetic Armor](https://www.curseforge.com/minecraft/mc-mods/cosmetic-armor-reworked) and elytra slots are supported.
 - The [SWEM (Equestrian)](https://www.curseforge.com/minecraft/mc-mods/swem) and [Parcool](https://www.curseforge.com/minecraft/mc-mods/parcool) mods are supported.
-- It is compatible with the mannequins of the [Carpet](https://www.curseforge.com/minecraft/mc-mods/carpet) and [Curtain](https://www.curseforge.com/minecraft/mc-mods/curtain) mods.
+- Compatible with the fake players of the [Carpet](https://www.curseforge.com/minecraft/mc-mods/carpet) and [Curtain](https://www.curseforge.com/minecraft/mc-mods/curtain) mods.
 - Compatible with [Touhou Little Maid](https://www.curseforge.com/minecraft/mc-mods/touhou-little-maid), which can replace the rendering model of the maid in this mod. Requires to use Maid mod version 1.2.0 or above.
 - Compatible with [Sophisticated Backpacks](https://modrinth.com/mod/sophisticated-backpacks), which can render the backpack of this mod.
 
@@ -103,6 +103,6 @@ The Yes Steve Model mod takes into account the mod requirements of the server co
 
 Versions 1.1.5 and earlier were written in pure Java and support the three major mainstream platforms and mobile platforms.
 
-Since the encryption of the old version of Java was quickly cracked, starting from version 1.2.0, the core encryption and rendering parts are all written in C++. This greatly improves the rendering efficiency and security, but the multi-platform support is poor.
+Since the encryption algorithm of the old versions written in Java was quickly cracked, starting from version 1.2.0, the core encryption and rendering parts are all written in C++. This greatly improves the rendering performance and security, but the multi-platform support is poor.
 
-Currently, the client only supports the Windows x64 system, and the server supports the Windows and Linux x64 systems. Support for other platforms and architectures is also in progress. Updates will be announced as the completion progresses.
+Currently, the client side only supports Windows x64 systems, while the server side supports Windows and Linux x64 systems. Support for other platforms and architectures is also in progress. Updates will be announced if there are any progresses.
