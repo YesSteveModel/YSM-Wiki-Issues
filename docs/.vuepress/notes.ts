@@ -122,7 +122,7 @@ const enNote = defineNoteConfig({
             items: [
                 'Introduction',
                 'Installation and Usage',
-                //'FAQ',
+                'Frequent Questions',
                 'Model Format Description',
                 'Configuration File Description',
                 'Related Commands'
