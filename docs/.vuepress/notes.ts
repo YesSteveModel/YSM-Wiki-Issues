@@ -1,4 +1,4 @@
-import {defineNoteConfig, defineNotesConfig} from 'vuepress-theme-plume'
+import {defineNoteConfig, defineNotesConfig, NoteItem} from 'vuepress-theme-plume'
 
 /* =================== locale: zh-CN ======================= */
 
@@ -16,7 +16,8 @@ const zhNote = defineNoteConfig({
                 '常见问题解答',
                 "模型格式说明",
                 "配置文件说明",
-                "相关指令"
+                "相关指令",
+                'Freesia插件',
             ],
         },
         {
@@ -89,6 +90,7 @@ const zhNote = defineNoteConfig({
             icon: 'ix:log',
             prefix: '更新日志',
             items: [
+                '2.4.1 更新日志',
                 '2.4.0 更新日志',
                 '2.3.2 更新日志',
                 '2.3.1 更新日志',
@@ -120,7 +122,7 @@ const enNote = defineNoteConfig({
             items: [
                 'Introduction',
                 'Installation and Usage',
-                //'FAQ',
+                'Frequent Questions',
                 'Model Format Description',
                 'Configuration File Description',
                 'Related Commands'
@@ -132,6 +134,7 @@ const enNote = defineNoteConfig({
             icon: 'ix:log',
             prefix: 'Update Log',
             items: [
+                '2.4.1 Update Log',
                 '2.4.0 Update Log',
                 '2.3.2 Update Log',
                 '2.3.1 Update Log',

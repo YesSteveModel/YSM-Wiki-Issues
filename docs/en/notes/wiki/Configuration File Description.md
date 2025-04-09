@@ -14,7 +14,7 @@ The Yes Steve Model mod also provides a number of configuration files to facilit
 
 An in-game configuration interface can be opened in the upper right corner of the model switching interface, where various client configuration options can be adjusted.
 
-If you want to adjust the paper doll in the upper left corner, simply press the `Alt P` key combination (if it doesn't work, please check the key bindings).
+If you want to adjust the extra model rendered in the upper left corner, simply press the `Alt P` key combination (if it doesn't work, please check the key bindings).
 
 ![2.png](https://s2.loli.net/2025/01/27/WzH1G8TK4hcrLks.png)
 
@@ -25,7 +25,7 @@ If you want to adjust the paper doll in the upper left corner, simply press the 
 The Yes Steve Model mod has two configuration files. One is located at `config/yes_steve_model-common.toml`, and the other is at `Save Directory/serverconfig/yes_steve_model-server.toml` (this configuration is available after version 2.3.0).
 
 ### Common Configuration (Requires Restart)
-Configuration at `config/yes_steve_model-common.toml`. The content of this file is different before 2.2.2 and after 2.3.0.
+This is the configuration at `config/yes_steve_model-common.toml`. The content of this file is different before 2.2.2 and after 2.3.0.
 
 ```toml
 [general]
@@ -54,7 +54,7 @@ Configuration at `config/yes_steve_model-common.toml`. The content of this file 
 
 ### Server Configuration (No Restart Required, Automatic Hot-reload)
 
-Configuration at `Save Directory/serverconfig/yes_steve_model-server.toml`. This file is only available in 2.3.0. Before 2.2.2, this configuration was in `config/yes_steve_model-common.toml`.
+This is the configuration at `Save Directory/serverconfig/yes_steve_model-server.toml`. This file is only available in 2.3.0. Before 2.2.2, this configuration was in `config/yes_steve_model-common.toml`.
 ```toml
 [server_scheduler]
 	#Concurrent level for processing models. Value 0 means AUTO.

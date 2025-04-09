@@ -82,7 +82,7 @@ export default defineUserConfig({
              */
             shiki: {
                 // 强烈建议预设代码块高亮语言，插件默认加载所有语言会产生不必要的时间开销
-                languages: ['jsonc', 'json5', "toml", "javascript"],
+                languages: ['jsonc', 'json5', "toml", "javascript", "properties"],
                 lineNumbers: true, // 启用行号
                 //   twoslash: true, // 启用 twoslash
                 //   whitespace: true, // 启用 空格/Tab 高亮
@@ -169,7 +169,7 @@ export default defineUserConfig({
              */
             comment: {
                 provider: 'Giscus', // "Artalk" | "Giscus" | "Twikoo" | "Waline"
-                comment: true,
+                comment: false,
                 repo: 'YesSteveModel/yesstevemodel.github.io',
                 repoId: 'R_kgDONv2plw',
                 category: 'Announcements',
