@@ -66,7 +66,7 @@ Some creators post models on Planet Minecraft.
 <LinkCard icon="ri:bilibili-fill" title="Search Models on Bilibili" href="https://search.bilibili.com/all?keyword=ysm%E6%A8%A1%E5%9E%8B" />
 <LinkCard icon="simple-icons:afdian" title="Search Models on AFDIAN" href="https://afdian.com/search?q=YSM" />
 <LinkCard icon="mdi:github" title="GitHub Free Model Repository" href="https://github.com/Elaina69/Yes-Steve-Model-Repo" />
-<LinkCard icon="mingcute:earth" title="Search Models on Planet Minecraft" href="https://www.planetminecraft.com/mods/?keywords=YSM" />
+<LinkCard icon="ri:earth-line" title="Search Models on Planet Minecraft" href="https://www.planetminecraft.com/mods/?keywords=YSM" />
 
 ## How to Open the Select Model Menu
 
