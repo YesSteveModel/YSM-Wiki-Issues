@@ -1,3 +1,3 @@
 files:
-  - source: i18n/en_us.json
-    translation: i18n/%language%.json
+  - source: /i18n/en_us.json
+    translation: /i18n/%language%.json
