@@ -12,6 +12,7 @@
   "gui.yes_steve_model.roulette.too_long": "The roulette's path is too long",
   "gui.yes_steve_model.roulette.lock_on": "Lock: ON",
   "gui.yes_steve_model.roulette.lock_off": "Lock: OFF",
+  "gui.yes_steve_model.roulette.stop": "Stop",
   "gui.yes_steve_model.search": "Search models...",
   "gui.yes_steve_model.url.home": "Home Page",
   "gui.yes_steve_model.url.donate": "Donate",
@@ -304,6 +305,7 @@
   "message.yes_steve_model.model.sync.complete": "§6§l【§aYSM§6§l】§eSuccessfully distributed models to players，use time：%.2fms",
   "message.yes_steve_model.model.set.success": "§6§l[§aYSM§6§l] §rSet '%s' models for player '%s'",
   "message.yes_steve_model.model.set.need_auth": "§6§l[§aYSM§6§l] §rUnable set '%s' models for player '%s', need model auth",
+  "message.yes_steve_model.model.need_auth": "§6§l[Warning§6§l] §rThe current model lacks permissions, contact the administrator to obtain permissions！",
   "message.yes_steve_model.model.animation_roulette.play": "§6§l[§aYSM§6§l] §rPlay '%s' animation",
   "message.yes_steve_model.model.debug_animation.true": "§6§l[§aYSM§6§l] §rAnimation debug enable",
   "message.yes_steve_model.model.debug_animation.false": "§6§l[§aYSM§6§l] §rAnimation debug disable",
@@ -362,6 +364,7 @@
   "commands.yes_steve_model.export.not_exist": "§6§l[§aYSM§6§l] §r'%s' is not exist",
   "key.yes_steve_model.player_model.desc": "Open Player Model GUI",
   "key.yes_steve_model.animation_roulette.desc": "Open Animation Roulette",
+  "key.yes_steve_model.lock_roulette.desc": "Lock Roulette",
   "key.yes_steve_model.extra_animation.none": "None",
   "key.yes_steve_model.extra_animation.0.desc": "Play Extra Animation 0",
   "key.yes_steve_model.extra_animation.1.desc": "Play Extra Animation 1",
@@ -372,5 +375,6 @@
   "key.yes_steve_model.extra_animation.6.desc": "Play Extra Animation 6",
   "key.yes_steve_model.extra_animation.7.desc": "Play Extra Animation 7",
   "key.yes_steve_model.debug_animation.desc": "Open Animation Debug",
-  "key.yes_steve_model.open_extra_player_render.desc": "Extra Player Render Config"
+  "key.yes_steve_model.open_extra_player_render.desc": "Extra Player Render Config",
+  "subtitle.yes_steve_model.custom": "YSM Custom Sound"
 }

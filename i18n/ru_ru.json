@@ -12,6 +12,7 @@
   "gui.yes_steve_model.roulette.too_long": "The roulette's path is too long",
   "gui.yes_steve_model.roulette.lock_on": "Lock: ON",
   "gui.yes_steve_model.roulette.lock_off": "Lock: OFF",
+  "gui.yes_steve_model.roulette.stop": "Stop",
   "gui.yes_steve_model.search": "Искать модели...",
   "gui.yes_steve_model.url.home": "Главная страница",
   "gui.yes_steve_model.url.donate": "Пожертвовать",
@@ -304,6 +305,7 @@
   "message.yes_steve_model.model.sync.complete": "§6§l【§aYSM§6§l】§eМодели успешно распределены между игроками, затраченное время：%.2fms",
   "message.yes_steve_model.model.set.success": "§6§l[§aYSM§6§l] §rУстановлена модель '%s' для игрока '%s'\"",
   "message.yes_steve_model.model.set.need_auth": "§6§l[§aYSM§6§l] §rНе удалось установить модель '%s' для игрока '%s', требуется авторизовать модель",
+  "message.yes_steve_model.model.need_auth": "§6§l[Warning§6§l] §rThe current model lacks permissions, contact the administrator to obtain permissions！",
   "message.yes_steve_model.model.animation_roulette.play": "§6§l[§aYSM§6§l] §rВоспроизводится анимация '%s'",
   "message.yes_steve_model.model.debug_animation.true": "§6§l[§aYSM§6§l] §rОтладка анимации включена",
   "message.yes_steve_model.model.debug_animation.false": "§6§l[§aYSM§6§l] §rОтладка анимации выключена",
@@ -362,6 +364,7 @@
   "commands.yes_steve_model.export.not_exist": "§6§l[§aYSM§6§l] §r'%s' не существует",
   "key.yes_steve_model.player_model.desc": "Открыть интерфейс моделей игрока",
   "key.yes_steve_model.animation_roulette.desc": "Открыть рулетку анимаций",
+  "key.yes_steve_model.lock_roulette.desc": "Lock Roulette",
   "key.yes_steve_model.extra_animation.none": "Отсутствует",
   "key.yes_steve_model.extra_animation.0.desc": "Воспроизвести доп. анимацию 0",
   "key.yes_steve_model.extra_animation.1.desc": "Воспроизвести доп. анимацию 1",
@@ -372,5 +375,6 @@
   "key.yes_steve_model.extra_animation.6.desc": "Воспроизвести доп. анимацию 6",
   "key.yes_steve_model.extra_animation.7.desc": "Воспроизвести доп. анимацию 7",
   "key.yes_steve_model.debug_animation.desc": "Открыть меню отладки анимаций",
-  "key.yes_steve_model.open_extra_player_render.desc": "Дополнительная конфигурация визуализации игрока"
+  "key.yes_steve_model.open_extra_player_render.desc": "Дополнительная конфигурация визуализации игрока",
+  "subtitle.yes_steve_model.custom": "YSM Custom Sound"
 }

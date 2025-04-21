@@ -12,6 +12,7 @@
   "gui.yes_steve_model.roulette.too_long": "The roulette's path is too long",
   "gui.yes_steve_model.roulette.lock_on": "Lock: ON",
   "gui.yes_steve_model.roulette.lock_off": "Lock: OFF",
+  "gui.yes_steve_model.roulette.stop": "Stop",
   "gui.yes_steve_model.search": "搜尋模型……",
   "gui.yes_steve_model.url.home": "首頁",
   "gui.yes_steve_model.url.donate": "贊助",
@@ -304,6 +305,7 @@
   "message.yes_steve_model.model.sync.complete": "§6§l【§aYSM§6§l】§e成功同步模型至玩家，耗時：%.2fms",
   "message.yes_steve_model.model.set.success": "§6§l[§aYSM§6§l] §r已將玩家 '%s' 的模型設定為 '%s",
   "message.yes_steve_model.model.set.need_auth": "§6§l[§aYSM§6§l] §r無法將玩家 '%s' 的模型設定為 '%s'，缺少權限",
+  "message.yes_steve_model.model.need_auth": "§6§l[Warning§6§l] §rThe current model lacks permissions, contact the administrator to obtain permissions！",
   "message.yes_steve_model.model.animation_roulette.play": "§6§l[§aYSM§6§l] §r播放“%s”動畫",
   "message.yes_steve_model.model.debug_animation.true": "§6§l[§aYSM§6§l] §r動畫除錯模式啟用",
   "message.yes_steve_model.model.debug_animation.false": "§6§l[§aYSM§6§l] §r動畫除錯模式關閉",
@@ -362,6 +364,7 @@
   "commands.yes_steve_model.export.not_exist": "§6§l[§aYSM§6§l] §r'%s' 不存在",
   "key.yes_steve_model.player_model.desc": "打開玩家模型介面",
   "key.yes_steve_model.animation_roulette.desc": "打開輪盤動畫",
+  "key.yes_steve_model.lock_roulette.desc": "Lock Roulette",
   "key.yes_steve_model.extra_animation.none": "無",
   "key.yes_steve_model.extra_animation.0.desc": "播放額外動畫 0",
   "key.yes_steve_model.extra_animation.1.desc": "播放額外動畫 1",
@@ -372,5 +375,6 @@
   "key.yes_steve_model.extra_animation.6.desc": "播放額外動畫 6",
   "key.yes_steve_model.extra_animation.7.desc": "播放額外動畫 7",
   "key.yes_steve_model.debug_animation.desc": "打開動畫除錯",
-  "key.yes_steve_model.open_extra_player_render.desc": "打開額外玩家渲染配置"
+  "key.yes_steve_model.open_extra_player_render.desc": "打開額外玩家渲染配置",
+  "subtitle.yes_steve_model.custom": "YSM Custom Sound"
 }
