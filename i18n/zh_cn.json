@@ -12,6 +12,7 @@
   "gui.yes_steve_model.roulette.too_long": "轮盘页面菜单过长！",
   "gui.yes_steve_model.roulette.lock_on": "锁定：开",
   "gui.yes_steve_model.roulette.lock_off": "锁定：关",
+  "gui.yes_steve_model.roulette.stop": "停止",
   "gui.yes_steve_model.search": "搜索模型……",
   "gui.yes_steve_model.url.home": "主页",
   "gui.yes_steve_model.url.donate": "赞助",
@@ -304,6 +305,7 @@
   "message.yes_steve_model.model.sync.complete": "§6§l【§aYSM§6§l】§e成功同步模型至玩家，耗时：%.2fms",
   "message.yes_steve_model.model.set.success": "§6§l[§aYSM§6§l] §r已将玩家 '%2$s' 的模型设置为 '%1$s'",
   "message.yes_steve_model.model.set.need_auth": "§6§l[§aYSM§6§l] §r无法将玩家 '%2$s' 的模型设置为 '%1$s'，缺少权限",
+  "message.yes_steve_model.model.need_auth": "§6§l[警告§6§l] §r当前模型缺少权限，请联系管理员获取！",
   "message.yes_steve_model.model.animation_roulette.play": "§6§l【§aYSM§6§l】§r播放“%s”动画",
   "message.yes_steve_model.model.debug_animation.true": "§6§l[§aYSM§6§l] §r动画调试模式启用",
   "message.yes_steve_model.model.debug_animation.false": "§6§l[§aYSM§6§l] §r动画调试模式关闭",
@@ -362,6 +364,7 @@
   "commands.yes_steve_model.export.not_exist": "§6§l[§aYSM§6§l] §r'%s' 不存在",
   "key.yes_steve_model.player_model.desc": "打开玩家模型界面",
   "key.yes_steve_model.animation_roulette.desc": "打开轮盘动画",
+  "key.yes_steve_model.lock_roulette.desc": "锁定轮盘",
   "key.yes_steve_model.extra_animation.none": "无",
   "key.yes_steve_model.extra_animation.0.desc": "播放额外动画 0",
   "key.yes_steve_model.extra_animation.1.desc": "播放额外动画 1",
@@ -372,5 +375,6 @@
   "key.yes_steve_model.extra_animation.6.desc": "播放额外动画 6",
   "key.yes_steve_model.extra_animation.7.desc": "播放额外动画 7",
   "key.yes_steve_model.debug_animation.desc": "打开动画调试",
-  "key.yes_steve_model.open_extra_player_render.desc": "打开额外玩家渲染配置"
+  "key.yes_steve_model.open_extra_player_render.desc": "打开额外玩家渲染配置",
+  "subtitle.yes_steve_model.custom": "YSM 自定义声音"
 }
