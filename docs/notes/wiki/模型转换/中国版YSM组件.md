@@ -23,6 +23,11 @@ icon: tabler:brand-minecraft
 
 - `ysmMain.zip`：前置包，仅用于中国版 YSM 组件附包测试附属包，**请勿作它用**。
 - `ysm-netease-utils.js`：BlockBench 插件，用于一键转换 Java 版 YSM 模型包。
+<FileCard
+fileName="ysm-netease-utils.js"
+fileSize="442 KB"
+fileUrl="/files/ysm-netease-utils.js"
+/>
 
 其次，你的电脑上应该还需要安装这三个软件：
 

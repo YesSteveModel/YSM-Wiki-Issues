@@ -86,4 +86,9 @@ server-port=19199
 子服主要负责处理来自 Velocity 端的玩家 Tracker 检查请求，并通知 Velocity 更新玩家 Tracker。因此，**子服必须安装 `Freesia-Backend`**。
 
 ## 示例脚本
-若还不理解使用方法，可以从[此处](https://ysm.cfpa.team/files/freesia-template.zip)获取一个模板，请执行其中的`install-freesia.bat`（Windows）或`install-freesia.sh`（Linux）来下载相关文件，下载完成后即可运行对应文件夹中的`start.bat`或`start.sh`开启服务端。
+若还不理解使用方法，可以从下方获取一个模板文件，请执行其中的`install-freesia.bat`（Windows）或`install-freesia.sh`（Linux）来下载相关文件，下载完成后即可运行对应文件夹中的`start.bat`或`start.sh`开启服务端。
+<FileCard
+fileName="freesia-template.zip"
+fileSize="10.6 KB"
+fileUrl="/files/freesia-template.zip"
+/>

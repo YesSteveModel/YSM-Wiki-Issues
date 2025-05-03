@@ -1,6 +1,7 @@
 import {webpackBundler} from '@vuepress/bundler-webpack'
 import {defineUserConfig} from 'vuepress'
 import {plumeTheme} from 'vuepress-theme-plume'
+import replaceIt from 'markdown-it-replace-it';
 
 export default defineUserConfig({
     base: '/',
@@ -29,17 +30,17 @@ export default defineUserConfig({
 
     theme: plumeTheme({
         /* 添加您的部署域名, 有助于 SEO, 生成 sitemap */
-        // hostname: 'https://your_site_url',
+        hostname: 'https://ysm.cfpa.team',
 
         /* 文档仓库配置，用于 editLink */
-        // docsRepo: '',
-        // docsDir: 'docs',
-        // docsBranch: '',
+        docsRepo: 'https://github.com/YesSteveModel/YSM-Wiki-Issues',
+        docsDir: 'docs',
+        docsBranch: 'main',
 
         /* 页内信息 */
-        // editLink: true,
+        editLink: true,
         // lastUpdated: true,
-        // contributors: true,
+        contributors: true,
         // changelog: false,
 
         /**
@@ -185,5 +186,5 @@ export default defineUserConfig({
          * @see https://theme-plume.vuejs.press/guide/features/encryption/
          */
         // encrypt: {},
-    }),
+    })
 })

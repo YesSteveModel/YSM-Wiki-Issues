@@ -5,6 +5,7 @@ import RepoCard from 'vuepress-theme-plume/features/RepoCard.vue'
 // import Swiper from 'vuepress-theme-plume/features/Swiper.vue'
 
 // import CustomComponent from './theme/components/Custom.vue'
+import FileCard from './theme/components/FileCard.vue'
 
 import './theme/styles/custom.css'
 
@@ -18,5 +19,6 @@ export default defineClientConfig({
 
         // your custom components
         // app.component('CustomComponent', CustomComponent)
+        app.component('FileCard', FileCard)
     },
 })
