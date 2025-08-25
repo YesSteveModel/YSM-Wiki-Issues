@@ -8,6 +8,12 @@ author: 流风
 
 我们也添加了 Oculus（Forge） 和 Iris（Fabric） 模组 PBR 材质的支持。
 
+::: caution 注意
+此文档经证实内容有误，实为 **PTGI** 标准的 PBR 贴图教程，我们正在编写新的适用于 YSM 的 PBR 贴图教程，为您带来不便，敬请谅解。
+
+您可以点击[此处](https://docs.minegraph.cn/labpbrmaterialstandard.html)来了解 YSM 模组使用的 LabPBR 标准以进行 PBR 贴图制作。
+:::
+
 ## 什么是 PBR
 
 简单来说，通过 PBR 我们可以用一种较为简便的方法来更加突出一个物体的质感。常用的有光滑度、金属度、亮度、法线。
