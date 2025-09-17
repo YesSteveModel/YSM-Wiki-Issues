@@ -35,7 +35,8 @@ const zhNote = defineNoteConfig({
                 "PBR贴图",
                 '添加音频',
                 '自定义轮盘',
-                '动画控制器'
+                '动画控制器',
+                '多语言支持'
             ],
         },
         {
@@ -71,7 +72,8 @@ const zhNote = defineNoteConfig({
                 '简介',
                 '变量介绍',
                 '常用molang集合',
-                'molang参考表'
+                'molang参考表',
+                '自定义函数'
             ],
         },
         {

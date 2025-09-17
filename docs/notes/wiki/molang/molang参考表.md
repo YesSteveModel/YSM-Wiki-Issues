@@ -259,6 +259,8 @@ author: K螺诺亚
 |     `ctrl.tac_is_melee`     |                   玩家是否正在近战（刺刀）                   |                          返回布尔值                          |  2.3.0   |
 |     `ctrl.tac_is_draw`      |                       玩家是否正在切枪                       |                          返回布尔值                          |  2.3.0   |
 | `ctrl.slashblade_animation` |                    玩家当前打出的剑技名称                    |      返回字符串<br/>如果没有打出任何剑技，返回空字符串       |  2.3.0   |
+| `ctrl.set_animation(animation, loop_type)`   |仅用于脚本控制器，用于播放指定动画|接受 1~2 个参数，第一个参数为动画名称，第二个参数可选，为动画循环类型。若不指定循环类型，则使用动画预设的循环类型|  2.5.0   |
+| `ctrl.set_beginning_`<br>`transition_length(second)`   |仅用于脚本控制器，<br>用于设置当前控制器的动画混合时间|接受 1 个参数，为动画的混合时间，单位为秒|  2.5.0   |
 
 ### TLM 部分
 
@@ -282,6 +284,21 @@ author: K螺诺亚
 |     `tlm.is_statue`      |                渲染雕像                 |      女仆可以被做成雕像、手办，这个变量就用来区分这几者      |  2.4.0   |
 |   `tlm.is_garage_kit`    |                渲染手办                 |      女仆可以被做成雕像、手办，这个变量就用来区分这几者      |  2.4.0   |
 |     `tlm.show_item`      |          女仆装饰槽位的物品 ID          | 女仆物品栏的最后一格会有特殊显示，这个就记录了物品栏最后一格的物品 ID |  2.4.0   |
+
+### 饰品 部分
+
+这部分 molang 用于饰品MOD相关
+|          Molang          |                  描述                   |                             备注                             | 适用版本 |
+| :----------------------: | :-------------------------------------: | :----------------------------------------------------------: | :------: |
+|`ysm.has_any_curios(type, name...)`| 判断指定饰品槽是否佩戴了指定的饰品中的任意一个。type 为饰品槽类型，name 为物品 id（支持任意数量，不止一个），下同。当 name 数量为 0 时，仅检测饰品槽是否为空。 |                                                              |  2.5.0   |
+|`ysm.has_any_curios_with_all_tags(type, tag...)`| 判断指定饰品槽是否佩戴了任意一个饰品有给定的所有标签 |                          返回布尔值                          |  2.5.0   |
+|`ysm.has_any_curios_with_all_tags(type, tag...)`| 判断指定饰品槽是否佩戴了任意一个饰品有给定的所有标签 |                          返回布尔值                          |  2.5.0   |
+|     `ysm.dump_curios`     | 输出当前玩家佩戴的饰品信息。仅在动画调试模式下有效。 |          玩家当前穿戴饰品的所有信息                |  2.5.0   |
+
+#### 注意
+- forge/neoforge 端饰品模组为 Curios；
+- fabric 端饰品模组为 Trinkets；
+- 两端的饰品槽类型不同，需要单独适配。
 
 ## 行为不一致的预设 molang
 
@@ -727,3 +744,26 @@ Tips：能帮助判断是否正在淋雪，而 `q.is_in_water_or_rain` 不能。
 - `ysm.mainhand_charged_crossbow`
 - `ysm.offhand_charged_crossbow`
 - `ysm.is_fishing`
+
+### 2.5.0 版本新增函数与变量
+
+- 新增饰品相关变量
+  
+  - `ysm.has_any_curios(type, name...)`    
+  判断指定饰品槽是否佩戴了指定的饰品中的任意一个。
+  type 为饰品槽类型，name 为物品 id（支持任意数量，不止一个），下同。
+  当 name 数量为 0 时，仅检测饰品槽是否为空。
+  
+  - `ysm.has_any_curios_with_all_tags(type, tag...)`    
+  判断指定饰品槽是否佩戴了任意一个饰品有给定的所有标签
+  
+  - `ysm.has_any_curios_with_any_tag(type, tag...)`    
+  判断指定饰品槽是否佩戴了任意一个饰品有给定的任意一个标签
+  
+  - `ysm.dump_curios`    
+  输出当前玩家佩戴的饰品信息。仅在动画调试模式下有效。
+
+#### 注意
+- forge/neoforge 端饰品模组为 Curios；
+- fabric 端饰品模组为 Trinkets；
+- 两端的饰品槽类型不同，需要单独适配。
