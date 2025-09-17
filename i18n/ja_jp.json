@@ -1,5 +1,4 @@
 {
-  "key.category.yes_steve_model": "Yes Steve Model",
   "gui.yes_steve_model.close": "閉じる",
   "gui.yes_steve_model.pre_page": "前のページ",
   "gui.yes_steve_model.next_page": "次のページ",
@@ -12,7 +11,6 @@
   "gui.yes_steve_model.roulette.too_long": "ルーレットの経路が長すぎます",
   "gui.yes_steve_model.roulette.lock_on": "ロック: ON",
   "gui.yes_steve_model.roulette.lock_off": "ロック: OFF",
-  "gui.yes_steve_model.roulette.stop": "Stop",
   "gui.yes_steve_model.search": "モデルを検索...",
   "gui.yes_steve_model.url.home": "ホームページ",
   "gui.yes_steve_model.url.donate": "寄付する",
@@ -33,7 +31,6 @@
   "gui.yes_steve_model.config.print_animation_roulette_msg": "アニメーションルーレット使用時にチャットで通知する",
   "gui.yes_steve_model.config.disable_self_hands": "自分のプレイヤーモデルの手を描画しない",
   "gui.yes_steve_model.config.disable_player_render": "追加のプレイヤーモデルを描画しない",
-  "gui.yes_steve_model.config.disable_arrows_model": "矢モデルのレンダリングを防ぐ",
   "gui.yes_steve_model.config.use_compatibility_renderer": "互換性レンダラーを使用",
   "gui.yes_steve_model.config.sound_volume": "アニメーション音量:",
   "gui.yes_steve_model.disclaimer.text": "このMODをご利用いただきありがとうございます。以下の利用規約を必ずお読みいただき、同意してください:\n\n\n1. このMODのダウンロードおよび使用は完全に無料であり、モデルの機密性は一切保証されません\n\n2. 開発チームは関連するモデル取引に関与しません。取引により発生した問題に関する責任を負いません\n\n3. 作成者は作成したモデルの著作権を有し、同時にそれに伴う責任を負います。これらは開発チームとは無関係です\n\n4. 法律や規制に違反するモデルを作成しないでください。開発チームはR18関連のモデルの作成に反対しています！また、R18関連のモデル制作に一切関与しません！",
@@ -309,7 +306,6 @@
   "message.yes_steve_model.model.animation_roulette.play": "§6§l[§aYSM§6§l] §rアニメーション '%s' を再生",
   "message.yes_steve_model.model.debug_animation.true": "§6§l[§aYSM§6§l] §rアニメーションデバッグが有効",
   "message.yes_steve_model.model.debug_animation.false": "§6§l[§aYSM§6§l] §rアニメーションデバッグが無効",
-  "message.yes_steve_model.model.debug_animation.output": "§6§l[§aYSM§6§l] §r[デバッグ] %s",
   "message.yes_steve_model.model.debug_animation.parser_error": "§6§l[§aYSM§6§l] §r表現の解析に失敗しました: %s",
   "message.yes_steve_model.model.debug_animation.result": "§6§l[§aYSM§6§l] §r実行結果: %s",
   "message.yes_steve_model.client.server_not_found": "§6§l[§aYSM§6§l] §rサーバー側のYSM MODのバージョンがクライアントと異なります。一部の機能が使用できない可能性があります",
@@ -320,7 +316,7 @@
   "error.yes_steve_model.read_file": "ファイルの読み込みに失敗しました: %s",
   "error.yes_steve_model.write_file": "ファイルの書き込みに失敗しました: %s",
   "error.yes_steve_model.decode_texture": "テクスチャファイルのデコードに失敗しました: %s",
-  "error.yes_steve_model.texture_too_large": "テクスチャの幅と高さは4096未満である必要があります",
+  "error.yes_steve_model.texture_too_large": "テクスチャの幅と高さは%s未満である必要があります",
   "error.yes_steve_model.parse_ysm_model": "YSMモデルファイルの解析に失敗しました: %s",
   "error.yes_steve_model.parse_geo_model": "モデルファイルの解析に失敗しました: %s",
   "error.yes_steve_model.parse_animation": "アニメーションファイルの解析に失敗しました: %s",
@@ -364,7 +360,6 @@
   "commands.yes_steve_model.export.not_exist": "§6§l[§aYSM§6§l] §r'%s' は存在しません",
   "key.yes_steve_model.player_model.desc": "プレイヤーモデルGUIを開く",
   "key.yes_steve_model.animation_roulette.desc": "アニメーションルーレットを開く",
-  "key.yes_steve_model.lock_roulette.desc": "Lock Roulette",
   "key.yes_steve_model.extra_animation.none": "なし",
   "key.yes_steve_model.extra_animation.0.desc": "エクストラアニメーション0を再生",
   "key.yes_steve_model.extra_animation.1.desc": "エクストラアニメーション1を再生",
@@ -375,6 +370,5 @@
   "key.yes_steve_model.extra_animation.6.desc": "エクストラアニメーション6を再生",
   "key.yes_steve_model.extra_animation.7.desc": "エクストラアニメーション7を再生",
   "key.yes_steve_model.debug_animation.desc": "アニメーションデバッグを開く",
-  "key.yes_steve_model.open_extra_player_render.desc": "追加のプレイヤーモデルの描画設定",
-  "subtitle.yes_steve_model.custom": "YSM Custom Sound"
+  "key.yes_steve_model.open_extra_player_render.desc": "追加のプレイヤーモデルの描画設定"
 }
