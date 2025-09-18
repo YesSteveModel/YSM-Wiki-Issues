@@ -202,9 +202,14 @@ author: K螺诺亚
 |                `ysm.offhand_charged_crossbow`                |                     副手是否持有充能弩箭                     |                                                              | 2.4.0 |
 |                       `ysm.is_fishing`                       |                      玩家是否在抛出鱼漂                      |                         也适用于女仆                         | 2.4.0 |
 |              `ysm.perlin_noise(seed, x, y, z)`               |           柏林噪声函数，返回一个 0-1 之间的浮点数            | 可以看看可汗学院的这个教程：[柏林噪声](https://zh.khanacademy.org/computing/computer-programming/programming-natural-simulations/programming-noise/a/perlin-noise) | 2.4.0 |
+|              `ysm.play_sound('id', 'sound_name', boolean,volume,pitch)`| 播放音频，`id`为该音频的标识，boolean为是否强制播放  |  | 2.5.0 |
+|              `ysm.stop_sound('id')`| 停止音频，`id`为该音频的标识 |  | 2.5.0 |
+|              `ysm.block_light`| 脚下方块亮度 |  | 2.5.0 |
+|              `ysm.sky_light`| 脚下方块受到天空所贡献的亮度 |  | 2.5.0 |
+|              `ysm.mouse(keycode)`| 检测鼠标按键情况 | 填入键码[鼠标按键对应的数字](https://www.glfw.org/docs/latest/group__buttons.html) | 2.5.0 |
+|              `ysm.keyboard(keycode)`| 检测键盘按键情况 | 填入键码[按键对应的数字](https://www.glfw.org/docs/latest/group__keys.html) | 2.5.0 |
 
-
-### ysm 箭矢相关
+### ysm 弹射物相关
 
 |           Molang            |                        描述                        |                             备注                             | 适用版本 |
 | :-------------------------: | :------------------------------------------------: | :----------------------------------------------------------: | :------: |
@@ -214,6 +219,9 @@ author: K螺诺亚
 | `ysm.delta_movement_length` | 获取箭⽮在两 tick 之间的位移⻓度，可以⽤来判断速度 |                                                              |  1.2.0   |
 |   `ysm.is_spectral_arrow`   |                判断箭⽮是否为光灵箭                |                                                              |  1.2.0   |
 |     `ysm.shoot_item_id`     |              射出此箭的物品 ID 是什么              |                可以用来区分普通弓和弩射出的箭                |  2.3.0   |
+|     `ysm.throwable_item`     |              物品类型投掷物的物品 ID              |                                |  2.5.0   |
+|     `ysm.hooked_in`     |              鱼钩勾住的实体 ID              |                            不存在时为空字符串                  |  2.5.0   |    
+|     `ysm.is_biting`     |              鱼钩是否咬钩              |                            布尔值                  |  2.5.0   |    
 
 ### Ctrl 部分
 
@@ -259,6 +267,7 @@ author: K螺诺亚
 |     `ctrl.tac_is_melee`     |                   玩家是否正在近战（刺刀）                   |                          返回布尔值                          |  2.3.0   |
 |     `ctrl.tac_is_draw`      |                       玩家是否正在切枪                       |                          返回布尔值                          |  2.3.0   |
 | `ctrl.slashblade_animation` |                    玩家当前打出的剑技名称                    |      返回字符串<br/>如果没有打出任何剑技，返回空字符串       |  2.3.0   |
+| `ctrl.playing_extra_animation` |                    玩家是否在播放轮盘动画                    |       	返回布尔值      |  2.5.0   |
 | `ctrl.set_animation(animation, loop_type)`   |仅用于脚本控制器，用于播放指定动画|接受 1~2 个参数，第一个参数为动画名称，第二个参数可选，为动画循环类型。若不指定循环类型，则使用动画预设的循环类型|  2.5.0   |
 | `ctrl.set_beginning_`<br>`transition_length(second)`   |仅用于脚本控制器，<br>用于设置当前控制器的动画混合时间|接受 1 个参数，为动画的混合时间，单位为秒|  2.5.0   |
 
