@@ -13,7 +13,7 @@ Yes Steve Model is a mod that modifies the original player model. It uses the mo
 ![img](https://s2.loli.net/2023/01/01/RAor58n6LBct3kW.jpg)
 
 ::: tip
-The latest version of Yes Steve Model is **2.4.1**.
+The latest version of Yes Steve Model is **2.5.0**.
 :::
 
 ::: tip

@@ -28,7 +28,7 @@ If you cannot solve a problem on your own, you can ask other people in the commu
 
 ## How to Install the Mod
 
-The latest release version of the mod is: `2.4.1`
+The latest release version of the mod is: `2.5.0`
 
 The mod works on:
 
@@ -122,7 +122,7 @@ Note that the following steps for installing models only applies to singleplayer
 If you have installed your model following the instructions above, but still cannot find it, please check the following:
 
 - Did you actually have the mod installed?
-- Did you have the latest version (2.4.1) of the mod installed? Most new models requires mod version 2.2.2 or above. Version 1.1.5 is no longer supported!
+- Did you have the latest version (2.5.0) of the mod installed? Most new models requires mod version 2.2.2 or above. Version 1.1.5 is no longer supported!
 - Were you in multiplayer? Only the OP can install models on a server.
 - Have you executed the command `/ysm model reload` to reload the models?
 - If you were playing for the first time, and have quite a lot of models installed, you could be in a situation where only the default model is available after reloading. Please wait for a while as the mod is building cache for your models, after which the models should show up. (Same for multiplayer)
@@ -178,7 +178,7 @@ Use the compatibility renderer. Instructions:
 
 ![lowversion.jpg](https://s21.ax1x.com/2025/02/03/pEZotl6.jpg)
 
-If you encountered this, please check if your YSM is up to date (the latest version is 2.4.1). If not, please update.
+If you encountered this, please check if your YSM is up to date (the latest version is 2.5.0). If not, please update.
 
 If it is up to date, please contact the model author.
 

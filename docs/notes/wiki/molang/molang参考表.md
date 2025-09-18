@@ -772,6 +772,38 @@ Tips：能帮助判断是否正在淋雪，而 `q.is_in_water_or_rain` 不能。
   - `ysm.dump_curios`    
   输出当前玩家佩戴的饰品信息。仅在动画调试模式下有效。
 
+- 新增播放音频相关函数
+  - `ysm.play_sound('id', 'sound_name', boolean,volume,pitch)`  
+  播放音频，id为该音频的标识，boolean为是否强制播放
+  - `ysm.stop_sound('id')`  
+  停止音频，id为该音频的标识
+
+- 新增亮度检测变量
+  - `ysm.block_light`   
+  脚下方块亮度
+  - `ysm.sky_light`   
+	脚下方块受到天空所贡献的亮度
+
+- 新增按键检测函数
+  - `ysm.mouse(keycode)`    
+    检测鼠标按键情况
+  - `ysm.keyboard(keycode)`   
+    检测键盘按键情况
+
+- 新增弹射物相关molang
+  - `ysm.throwable_item`  
+    物品类型投掷物的物品 ID
+  - `ysm.hooked_in`   
+  	鱼钩勾住的实体 ID
+  - `ysm.is_biting`   
+  	鱼钩是否咬钩
+
+- 新增脚本控制器相关(只能用于脚本控制器)
+  - `ctrl.set_animation(animation, loop_type)`    
+  用于播放指定动画
+  - `ctrl.set_beginning_transition_length(second)`    
+  用于设置当前控制器的动画混合时间
+
 #### 注意
 - forge/neoforge 端饰品模组为 Curios；
 - fabric 端饰品模组为 Trinkets；
