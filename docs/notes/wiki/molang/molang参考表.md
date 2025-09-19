@@ -202,12 +202,17 @@ author: K螺诺亚
 |                `ysm.offhand_charged_crossbow`                |                     副手是否持有充能弩箭                     |                                                              | 2.4.0 |
 |                       `ysm.is_fishing`                       |                      玩家是否在抛出鱼漂                      |                         也适用于女仆                         | 2.4.0 |
 |              `ysm.perlin_noise(seed, x, y, z)`               |           柏林噪声函数，返回一个 0-1 之间的浮点数            | 可以看看可汗学院的这个教程：[柏林噪声](https://zh.khanacademy.org/computing/computer-programming/programming-natural-simulations/programming-noise/a/perlin-noise) | 2.4.0 |
-|              `ysm.play_sound('id', 'sound_name', boolean,volume,pitch)`| 播放音频，`id`为该音频的标识，boolean为是否强制播放  |  | 2.5.0 |
-|              `ysm.stop_sound('id')`| 停止音频，`id`为该音频的标识 |  | 2.5.0 |
-|              `ysm.block_light`| 脚下方块亮度 |  | 2.5.0 |
-|              `ysm.sky_light`| 脚下方块受到天空所贡献的亮度 |  | 2.5.0 |
-|              `ysm.mouse(keycode)`| 检测鼠标按键情况 | 填入键码[鼠标按键对应的数字](https://www.glfw.org/docs/latest/group__buttons.html) | 2.5.0 |
-|              `ysm.keyboard(keycode)`| 检测键盘按键情况 | 填入键码[按键对应的数字](https://www.glfw.org/docs/latest/group__keys.html) | 2.5.0 |
+| `ysm.relative_block_name_any(xOffset, yOffset, zOffset, 'blockName1', 'blockName2'...)` | 和 `ysm.relative_block_name` 类似，不过可以传入多个方块 ID 字符串。 |               只要有一个 ID 匹配，即返回 true                | 2.5.0 |
+|                `ysm.in_shield_block_cooldown`                |       布尔值变量，当前是否处于盾牌成功格挡的冷却时间内       |                     冷却时间持续 5 tick                      | 2.5.0 |
+|            `ysm.xxa`<br/>`ysm.yya`<br/>`ysm.zza`             | 当玩家骑乘实体时，玩家按下前后左右键时，该变量分别有对应数值 | 前后为 `ysm.xxa`<br>左右为 `ysm.yya`<br>`ysm.zza` 不知何用，上下移动未见数值变化 | 2.5.0 |
+| `ysm.play_sound('id', 'sound_name', boolean, volume, pitch)` | 播放音频，`id`为该音频的标识，`sound_name` 写法和音频关键帧动画里的写法一致。<br>`boolean` 为是否强制播放 | 当设置为强制播放时，每次执行都会把先前同 ID 的音频停掉，然后重头播放。 | 2.5.0 |
+|                    `ysm.stop_sound('id')`                    |                 停止音频，`id`为该音频的标识                 |                                                              | 2.5.0 |
+|                    `ysm.stop_all_sounds`                     |               停止所有 molang 添加而播放的音频               |                          该函数无参                          | 2.5.0 |
+|                      `ysm.block_light`                       |                         脚下方块亮度                         |                             0-15                             | 2.5.0 |
+|                       `ysm.sky_light`                        |                 脚下方块受到天空所贡献的亮度                 |                     0-15，完全露天为 15                      | 2.5.0 |
+|                     `ysm.mouse(keycode)`                     |                       检测鼠标按键情况                       | 填入键码[鼠标按键对应的数字](https://www.glfw.org/docs/latest/group__buttons.html) | 2.5.0 |
+|                   `ysm.keyboard(keycode)`                    |                       检测键盘按键情况                       | 填入键码[按键对应的数字](https://www.glfw.org/docs/latest/group__keys.html) | 2.5.0 |
+|                 `ysm.sync(int1, int2, ...)`                  |      主动向服务器同步数据，参考后续自定义函数篇章的说明      |                                                              | 2.5.0 |
 
 ### ysm 弹射物相关
 
@@ -215,61 +220,65 @@ author: K螺诺亚
 | :-------------------------: | :------------------------------------------------: | :----------------------------------------------------------: | :------: |
 |    `ysm.on_ground_time`     |           箭矢掉在地上的时长（单位：刻）           | 游戏内箭矢会在落地后 1200 刻（60 秒）后消失<br>如果在此期间箭矢被移动则重置为 0 |  1.2.0   |
 |       `ysm.in_ground`       |                判断箭⽮是否掉在地上                |                                                              |  1.2.0   |
-|   `ysm.projectile_owner`    |              返回发射该箭⽮的玩家实体              |               可以使⽤ “箭头表达式” 查询其属性               |  1.2.0   |
+|   `ysm.projectile_owner`    |              返回发射该箭⽮的玩家实体              | 可以使⽤ “箭头表达式” 查询其属性<br>==目前存在内存泄漏问题，不推荐使用== |  1.2.0   |
 | `ysm.delta_movement_length` | 获取箭⽮在两 tick 之间的位移⻓度，可以⽤来判断速度 |                                                              |  1.2.0   |
 |   `ysm.is_spectral_arrow`   |                判断箭⽮是否为光灵箭                |                                                              |  1.2.0   |
 |     `ysm.shoot_item_id`     |              射出此箭的物品 ID 是什么              |                可以用来区分普通弓和弩射出的箭                |  2.3.0   |
-|     `ysm.throwable_item`     |              物品类型投掷物的物品 ID              |                                |  2.5.0   |
-|     `ysm.hooked_in`     |              鱼钩勾住的实体 ID              |                            不存在时为空字符串                  |  2.5.0   |    
-|     `ysm.is_biting`     |              鱼钩是否咬钩              |                            布尔值                  |  2.5.0   |    
+|    `ysm.throwable_item`     |              物品类型投掷物的物品 ID               |                                                              |  2.5.0   |
+|       `ysm.hooked_in`       |                 鱼钩勾住的实体 ID                  |                      不存在时为空字符串                      |  2.5.0   |
+|       `ysm.is_biting`       |                    鱼钩是否咬钩                    |                            布尔值                            |  2.5.0   |
 
 ### Ctrl 部分
 
 这部分主要用于动画控制器
 
-|           Molang            |                             描述                             |                             备注                             | 适用版本 |
-| :-------------------------: | :----------------------------------------------------------: | :----------------------------------------------------------: | :------: |
-|        `ctrl.death`         |                        死亡时为 true                         |                                                              |  2.3.0   |
-|       `ctrl.riptide`        |                使用三叉戟，触发激流时为 true                 |                                                              |  2.3.0   |
-|        `ctrl.sleep`         |                        睡觉时为 true                         |                                                              |  2.3.0   |
-|         `ctrl.swim`         |                        游泳时为 true                         |                                                              |  2.3.0   |
-|        `ctrl.climb`         |                     趴下并移动时为 true                      |                                                              |  2.3.0   |
-|       `ctrl.climbing`       |                     趴下不移动时为 true                      |                                                              |  2.3.0   |
-|      `ctrl.ladder_up`       |                     梯子上上爬时为 true                      |                                                              |  2.3.0   |
-|   `ctrl.ladder_stillness`   |                     梯子上定住时为 true                      |                                                              |  2.3.0   |
-|     `ctrl.ladder_down`      |                     梯子上下滑时为 true                      |                                                              |  2.3.0   |
-|         `ctrl.fly`          |                        飞行时为 true                         |                                                              |  2.3.0   |
-|      `ctrl.elytra_fly`      |                      鞘翅飞行时为 true                       |                                                              |  2.3.0   |
-|      `ctrl.swim_stand`      |                     站立式游泳时为 true                      |                                                              |  2.3.0   |
-|       `ctrl.attacked`       |                       被攻击时为 true                        |                                                              |  2.3.0   |
-|         `ctrl.jump`         |                        跳跃时为 true                         |                                                              |  2.3.0   |
-|        `ctrl.sneak`         |                      潜行移动时为 true                       |                                                              |  2.3.0   |
-|       `ctrl.sneaking`       |                     潜行不移动时为 true                      |                                                              |  2.3.0   |
-|         `ctrl.run`          |                        跑步时为 true                         |                                                              |  2.3.0   |
-|         `ctrl.walk`         |                        行走时为 true                         |                                                              |  2.3.0   |
-|         `ctrl.idle`         |                        待命是为 true                         |                                                              |  2.3.1   |
-|  `ctrl.hold(slotType, id)`  |      用法：`ctrl.hold('mainhand', '$minecraft:apple')`       | slotType 参数有：`mainhand` `offhand`<br>第二个参数和原来动画命名有点类似，`$`物品ID，`#`物品tag，`:`特殊类别 |  2.3.0   |
-| `ctrl.swing(slotType, id)`  |       用法：`ctrl.swing('offhand', '#minecraft:axes')`       | slotType 参数有：`mainhand` `offhand`<br/>第二个参数和原来动画命名有点类似，`$`物品ID，`#`物品tag，`:`特殊类别 |  2.3.0   |
-|  `ctrl.use(slotType, id)`   |             用法：`ctrl.use('offhand', ':eat')`              | slotType 参数有：`mainhand` `offhand`<br/>第二个参数和原来动画命名有点类似，`$`物品ID，`#`物品tag，`:`特殊类别 |  2.3.0   |
-| `ctrl.armor(slotType, id)`  | 用法：`ctrl.armor('head', '$minecraft:iron_helmet')`<br>第一个参数有：feet, legs, chest, head | slotType 参数有：`chest` `feet` `head` `legs`<br/>第二个参数和原来动画命名有点类似，`$`物品ID，`#`物品tag，`:`特殊类别 |  2.3.0   |
-|    `ctrl.ride(type, id)`    | 用法：`ctrl.ride('vehicle', '$minecraft:pig')`<br>`ctrl.ride('passenger', '$minecraft:pig')` | type 参数有：`vehicle` `passenger`<br/>第二个参数和原来动画命名有点类似，`$`物品ID，`#`物品tag，`:`特殊类别 |  2.3.0   |
-|     `ctrl.carryon_type`     |       玩家抱起的类型，有三种 `block` `entity` `player`       |      返回字符串<br/>如果没有抱起任何东西，返回空字符串       |  2.3.0   |
-| `ctrl.carryon_is_princess`  |                      玩家是否**被**抱起                      |                          返回布尔值                          |  2.3.0   |
-|    `ctrl.parcool_state`     |                  返回当前正在执行的跑酷动作                  |    返回字符串<br/>如果没有执行任何跑酷动作，返回空字符串     |  2.3.0   |
-|     `ctrl.swem_is_ride`     |                  玩家是否**骑乘** SWEM 的马                  |                          返回布尔值                          |  2.3.0   |
-|      `ctrl.swem_state`      |                  玩家当前正在执行的马术动作                  |      返回字符串<br/>如果没有骑 SWEM 的马，返回空字符串       |  2.3.0   |
-|     `ctrl.tac_hold_gun`     |                  玩家是否主手持 tacz 的枪械                  |                          返回布尔值                          |  2.3.0   |
-|     `ctrl.tac_gun_type`     |         玩家当前持有的枪械类型（步枪、手枪那些分类）         |          返回字符串<br/>如果没有持枪，返回空字符串           |  2.3.0   |
-|      `ctrl.tac_gun_id`      |                    玩家当前持有的枪械 ID                     |          返回字符串<br/>如果没有持枪，返回空字符串           |  2.3.0   |
-|     `ctrl.tac_is_fire`      |                       玩家是否正在开火                       |                          返回布尔值                          |  2.3.0   |
-|      `ctrl.tac_is_aim`      |                       玩家是否正在瞄准                       |                          返回布尔值                          |  2.3.0   |
-|    `ctrl.tac_is_reload`     |                     玩家是否正在重载弹药                     |                          返回布尔值                          |  2.3.0   |
-|     `ctrl.tac_is_melee`     |                   玩家是否正在近战（刺刀）                   |                          返回布尔值                          |  2.3.0   |
-|     `ctrl.tac_is_draw`      |                       玩家是否正在切枪                       |                          返回布尔值                          |  2.3.0   |
-| `ctrl.slashblade_animation` |                    玩家当前打出的剑技名称                    |      返回字符串<br/>如果没有打出任何剑技，返回空字符串       |  2.3.0   |
-| `ctrl.playing_extra_animation` |                    玩家是否在播放轮盘动画                    |       	返回布尔值      |  2.5.0   |
-| `ctrl.set_animation(animation, loop_type)`   |仅用于脚本控制器，用于播放指定动画|接受 1~2 个参数，第一个参数为动画名称，第二个参数可选，为动画循环类型。若不指定循环类型，则使用动画预设的循环类型|  2.5.0   |
-| `ctrl.set_beginning_`<br>`transition_length(second)`   |仅用于脚本控制器，<br>用于设置当前控制器的动画混合时间|接受 1 个参数，为动画的混合时间，单位为秒|  2.5.0   |
+|                            Molang                            |                             描述                             |                             备注                             | 适用版本 |
+| :----------------------------------------------------------: | :----------------------------------------------------------: | :----------------------------------------------------------: | :------: |
+|                         `ctrl.death`                         |                        死亡时为 true                         |                                                              |  2.3.0   |
+|                        `ctrl.riptide`                        |                使用三叉戟，触发激流时为 true                 |                                                              |  2.3.0   |
+|                         `ctrl.sleep`                         |                        睡觉时为 true                         |                                                              |  2.3.0   |
+|                         `ctrl.swim`                          |                        游泳时为 true                         |                                                              |  2.3.0   |
+|                         `ctrl.climb`                         |                     趴下并移动时为 true                      |                                                              |  2.3.0   |
+|                       `ctrl.climbing`                        |                     趴下不移动时为 true                      |                                                              |  2.3.0   |
+|                       `ctrl.ladder_up`                       |                     梯子上上爬时为 true                      |                                                              |  2.3.0   |
+|                   `ctrl.ladder_stillness`                    |                     梯子上定住时为 true                      |                                                              |  2.3.0   |
+|                      `ctrl.ladder_down`                      |                     梯子上下滑时为 true                      |                                                              |  2.3.0   |
+|                          `ctrl.fly`                          |                        飞行时为 true                         |                                                              |  2.3.0   |
+|                      `ctrl.elytra_fly`                       |                      鞘翅飞行时为 true                       |                                                              |  2.3.0   |
+|                      `ctrl.swim_stand`                       |                     站立式游泳时为 true                      |                                                              |  2.3.0   |
+|                       `ctrl.attacked`                        |                       被攻击时为 true                        |                                                              |  2.3.0   |
+|                         `ctrl.jump`                          |                        跳跃时为 true                         |                                                              |  2.3.0   |
+|                         `ctrl.sneak`                         |                      潜行移动时为 true                       |                                                              |  2.3.0   |
+|                       `ctrl.sneaking`                        |                     潜行不移动时为 true                      |                                                              |  2.3.0   |
+|                          `ctrl.run`                          |                        跑步时为 true                         |                                                              |  2.3.0   |
+|                         `ctrl.walk`                          |                        行走时为 true                         |                                                              |  2.3.0   |
+|                         `ctrl.idle`                          |                        待命是为 true                         |                                                              |  2.3.1   |
+|                  `ctrl.hold(slotType, id)`                   |      用法：`ctrl.hold('mainhand', '$minecraft:apple')`       | slotType 参数有：`mainhand` `offhand`<br>第二个参数和原来动画命名有点类似，`$`物品ID，`#`物品tag，`:`特殊类别 |  2.3.0   |
+|                  `ctrl.swing(slotType, id)`                  |       用法：`ctrl.swing('offhand', '#minecraft:axes')`       | slotType 参数有：`mainhand` `offhand`<br/>第二个参数和原来动画命名有点类似，`$`物品ID，`#`物品tag，`:`特殊类别 |  2.3.0   |
+|                   `ctrl.use(slotType, id)`                   |             用法：`ctrl.use('offhand', ':eat')`              | slotType 参数有：`mainhand` `offhand`<br/>第二个参数和原来动画命名有点类似，`$`物品ID，`#`物品tag，`:`特殊类别 |  2.3.0   |
+|                  `ctrl.armor(slotType, id)`                  | 用法：`ctrl.armor('head', '$minecraft:iron_helmet')`<br>第一个参数有：feet, legs, chest, head | slotType 参数有：`chest` `feet` `head` `legs`<br/>第二个参数和原来动画命名有点类似，`$`物品ID，`#`物品tag，`:`特殊类别 |  2.3.0   |
+|                    `ctrl.ride(type, id)`                     | 用法：`ctrl.ride('vehicle', '$minecraft:pig')`<br>`ctrl.ride('passenger', '$minecraft:pig')` | type 参数有：`vehicle` `passenger`<br/>第二个参数和原来动画命名有点类似，`$`物品ID，`#`物品tag，`:`特殊类别 |  2.3.0   |
+|                     `ctrl.carryon_type`                      |       玩家抱起的类型，有三种 `block` `entity` `player`       |      返回字符串<br/>如果没有抱起任何东西，返回空字符串       |  2.3.0   |
+|                  `ctrl.carryon_is_princess`                  |                      玩家是否**被**抱起                      |                          返回布尔值                          |  2.3.0   |
+|                     `ctrl.parcool_state`                     |                  返回当前正在执行的跑酷动作                  |    返回字符串<br/>如果没有执行任何跑酷动作，返回空字符串     |  2.3.0   |
+|                     `ctrl.swem_is_ride`                      |                  玩家是否**骑乘** SWEM 的马                  |                          返回布尔值                          |  2.3.0   |
+|                      `ctrl.swem_state`                       |                  玩家当前正在执行的马术动作                  |      返回字符串<br/>如果没有骑 SWEM 的马，返回空字符串       |  2.3.0   |
+|                     `ctrl.tac_hold_gun`                      |                  玩家是否主手持 tacz 的枪械                  |                          返回布尔值                          |  2.3.0   |
+|                     `ctrl.tac_gun_type`                      |         玩家当前持有的枪械类型（步枪、手枪那些分类）         |          返回字符串<br/>如果没有持枪，返回空字符串           |  2.3.0   |
+|                      `ctrl.tac_gun_id`                       |                    玩家当前持有的枪械 ID                     |          返回字符串<br/>如果没有持枪，返回空字符串           |  2.3.0   |
+|                      `ctrl.tac_is_fire`                      |                       玩家是否正在开火                       |                          返回布尔值                          |  2.3.0   |
+|                      `ctrl.tac_is_aim`                       |                       玩家是否正在瞄准                       |                          返回布尔值                          |  2.3.0   |
+|                     `ctrl.tac_is_reload`                     |                     玩家是否正在重载弹药                     |                          返回布尔值                          |  2.3.0   |
+|                     `ctrl.tac_is_melee`                      |                   玩家是否正在近战（刺刀）                   |                          返回布尔值                          |  2.3.0   |
+|                      `ctrl.tac_is_draw`                      |                       玩家是否正在切枪                       |                          返回布尔值                          |  2.3.0   |
+|                 `ctrl.slashblade_animation`                  |                    玩家当前打出的剑技名称                    |      返回字符串<br/>如果没有打出任何剑技，返回空字符串       |  2.3.0   |
+|                `ctrl.playing_extra_animation`                |                    玩家是否在播放轮盘动画                    |                          返回布尔值                          |  2.5.0   |
+|                `ctrl.create_hanging_skyhook`                 |                   玩家是否在机械动力悬链上                   |                          返回布尔值                          |  2.5.0   |
+| `ysm.state_continue`<br>`ysm.state_stop`<br/>`ysm.state_pause`<br/>`ysm.state_bypass` |                    常量，仅用于脚本控制器                    |                      详见自定义函数部分                      |  2.5.0   |
+|          `ctrl.set_animation(animation, loop_type)`          |              仅用于脚本控制器，用于播放指定动画              | 接受 1~2 个参数，第一个参数为动画名称，第二个参数可选，为动画循环类型。若不指定循环类型，则使用动画预设的循环类型 |  2.5.0   |
+|     `ctrl.set_beginning_`<br>`transition_length(second)`     |    仅用于脚本控制器，<br>用于设置当前控制器的动画混合时间    |          接受 1 个参数，为动画的混合时间，单位为秒           |  2.5.0   |
+|                         `ysm.reset`                          |                            无参数                            | 立刻重置动画控制器至初始状态。若有动画正在播放，会粗暴的中止而不会平滑过渡。此外，该函数还包含了`ctrl.indicate_reload`的作用 |  2.5.0   |
+|                    `ysm.indicate_reload`                     |                           重载动画                           | 和 `ysm.reset` 有点像，但是用于 `play_once` 或 `hold_on_last_frame` 这样的动画之前调用，用来重置让其再次进行播放。 |  2.5.0   |
 
 ### TLM 部分
 
