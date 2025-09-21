@@ -6,6 +6,7 @@ import RepoCard from 'vuepress-theme-plume/features/RepoCard.vue'
 
 // import CustomComponent from './theme/components/Custom.vue'
 import FileCard from './theme/components/FileCard.vue'
+import Layout from './theme/components/Layout.vue'
 
 import './theme/styles/custom.css'
 
@@ -20,5 +21,8 @@ export default defineClientConfig({
         // your custom components
         // app.component('CustomComponent', CustomComponent)
         app.component('FileCard', FileCard)
+    },
+    layouts: {
+        Layout,
     },
 })
