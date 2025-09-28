@@ -252,7 +252,7 @@ author: K螺诺亚
 |                       `ctrl.sneaking`                        |                     潜行不移动时为 true                      |                                                              |  2.3.0   |
 |                          `ctrl.run`                          |                        跑步时为 true                         |                                                              |  2.3.0   |
 |                         `ctrl.walk`                          |                        行走时为 true                         |                                                              |  2.3.0   |
-|                         `ctrl.idle`                          |                        待命是为 true                         |                                                              |  2.3.1   |
+|                         `ctrl.idle`                          |                        待命时为 true                         |                                                              |  2.3.1   |
 |                  `ctrl.hold(slotType, id)`                   |      用法：`ctrl.hold('mainhand', '$minecraft:apple')`       | slotType 参数有：`mainhand` `offhand`<br>第二个参数和原来动画命名有点类似，`$`物品ID，`#`物品tag，`:`特殊类别 |  2.3.0   |
 |                  `ctrl.swing(slotType, id)`                  |       用法：`ctrl.swing('offhand', '#minecraft:axes')`       | slotType 参数有：`mainhand` `offhand`<br/>第二个参数和原来动画命名有点类似，`$`物品ID，`#`物品tag，`:`特殊类别 |  2.3.0   |
 |                   `ctrl.use(slotType, id)`                   |             用法：`ctrl.use('offhand', ':eat')`              | slotType 参数有：`mainhand` `offhand`<br/>第二个参数和原来动画命名有点类似，`$`物品ID，`#`物品tag，`:`特殊类别 |  2.3.0   |
