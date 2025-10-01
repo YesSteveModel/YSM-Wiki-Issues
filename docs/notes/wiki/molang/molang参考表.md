@@ -114,105 +114,106 @@ author: K螺诺亚
 
 
 ### ysm 实体部分
-|                                         Molang                                          |                             描述                             |                             备注                             | 版本  |
-|:---------------------------------------------------------------------------------------:| :----------------------------------------------------------: | :----------------------------------------------------------: | :---: |
-|                           `ysm.dump_equipped_item(slotType)`                            |  输出玩家已装备物品的信息⾄聊天框<br>仅在动画调试模式下有效  | slotType 参数有：`chest` `feet` `head` `legs` `mainhand` `offhand` | 1.2.0 |
-|                  `ysm.dump_relative_block(xOffset, yOffset, zOffset)`                   | 输出玩家附近某个⽅块的信息⾄聊天框<br/>仅在动画调试模式下有效 |     三个参数是以玩家下半身为中心点的，参数最大不得超过 8     | 1.2.0 |
-|                                     `ysm.dump_mods`                                     |   输出已安装的模组信息⾄聊天框<br/>仅在动画调试模式下有效    |                                                              | 1.2.0 |
-|                                   `ysm.dump_effects`                                    | 输出玩家附加的药⽔效果的信息⾄聊天框<br/>仅在动画调试模式下有效 |                                                              | 1.2.0 |
-|                                    `ysm.dump_biome`                                     | 输出玩家所在群系的ID和标签到聊天框<br/>仅在动画调试模式下有效 |                                                              | 1.2.0 |
-|                                `ysm.mod_version(modid)`                                 |                返回客⼾端安装的指定模组的版本                |                                                              | 1.2.0 |
-|                     `ysm.equipped_enchantment_level(slotType, id)`                      |               返回玩家已装备物品的指定附魔等级               | slotType 参数有：`chest` `feet` `head` `legs` `mainhand` `offhand` | 1.2.0 |
-|                                 `ysm.effect_level(id)`                                  |              返回玩家或箭⽮上附加的药⽔效果等级              |                                                              | 1.2.0 |
-|                  `ysm.relative_block_name(xOffset, yOffset, zOffset)`                   |                  返回玩家附近某个⽅块的 id                   |     三个参数是以玩家下半身为中心点的，参数最大不得超过 8     | 1.2.0 |
-|                                     `ysm.head_yaw`                                      |                与 query.head_x_rotation 相同                 |                                                              | 1.1.5 |
-|                                    `ysm.head_pitch`                                     |                与 query.head_y_rotation 相同                 |                                                              | 1.1.5 |
-|                                      `ysm.weather`                                      |                         返回当前天⽓                         |              0：晴天，1：⾬或雪，2：雷⾬或暴雪               | 1.2.0 |
-|                                  `ysm.dimension_name`                                   |                       返回当前维度 ID                        |                                                              | 1.2.0 |
-|                                        `ysm.fps`                                        |                         返回游戏帧率                         |                                                              | 1.1.5 |
-|                                  `ysm.input_vertical`                                   |                   获取玩家移动方向（前后）                   |           前进时大于0，后退时小于0，静止不动时为 0           | 2.3.0 |
-|                                 `ysm.input_horizontal`                                  |                   获取玩家移动方向（左右）                   |       向右移动时大于0，向左移动时小于0，静止不动时为 0       | 2.3.0 |
-|                                    `ysm.person_view`                                    |                   返回当前模型所处人称视角                   | 第一人称：0，第三人称背面：1，第三人称正面：2；<br>应该能兼容越肩视角？ | 2.3.1 |
-|                                   `ysm.is_passenger`                                    |                   与 query.is_riding 相同                    |                                                              | 1.1.5 |
-|                                     `ysm.is_sleep`                                      |                  与 query.is_sleeping 相同                   |                                                              | 1.1.5 |
-|                                     `ysm.is_sneak`                                      |                  与 query.is_sneaking 相同                   |                                                              | 1.1.5 |
-|                                  `ysm.biome_category`                                   |                    获取玩家所处群系的类别                    |                仅在 1.16.5 和 1.18.2 可以使⽤                | 1.2.0 |
-|                                    `ysm.is_open_air`                                    |                   判断玩家是否处于露天区域                   |                                                              | 1.2.0 |
-|                                   `ysm.eye_in_water`                                    |       判断眼部是否在⽔下，⽤来判断玩家是否完全浸⼊⽔中       |                                                              | 2.2.1 |
-|                                   `ysm.frozen_ticks`                                    | 当玩家与细雪接触时，此数值每刻增加 1 ，最大 140。不接触时每刻减少 2，直到归零 |                                                              | 2.2.1 |
-|                                    `ysm.air_supply`                                     |                       空⽓值，最⼤ 300                       |                                                              | 2.2.1 |
-|                                    `ysm.has_helmet`                                     |             玩家穿戴头盔时为 true，否则为 false              |                                                              | 1.1.5 |
-|                                  `ysm.has_chest_plate`                                  |             玩家穿戴胸甲时为 true，否则为 false              |                                                              | 1.1.5 |
-|                                   `ysm.has_leggings`                                    |             玩家穿戴护腿时为 true，否则为 false              |                                                              | 1.1.5 |
-|                                     `ysm.has_boots`                                     |             玩家穿戴靴⼦时为 true，否则为 false              |                                                              | 1.1.5 |
-|                                   `ysm.has_mainhand`                                    |           玩家主⼿持有物品时为 true，否则为 false            |                                                              | 1.1.5 |
-|                                    `ysm.has_offhand`                                    |           玩家副⼿持有物品时为 true，否则为 false            |                                                              | 1.1.5 |
-|                                    `ysm.has_elytra`                                     |            玩家穿戴鞘翅时返回 true，否则为 false             |                                                              | 1.1.5 |
-|                                    `ysm.is_riptide`                                     |           玩家处于激流状态时为 true，否则为 false            |                                                              | 1.1.5 |
-|                                    `ysm.armor_value`                                    |                        返回玩家护甲值                        |                                                              | 1.1.5 |
-|                                   `ysm.is_close_eyes`                                   |            默认为 false，当玩家需要眨眼返回 true             |         眨眼频率大约在 4 秒左右。睡觉时也会返回 true         | 1.1.5 |
-|                              `ysm.rendering_in_inventory`                               | 判断模型是否在 GUI 中渲染（例如：模型选择界面）<br>当模型在这些地方渲染时返回 true |                                                              | 2.2.1 |
-|                              `ysm.rendering_in_paperdoll`                               |                  判断模型是否在纸娃娃中渲染                  |             纸娃娃指的就是左上角那个额外玩家渲染             | 2.3.1 |
-|                                     `ysm.on_ladder`                                     |               布尔值，⽤来判断实体是否在梯⼦上               |                                                              | 2.2.1 |
-|                                   `ysm.ladder_facing`                                   |                      实体所爬的梯⼦朝向                      |             输出数字 0-3，分别对应：南-西-北-东              | 2.2.1 |
-|                                    `ysm.arrow_count`                                    |                    玩家插在⾝上的箭的数量                    |                                                              | 2.2.1 |
-|                                   `ysm.stinger_count`                                   |                玩家插在⾝上的蜜蜂的毒刺的数量                |                                                              | 2.2.1 |
-|                                   `ysm.texture_name`                                    |            返回玩家正在使⽤的材质名称（含扩展名）            |                                                              | 1.2.0 |
-|                                   `ysm.elytra_rot_x`                                    |                  返回玩家鞘翅的 X 旋转⻆度                   |                                                              | 1.1.5 |
-|                                   `ysm.elytra_rot_y`                                    |                  返回玩家鞘翅的 Y 旋转⻆度                   |                                                              | 1.1.5 |
-|                                   `ysm.elytra_rot_z`                                    |                  返回玩家鞘翅的 Z 旋转⻆度                   |                                                              | 1.1.5 |
-|                                    `ysm.food_level`                                     |                        返回玩家饱食度                        |                                                              | 1.1.5 |
-|                               `ysm.first_person_mod_hide`                               | 当玩家安装更真实的第一人称模型模组，且需要隐藏玩家头部时为 true，否者为 false |                                                              | 1.1.5 |
-|                             `ysm.has_left_shoulder_parrot`                              |                  判断玩家左肩是否有鹦鹉停靠                  |                                                              | 2.2.1 |
-|                             `ysm.has_right_shoulder_parrot`                             |                  判断玩家右肩是否有鹦鹉停靠                  |                                                              | 2.2.1 |
-|                           `ysm.left_shoulder_parrot_variant`                            |                    返回玩家左肩的鹦鹉变种                    | 1.19 及以前版本没有字符串形式的鹦鹉颜色变种，故此变量仅能用于 1.20 及以后版本 | 2.2.1 |
-|                           `ysm.right_shoulder_parrot_variant`                           |                    返回玩家右肩的鹦鹉变种                    | 1.19 及以前版本没有字符串形式的鹦鹉颜色变种，故此变量仅能用于 1.20 及以后版本 | 2.2.1 |
-|                                   `ysm.attack_damage`                                   |                玩家的攻击伤害，继承自玩家属性                |                                                              | 2.2.1 |
-|                                   `ysm.attack_speed`                                    |                玩家的攻击速度，继承自玩家属性                |                                                              | 2.2.1 |
-|                                 `ysm.attack_knockback`                                  |              玩家的攻击击退效果，继承自玩家属性              |                                                              | 2.2.1 |
-|                                  `ysm.movement_speed`                                   |             玩家的基础移动加速度，继承自玩家属性             |                                                              | 2.2.1 |
-|                               `ysm.knockback_resistance`                                |                玩家的击退抗性，继承自玩家属性                |                                                              | 2.2.1 |
-|                                       `ysm.luck`                                        |                 玩家的幸运值，继承自玩家属性                 |                                                              | 2.2.1 |
-|                                    `ysm.block_reach`                                    |              玩家的方块触及距离，继承自玩家属性              |                                                              | 2.2.1 |
-|                                   `ysm.entity_reach`                                    |              玩家的实体触及距离，继承自玩家属性              |                                                              | 2.2.1 |
-|                                    `ysm.swim_speed`                                     |                玩家的游泳速度，继承自玩家属性                |                                                              | 2.2.1 |
-|                                  `ysm.entity_gravity`                                   |         玩家所受的重力，即下落加速度，继承自玩家属性         |                                                              | 2.2.1 |
-|                               `ysm.step_height_addition`                                | 玩家不用跳跃可以直接走过的最大高度与玩家潜行时不会走下方块的最小高度差，     继承自玩家属性 |                                                              | 2.2.1 |
-|                                 `ysm.nametag_distance`                                  |                       命名牌的可见距离                       |                                                              | 2.2.1 |
-|                        `ysm.first_order(name, input, response)`                         |                         一阶系统函数                         |                                                              | 2.3.0 |
-|            `ysm.second_order(name, input, frequency, coefficient, response)`            |                         二阶系统函数                         |                                                              | 2.3.0 |
-|                                 `ysm.bone_rot(name).x`                                  |                获取特定组名的上一帧X轴旋转值                 |                                                              | 2.2.2 |
-|                                 `ysm.bone_rot(name).y`                                  |                获取特定组名的上一帧Y轴旋转值                 |                                                              | 2.2.2 |
-|                                 `ysm.bone_rot(name).z`                                  |                获取特定组名的上一帧Z轴旋转值                 |                                                              | 2.2.2 |
-|                                 `ysm.bone_pos(name).x`                                  |             获取特定组名在模型相对空间的X轴位置              |                                                              | 2.2.2 |
-|                                 `ysm.bone_pos(name).y`                                  |             获取特定组名在模型相对空间的Y轴位置              |                                                              | 2.2.2 |
-|                                 `ysm.bone_pos(name).z`                                  |             获取特定组名在模型相对空间的Z轴位置              |                                                              | 2.2.2 |
-|                                `ysm.bone_scale(name).x`                                 |                获取特定组名的上一帧X轴缩放值                 |                                                              | 2.2.2 |
-|                                `ysm.bone_scale(name).y`                                 |                获取特定组名的上一帧Y轴缩放值                 |                                                              | 2.2.2 |
-|                                `ysm.bone_scale(name).z`                                 |                获取特定组名的上一帧Z轴缩放值                 |                                                              | 2.2.2 |
-|                              `ysm.bone_pivot_abs(name).x`                               |             获取特定组名在模型绝对空间的X轴位置              |                                                              | 2.2.2 |
-|                              `ysm.bone_pivot_abs(name).y`                               |             获取特定组名在模型绝对空间的Y轴位置              |                                                              | 2.2.2 |
-|                              `ysm.bone_pivot_abs(name).z`                               |             获取特定组名在模型绝对空间的Z轴位置              |                                                              | 2.2.2 |
-|                                    `ysm.entity_type`                                    |    返回当前渲染实体的类型，因为现在渲染不仅仅可以用于玩家    |                  返回 `player` 或者 `maid`                   | 2.4.0 |
-|                                     `ysm.is_player`                                     |                    当前渲染对象是否是玩家                    |                                                              | 2.4.0 |
-|                                      `ysm.is_maid`                                      |                    当前渲染对象是否是女仆                    |                                                              | 2.4.0 |
-|           `ysm.particle('id', x, y, z, dx, dy, dz, speed, count, life_time)`            | 生成粒子，该函数参数和原版 `particle` 指令参数完全一致，仅仅多出了 `life_time` 参数 | 可参考官方 wiki：[粒子指令](https://zh.minecraft.wiki/w/%E5%91%BD%E4%BB%A4/particle) | 2.4.0 |
-|         `ysm.abs_particle('id', x, y, z, dx, dy, dz, speed, count, life_time)`          | 生成粒子，该函数参数和原版 `particle` 指令参数完全一致，仅仅多出了 `life_time` 参数 | 该函数生成的粒子不会随玩家朝向而改变位置，可以理解为绝对坐标生成粒子 | 2.4.0 |
-|                             `ysm.mainhand_charged_crossbow`                             |                     主手是否持有充能弩箭                     |                                                              | 2.4.0 |
-|                             `ysm.offhand_charged_crossbow`                              |                     副手是否持有充能弩箭                     |                                                              | 2.4.0 |
-|                                    `ysm.is_fishing`                                     |                      玩家是否在抛出鱼漂                      |                         也适用于女仆                         | 2.4.0 |
-|                            `ysm.perlin_noise(seed, x, y, z)`                            |           柏林噪声函数，返回一个 0-1 之间的浮点数            | 可以看看可汗学院的这个教程：[柏林噪声](https://zh.khanacademy.org/computing/computer-programming/programming-natural-simulations/programming-noise/a/perlin-noise) | 2.4.0 |
+|                            Molang                            |                             描述                             |                             备注                             | 版本  |
+| :----------------------------------------------------------: | :----------------------------------------------------------: | :----------------------------------------------------------: | :---: |
+|              `ysm.dump_equipped_item(slotType)`              |  输出玩家已装备物品的信息⾄聊天框<br>仅在动画调试模式下有效  | slotType 参数有：`chest` `feet` `head` `legs` `mainhand` `offhand` | 1.2.0 |
+|     `ysm.dump_relative_block(xOffset, yOffset, zOffset)`     | 输出玩家附近某个⽅块的信息⾄聊天框<br/>仅在动画调试模式下有效 |     三个参数是以玩家下半身为中心点的，参数最大不得超过 8     | 1.2.0 |
+|                       `ysm.dump_mods`                        |   输出已安装的模组信息⾄聊天框<br/>仅在动画调试模式下有效    |                                                              | 1.2.0 |
+|                      `ysm.dump_effects`                      | 输出玩家附加的药⽔效果的信息⾄聊天框<br/>仅在动画调试模式下有效 |                                                              | 1.2.0 |
+|                       `ysm.dump_biome`                       | 输出玩家所在群系的ID和标签到聊天框<br/>仅在动画调试模式下有效 |                                                              | 1.2.0 |
+|                   `ysm.mod_version(modid)`                   |                返回客⼾端安装的指定模组的版本                |                                                              | 1.2.0 |
+|        `ysm.equipped_enchantment_level(slotType, id)`        | 返回玩家已装备物品的指定附魔等级<br>2.5.0 及之后该方法可以传递多个 `id` 参数，返回所有的等级之和 | slotType 参数有：`chest` `feet` `head` `legs` `mainhand` `offhand` | 1.2.0 |
+|                    `ysm.effect_level(id)`                    | 返回玩家或箭⽮上附加的药⽔效果等级<br/>2.5.0 及之后该方法可以传递多个 `id` 参数，返回所有的效果等级之和 |                                                              | 1.2.0 |
+|     `ysm.relative_block_name(xOffset, yOffset, zOffset)`     |                  返回玩家附近某个⽅块的 id                   |     三个参数是以玩家下半身为中心点的，参数最大不得超过 8     | 1.2.0 |
+|                        `ysm.head_yaw`                        |                与 query.head_x_rotation 相同                 |                                                              | 1.1.5 |
+|                       `ysm.head_pitch`                       |                与 query.head_y_rotation 相同                 |                                                              | 1.1.5 |
+|                        `ysm.weather`                         |                         返回当前天⽓                         |              0：晴天，1：⾬或雪，2：雷⾬或暴雪               | 1.2.0 |
+|                     `ysm.dimension_name`                     |                       返回当前维度 ID                        |                                                              | 1.2.0 |
+|                          `ysm.fps`                           |                         返回游戏帧率                         |                                                              | 1.1.5 |
+|                     `ysm.input_vertical`                     |                   获取玩家移动方向（前后）                   |           前进时大于0，后退时小于0，静止不动时为 0           | 2.3.0 |
+|                    `ysm.input_horizontal`                    |                   获取玩家移动方向（左右）                   |       向右移动时大于0，向左移动时小于0，静止不动时为 0       | 2.3.0 |
+|                      `ysm.person_view`                       |                   返回当前模型所处人称视角                   | 第一人称：0，第三人称背面：1，第三人称正面：2；<br>应该能兼容越肩视角？ | 2.3.1 |
+|                      `ysm.is_passenger`                      |                   与 query.is_riding 相同                    |                                                              | 1.1.5 |
+|                        `ysm.is_sleep`                        |                  与 query.is_sleeping 相同                   |                                                              | 1.1.5 |
+|                        `ysm.is_sneak`                        |                  与 query.is_sneaking 相同                   |                                                              | 1.1.5 |
+|                     `ysm.biome_category`                     |                    获取玩家所处群系的类别                    |                仅在 1.16.5 和 1.18.2 可以使⽤                | 1.2.0 |
+|                      `ysm.is_open_air`                       |                   判断玩家是否处于露天区域                   |                                                              | 1.2.0 |
+|                      `ysm.eye_in_water`                      |       判断眼部是否在⽔下，⽤来判断玩家是否完全浸⼊⽔中       |                                                              | 2.2.1 |
+|                      `ysm.frozen_ticks`                      | 当玩家与细雪接触时，此数值每刻增加 1 ，最大 140。不接触时每刻减少 2，直到归零 |                                                              | 2.2.1 |
+|                       `ysm.air_supply`                       |                       空⽓值，最⼤ 300                       |                                                              | 2.2.1 |
+|                       `ysm.has_helmet`                       |             玩家穿戴头盔时为 true，否则为 false              |                                                              | 1.1.5 |
+|                    `ysm.has_chest_plate`                     |             玩家穿戴胸甲时为 true，否则为 false              |                                                              | 1.1.5 |
+|                      `ysm.has_leggings`                      |             玩家穿戴护腿时为 true，否则为 false              |                                                              | 1.1.5 |
+|                       `ysm.has_boots`                        |             玩家穿戴靴⼦时为 true，否则为 false              |                                                              | 1.1.5 |
+|                      `ysm.has_mainhand`                      |           玩家主⼿持有物品时为 true，否则为 false            |                                                              | 1.1.5 |
+|                      `ysm.has_offhand`                       |           玩家副⼿持有物品时为 true，否则为 false            |                                                              | 1.1.5 |
+|                       `ysm.has_elytra`                       |            玩家穿戴鞘翅时返回 true，否则为 false             |                                                              | 1.1.5 |
+|                       `ysm.is_riptide`                       |           玩家处于激流状态时为 true，否则为 false            |                                                              | 1.1.5 |
+|                      `ysm.armor_value`                       |                        返回玩家护甲值                        |                                                              | 1.1.5 |
+|                     `ysm.is_close_eyes`                      |            默认为 false，当玩家需要眨眼返回 true             |         眨眼频率大约在 4 秒左右。睡觉时也会返回 true         | 1.1.5 |
+|                 `ysm.rendering_in_inventory`                 | 判断模型是否在 GUI 中渲染（例如：模型选择界面）<br>当模型在这些地方渲染时返回 true |                                                              | 2.2.1 |
+|                 `ysm.rendering_in_paperdoll`                 |                  判断模型是否在纸娃娃中渲染                  |             纸娃娃指的就是左上角那个额外玩家渲染             | 2.3.1 |
+|                       `ysm.on_ladder`                        |               布尔值，⽤来判断实体是否在梯⼦上               |                                                              | 2.2.1 |
+|                     `ysm.ladder_facing`                      |                      实体所爬的梯⼦朝向                      |             输出数字 0-3，分别对应：南-西-北-东              | 2.2.1 |
+|                      `ysm.arrow_count`                       |                    玩家插在⾝上的箭的数量                    |                                                              | 2.2.1 |
+|                     `ysm.stinger_count`                      |                玩家插在⾝上的蜜蜂的毒刺的数量                |                                                              | 2.2.1 |
+|                      `ysm.texture_name`                      |            返回玩家正在使⽤的材质名称（含扩展名）            |                                                              | 1.2.0 |
+|                      `ysm.elytra_rot_x`                      |                  返回玩家鞘翅的 X 旋转⻆度                   |                                                              | 1.1.5 |
+|                      `ysm.elytra_rot_y`                      |                  返回玩家鞘翅的 Y 旋转⻆度                   |                                                              | 1.1.5 |
+|                      `ysm.elytra_rot_z`                      |                  返回玩家鞘翅的 Z 旋转⻆度                   |                                                              | 1.1.5 |
+|                       `ysm.food_level`                       |                        返回玩家饱食度                        |                                                              | 1.1.5 |
+|                 `ysm.first_person_mod_hide`                  | 当玩家安装更真实的第一人称模型模组，且需要隐藏玩家头部时为 true，否者为 false |                                                              | 1.1.5 |
+|                `ysm.has_left_shoulder_parrot`                |                  判断玩家左肩是否有鹦鹉停靠                  |                                                              | 2.2.1 |
+|               `ysm.has_right_shoulder_parrot`                |                  判断玩家右肩是否有鹦鹉停靠                  |                                                              | 2.2.1 |
+|              `ysm.left_shoulder_parrot_variant`              |                    返回玩家左肩的鹦鹉变种                    | 1.19 及以前版本没有字符串形式的鹦鹉颜色变种，故此变量仅能用于 1.20 及以后版本 | 2.2.1 |
+|             `ysm.right_shoulder_parrot_variant`              |                    返回玩家右肩的鹦鹉变种                    | 1.19 及以前版本没有字符串形式的鹦鹉颜色变种，故此变量仅能用于 1.20 及以后版本 | 2.2.1 |
+|                     `ysm.attack_damage`                      |                玩家的攻击伤害，继承自玩家属性                |                                                              | 2.2.1 |
+|                      `ysm.attack_speed`                      |                玩家的攻击速度，继承自玩家属性                |                                                              | 2.2.1 |
+|                    `ysm.attack_knockback`                    |              玩家的攻击击退效果，继承自玩家属性              |                                                              | 2.2.1 |
+|                     `ysm.movement_speed`                     |             玩家的基础移动加速度，继承自玩家属性             |                                                              | 2.2.1 |
+|                  `ysm.knockback_resistance`                  |                玩家的击退抗性，继承自玩家属性                |                                                              | 2.2.1 |
+|                          `ysm.luck`                          |                 玩家的幸运值，继承自玩家属性                 |                                                              | 2.2.1 |
+|                      `ysm.block_reach`                       |              玩家的方块触及距离，继承自玩家属性              |                                                              | 2.2.1 |
+|                      `ysm.entity_reach`                      |              玩家的实体触及距离，继承自玩家属性              |                                                              | 2.2.1 |
+|                       `ysm.swim_speed`                       |                玩家的游泳速度，继承自玩家属性                |                                                              | 2.2.1 |
+|                     `ysm.entity_gravity`                     |         玩家所受的重力，即下落加速度，继承自玩家属性         |                                                              | 2.2.1 |
+|                  `ysm.step_height_addition`                  | 玩家不用跳跃可以直接走过的最大高度与玩家潜行时不会走下方块的最小高度差，     继承自玩家属性 |                                                              | 2.2.1 |
+|                    `ysm.nametag_distance`                    |                       命名牌的可见距离                       |                                                              | 2.2.1 |
+|           `ysm.first_order(name, input, response)`           |                         一阶系统函数                         |                                                              | 2.3.0 |
+| `ysm.second_order(name, input, frequency, coefficient, response)` |                         二阶系统函数                         |                                                              | 2.3.0 |
+|                    `ysm.bone_rot(name).x`                    |                获取特定组名的上一帧X轴旋转值                 |                                                              | 2.2.2 |
+|                    `ysm.bone_rot(name).y`                    |                获取特定组名的上一帧Y轴旋转值                 |                                                              | 2.2.2 |
+|                    `ysm.bone_rot(name).z`                    |                获取特定组名的上一帧Z轴旋转值                 |                                                              | 2.2.2 |
+|                    `ysm.bone_pos(name).x`                    |             获取特定组名在模型相对空间的X轴位置              |                                                              | 2.2.2 |
+|                    `ysm.bone_pos(name).y`                    |             获取特定组名在模型相对空间的Y轴位置              |                                                              | 2.2.2 |
+|                    `ysm.bone_pos(name).z`                    |             获取特定组名在模型相对空间的Z轴位置              |                                                              | 2.2.2 |
+|                   `ysm.bone_scale(name).x`                   |                获取特定组名的上一帧X轴缩放值                 |                                                              | 2.2.2 |
+|                   `ysm.bone_scale(name).y`                   |                获取特定组名的上一帧Y轴缩放值                 |                                                              | 2.2.2 |
+|                   `ysm.bone_scale(name).z`                   |                获取特定组名的上一帧Z轴缩放值                 |                                                              | 2.2.2 |
+|                 `ysm.bone_pivot_abs(name).x`                 |             获取特定组名在模型绝对空间的X轴位置              |                                                              | 2.2.2 |
+|                 `ysm.bone_pivot_abs(name).y`                 |             获取特定组名在模型绝对空间的Y轴位置              |                                                              | 2.2.2 |
+|                 `ysm.bone_pivot_abs(name).z`                 |             获取特定组名在模型绝对空间的Z轴位置              |                                                              | 2.2.2 |
+|                      `ysm.entity_type`                       |    返回当前渲染实体的类型，因为现在渲染不仅仅可以用于玩家    |                  返回 `player` 或者 `maid`                   | 2.4.0 |
+|                       `ysm.is_player`                        |                    当前渲染对象是否是玩家                    |                                                              | 2.4.0 |
+|                        `ysm.is_maid`                         |                    当前渲染对象是否是女仆                    |                                                              | 2.4.0 |
+| `ysm.particle('id', x, y, z, dx, dy, dz, speed, count, life_time)` | 生成粒子，该函数参数和原版 `particle` 指令参数完全一致，仅仅多出了 `life_time` 参数 | 可参考官方 wiki：[粒子指令](https://zh.minecraft.wiki/w/%E5%91%BD%E4%BB%A4/particle) | 2.4.0 |
+| `ysm.abs_particle('id', x, y, z, dx, dy, dz, speed, count, life_time)` | 生成粒子，该函数参数和原版 `particle` 指令参数完全一致，仅仅多出了 `life_time` 参数 | 该函数生成的粒子不会随玩家朝向而改变位置，可以理解为绝对坐标生成粒子 | 2.4.0 |
+|               `ysm.mainhand_charged_crossbow`                |                     主手是否持有充能弩箭                     |                                                              | 2.4.0 |
+|                `ysm.offhand_charged_crossbow`                |                     副手是否持有充能弩箭                     |                                                              | 2.4.0 |
+|                       `ysm.is_fishing`                       |                      玩家是否在抛出鱼漂                      |                         也适用于女仆                         | 2.4.0 |
+|              `ysm.perlin_noise(seed, x, y, z)`               |           柏林噪声函数，返回一个 0-1 之间的浮点数            | 可以看看可汗学院的这个教程：[柏林噪声](https://zh.khanacademy.org/computing/computer-programming/programming-natural-simulations/programming-noise/a/perlin-noise) | 2.4.0 |
 | `ysm.relative_block_name_any(xOffset, yOffset, zOffset, 'blockName1', 'blockName2'...)` | 和 `ysm.relative_block_name` 类似，不过可以传入多个方块 ID 字符串。 |               只要有一个 ID 匹配，即返回 true                | 2.5.0 |
-|                             `ysm.in_shield_block_cooldown`                              |       布尔值变量，当前是否处于盾牌成功格挡的冷却时间内       |                     冷却时间持续 5 tick                      | 2.5.0 |
-|                          `ysm.xxa`<br/>`ysm.yya`<br/>`ysm.zza`                          | 当玩家骑乘实体时，玩家按下前后左右键时，该变量分别有对应数值 | 前后为 `ysm.xxa`<br>左右为 `ysm.yya`<br>`ysm.zza` 不知何用，上下移动未见数值变化 | 2.5.0 |
-|              `ysm.play_sound('id', 'sound_name', boolean, volume, pitch)`               | 播放音频，`id`为该音频的标识，`sound_name` 写法和音频关键帧动画里的写法一致。<br>`boolean` 为是否强制播放 | 当设置为强制播放时，每次执行都会把先前同 ID 的音频停掉，然后重头播放。 | 2.5.0 |
-|                                 `ysm.stop_sound('id')`                                  |                 停止音频，`id`为该音频的标识                 |                                                              | 2.5.0 |
-|                                  `ysm.stop_all_sounds`                                  |               停止所有 molang 添加而播放的音频               |                          该函数无参                          | 2.5.0 |
-|                                    `ysm.block_light`                                    |                         脚下方块亮度                         |                             0-15                             | 2.5.0 |
-|                                     `ysm.sky_light`                                     |                 脚下方块受到天空所贡献的亮度                 |                     0-15，完全露天为 15                      | 2.5.0 |
-|                             `ysm.mouse(keycode)` [+client]                              |                       检测鼠标按键情况                       | 填入键码[鼠标按键对应的数字](https://www.glfw.org/docs/latest/group__buttons.html) | 2.5.0 |
-|                                 `ysm.keyboard(keycode)` [+client]                                 |                       检测键盘按键情况                       | 填入键码[按键对应的数字](https://www.glfw.org/docs/latest/group__keys.html) | 2.5.0 |
-|                               `ysm.sync(int1, int2, ...)`                               |      主动向服务器同步数据，参考后续自定义函数篇章的说明      |                                                              | 2.5.0 |
+|                `ysm.in_shield_block_cooldown`                |       布尔值变量，当前是否处于盾牌成功格挡的冷却时间内       |                     冷却时间持续 5 tick                      | 2.5.0 |
+|            `ysm.xxa`<br/>`ysm.yya`<br/>`ysm.zza`             | 当玩家骑乘实体时，玩家按下前后左右键时，该变量分别有对应数值 | 前后为 `ysm.xxa`<br>左右为 `ysm.yya`<br>`ysm.zza` 不知何用，上下移动未见数值变化 | 2.5.0 |
+| `ysm.play_sound('id', 'sound_name', boolean, volume, pitch)` | 播放音频，`id`为该音频的标识，`sound_name` 写法和音频关键帧动画里的写法一致。<br>`boolean` 为是否强制播放 | 当设置为强制播放时，每次执行都会把先前同 ID 的音频停掉，然后重头播放。 | 2.5.0 |
+|                    `ysm.stop_sound('id')`                    |                 停止音频，`id`为该音频的标识                 |                                                              | 2.5.0 |
+|                    `ysm.stop_all_sounds`                     |               停止所有 molang 添加而播放的音频               |                          该函数无参                          | 2.5.0 |
+|                      `ysm.block_light`                       |                         脚下方块亮度                         |                             0-15                             | 2.5.0 |
+|                       `ysm.sky_light`                        |                 脚下方块受到天空所贡献的亮度                 |                     0-15，完全露天为 15                      | 2.5.0 |
+|                `ysm.mouse(keycode)` [+client]                |                       检测鼠标按键情况                       | 填入键码[鼠标按键对应的数字](https://www.glfw.org/docs/latest/group__buttons.html) | 2.5.0 |
+|      `ysm.keyboard(keycode1, keycode2, ...)` [+client]       |                       检测键盘按键情况                       | 填入键码[按键对应的数字](https://www.glfw.org/docs/latest/group__keys.html)。支持 1 至多个参数。<br>当写入多个参数时，只要有一个按键按下，则返回 true | 2.5.0 |
+|                       `ysm.time_delta`                       |                      两帧之间的时间间隔                      |                                                              | 2.5.0 |
+|                 `ysm.sync(int1, int2, ...)`                  |      主动向服务器同步数据，参考后续自定义函数篇章的说明      |                                                              | 2.5.0 |
 
 ### ysm 弹射物相关
 
