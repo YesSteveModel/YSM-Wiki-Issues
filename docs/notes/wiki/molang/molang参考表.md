@@ -79,7 +79,8 @@ author: K螺诺亚
 |                 `query.distance_from_camera`                 |                   返回玩家和镜头之间的距离                   |                                                              | 1.1.5 |
 |                `query.eye_target_x_rotation`                 |              返回玩家视⻆ X 旋转⻆度，默认为 0               |                                                              | 1.1.5 |
 |                `query.eye_target_y_rotation`                 |              返回玩家视⻆ Y 旋转⻆度，默认为 0               |                                                              | 1.1.5 |
-|                     `query.ground_speed`                     |                         返回玩家速度                         | 该值没有负数值，即使人物后退也会输出正值，无法根据人物行进方向不同做出响应；<br>行走值大约为 1.7，跑动值大约为 3.2，飞行值为 20 | 1.1.5 |
+|                `query.ground_speed` [+client]                |                         返回玩家速度                         | 该值没有负数值，即使人物后退也会输出正值，无法根据人物行进方向不同做出响应；<br>行走值大约为 1.7，跑动值大约为 3.2，飞行值为 20 | 1.1.5 |
+|                    `query.ground_speed2`                     |                         返回玩家速度                         | 该值和上面的 `query.ground_speed` 都是人物的速度。但是此值可以在服务端玩家之间同步<br/>此方法返回数值和上面的变量有所不同，数值稍大 | 2.5.1 |
 |               `query.modified_distance_moved`                |                 玩家⽔平移动距离的总数（⽶）                 |                                                              | 1.1.5 |
 |                    `query.vertical_speed`                    |    返回玩家移动中垂直分量的速度（⽶/秒），朝上移动为正数     |         创造模式飞行：[-7.5,7.5]<br>高处掉落：[0,20]         | 1.1.5 |
 |                    `query.walk_distance`                     |               返回玩家步⾏移动距离的总数（⽶）               |                                                              | 1.1.5 |
