@@ -214,7 +214,7 @@ author: K螺诺亚
 |      `ysm.keyboard(keycode1, keycode2, ...)` [+client]       |                       检测键盘按键情况                       | 填入键码[按键对应的数字](https://www.glfw.org/docs/latest/group__keys.html)。支持 1 至多个参数。<br>当写入多个参数时，只要有一个按键按下，则返回 true | 2.5.0 |
 |                       `ysm.time_delta`                       |                      两帧之间的时间间隔                      |                                                              | 2.5.0 |
 |                 `ysm.sync(int1, int2, ...)`                  |      主动向服务器同步数据，参考后续自定义函数篇章的说明      |                                                              | 2.5.0 |
-|                    `query.ground_speed2`                     |                         返回玩家速度                         | 该值和上面的 `query.ground_speed` 都是人物的速度。但是此值可以在服务端玩家之间同步<br/>此方法返回数值和上面的变量有所不同，数值稍大 | 2.5.1 |
+|                    `ysm.ground_speed2`                     |                         返回玩家速度                         | 该值和上面的 `query.ground_speed` 都是人物的速度。但是此值可以在服务端玩家之间同步<br/>此方法返回数值和上面的变量有所不同，数值稍大 | 2.5.1 |
 
 ### ysm 弹射物相关
 
