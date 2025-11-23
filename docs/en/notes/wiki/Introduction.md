@@ -105,4 +105,13 @@ Versions 1.1.5 and earlier were written in pure Java and support the three major
 
 Since the encryption algorithm of the old versions written in Java was quickly cracked, starting from version 1.2.0, the core encryption and rendering parts are all written in C++. This greatly improves the rendering performance and security, but the multi-platform support is poor.
 
-Currently, the client side supports Windows x64, Linux x64 and Android ARM64 systems, while the server side supports Windows and Linux x64 systems. Support for other platforms and architectures is also in progress. Updates will be announced if there are any progresses.
+The system support situation is as follows:
+
+|        System         | Client | Server |
+| :-------------------: | :----: | :----: |
+|     Windows AMD64     |   ✅   |   ✅   |
+|      Linux AMD64      |   ✅   |   ✅   |
+|    Android AArch64    |   ✅   |   ❌   |
+|     macOS (Intel)     |   ❌   |   ❌   |
+| macOS (Apple Silicon) |   ❌   |   ❌   |
+
