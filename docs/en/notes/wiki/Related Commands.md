@@ -28,6 +28,7 @@ These commands can be executed on both the server and the client.
 - `/ysm export <model_id> [extra_info]` Export a model to the YSM exclusive model format. You can also add additional information.
 - `/ysm ping` Test the connectivity between the client and the server. If the message "The server mod and the client version are inconsistent" appears, you can execute this command. This command has no permission requirements.
 - `/ysm molang execute <player> <expr>` Execute molang on a specified player. It can be used in multiplayer games, but the execution result will not be printed.
+- `/ysm model disable <player> [true | false]` This command was added in version 2.5.2 and is used to disable a player's model. When set to true, the corresponding player will no longer display the YSM model and will revert to the original model.
 
 ## Client Commands
 
@@ -41,5 +42,8 @@ These commands are only executed on the client and are used by model creators to
     - The expression is executed before animations if `pre` is specified, or after if `post` is specified.
     - In versions 2.2.2 and earlier, you need to press `Alt` + `B` twice to enter the custom debug screen.
     - In versions 2.3.0 and later, you only need to press `Alt` + `B` once to enter the custom debug screen.
+    - In versions 2.5.2 and later, you can debug the target entity by pressing `Alt` + `B` on the entity using the YSM model.
 - `/ysmclient molang watch remove <name>` Remove a previously added molang expression.
 - `/ysmclient molang watch clear` Clear all previously added molang expressions.
+- `/ysmclient debug <selector>` A command added in 2.5.2 which can accurately match the corresponding entity for debugging.
+- `/ysmclient molang execute <expr>` A command added in 2.5.2 which can execute Molang expressions on the currently debugged entity.
