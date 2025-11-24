@@ -48,7 +48,7 @@ There are also many artists who helped design models or correct animations. Sinc
 ### 1. Why is this mod closed source and has encrypted art resources?
 The theft and resale of art resources has always been a serious problem. This mod was originally designed to avoid this as much as possible.
 
-### 2. Why does the latest version of this mod not support Mac and Linux, or ARM architecture platforms?
+### 2. Why does the latest version of this mod not support Mac?
 The earliest version was written in pure Java and could support any platform, but it was quickly cracked due to security issues.    
 For security reasons, the core part was rewritten in C++. Writing cross-platform code in C++ is relatively troublesome.    
 However, we are currently also promoting compatibility with other platforms. It is still in progress. We will update in time when there is progress. But it takes time, so please understand.    
