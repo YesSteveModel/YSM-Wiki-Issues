@@ -215,9 +215,34 @@ Currently supported launchers are:
 If you are using the correct launcher but still cannot play normally, please update your launcher to the latest version.
 
 ::: collapse
-- If you are the developer of the Android Minecraft JE launcher...
+- If you are the developer of the Android version of Minecraft JE Launcher...
 
-  Due to Android's permission restrictions, YSM requires a special environment variable `MOD_ANDROID_RUNTIME` to run properly, which is used to store the files required for YSM to operate.
+  Due to Android's permission restrictions, YSM requires a special environment variable `MOD_ANDROID_RUNTIME` to run properly. It is used to store the files needed for YSM's operation. Below is the compatibility description:
+
+  ::: demo-wrapper title="MOD_ANDROID_RUNTIME Environment Variable Configuration Instructions"
+
+  ## Configuration Requirements
+
+  The `MOD_ANDROID_RUNTIME` environment variable must point to a directory in the same namespace as `libjvm.so`.
+
+  ## Technical Background
+
+  Android 7.0+ introduced the native library namespace isolation mechanism. The `.so` library files of the Yes Steve Model mod need to be in the same namespace as the JVM runtime library to load correctly.
+
+  ## Supported Launcher Configuration Examples
+
+  #### Fold Craft Launcher
+  - Environment variable path: `/data/user/0/com.tungsten.fcl/app_runtime_mod`
+  - JVM runtime library path: `/data/user/0/com.tungsten.fcl/app_runtime/java/jre17/lib/server/libjvm.so`
+
+  #### Zalith Launcher
+  - Environment variable path: `/data/user/0/com.movtery.zalithlauncher/app_runtime_mod`
+  - JVM runtime library path: `/data/user/0/com.movtery.zalithlauncher/runtimes/Internal-17/lib/server/libjvm.so`
+
+  ## Reference Documents
+
+  - [Android Native Library Namespaces Documentation](https://source.android.com/docs/core/permissions/namespaces_libraries)
+  
 :::
 
 You can also choose to play the NetEase Edition.
