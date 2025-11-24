@@ -28,9 +28,17 @@ If you cannot solve a problem on your own, you can ask other people in the commu
 
 ## How to Install the Mod
 
-The latest release version of the mod is: `2.5.0`
+The latest release version of the mod is: `2.5.3`
 
 The mod works on:
+
+<Card title="Version 2.5.3" icon="icon-park-outline:tag">
+
+- Forge: `1.20.1`
+- Fabric: `1.21.1` `1.20.1`
+- NeoForge: `1.21.1`
+
+</Card>
 
 <Card title="Version 2.4.1" icon="icon-park-outline:tag">
 
@@ -122,7 +130,7 @@ Note that the following steps for installing models only applies to singleplayer
 If you have installed your model following the instructions above, but still cannot find it, please check the following:
 
 - Did you actually have the mod installed?
-- Did you have the latest version (2.5.0) of the mod installed? Most new models requires mod version 2.2.2 or above. Version 1.1.5 is no longer supported!
+- Did you have the latest version (2.5.3) of the mod installed? Most new models requires mod version 2.2.2 or above. Version 1.1.5 is no longer supported!
 - Were you in multiplayer? Only the OP can install models on a server.
 - Have you executed the command `/ysm model reload` to reload the models?
 - If you were playing for the first time, and have quite a lot of models installed, you could be in a situation where only the default model is available after reloading. Please wait for a while as the mod is building cache for your models, after which the models should show up. (Same for multiplayer)
@@ -178,7 +186,7 @@ Use the compatibility renderer. Instructions:
 
 ![lowversion.jpg](https://s21.ax1x.com/2025/02/03/pEZotl6.jpg)
 
-If you encountered this, please check if your YSM is up to date (the latest version is 2.5.0). If not, please update.
+If you encountered this, please check if your YSM is up to date (the latest version is 2.5.3). If not, please update.
 
 If it is up to date, please contact the model author.
 
@@ -196,7 +204,46 @@ In the case that you encounter any problems when playing the NetEase Edition, pl
 
 ## Can I Play YSM on My Phone
 
-Yes, but only YSM for Java Edition of version 1.1.5 and below. Starting from version 1.2.0, due to the change to the core code, playing YSM on phone is no longer supported. We will solve this issue in future versions step by step.
+Yes, starting from version 2.5.2, this mod supports mobile gameplay, but a compatible launcher needs to be installed.
+
+Currently supported launchers are:
+
+- [Fold Craft Launcher](https://github.com/FCL-Team/FoldCraftLauncher)
+- [Zalith Launcher](https://github.com/ZalithLauncher/ZalithLauncher)
+- [Zalith Launcher 2](https://github.com/ZalithLauncher/ZalithLauncher2)
+
+If you are using the correct launcher but still cannot play normally, please update your launcher to the latest version.
+
+::: collapse
+- If you are the developer of the Android version of Minecraft JE Launcher...
+
+  Due to Android's permission restrictions, YSM requires a special environment variable `MOD_ANDROID_RUNTIME` to run properly. It is used to store the native files needed for YSM's operation. Below is the compatibility description:
+
+  ::: demo-wrapper title="MOD_ANDROID_RUNTIME Environment Variable Configuration Instructions"
+
+  ## Configuration Requirements
+
+  The `MOD_ANDROID_RUNTIME` environment variable must point to a directory in the same namespace as `libjvm.so`.
+
+  ## Technical Background
+
+  Android 7.0+ introduced the native library namespace isolation mechanism. The `.so` library files of the Yes Steve Model mod need to be in the same namespace as the JVM runtime library to load correctly.
+
+  ## Supported Launcher Configuration Examples
+
+  #### Fold Craft Launcher
+  - Environment variable path: `/data/user/0/com.tungsten.fcl/app_runtime_mod`
+  - JVM runtime library path: `/data/user/0/com.tungsten.fcl/app_runtime/java/jre17/lib/server/libjvm.so`
+
+  #### Zalith Launcher
+  - Environment variable path: `/data/user/0/com.movtery.zalithlauncher/app_runtime_mod`
+  - JVM runtime library path: `/data/user/0/com.movtery.zalithlauncher/runtimes/Internal-17/lib/server/libjvm.so`
+
+  ## Reference Documents
+
+  - [Android Native Library Namespaces Documentation](https://source.android.com/docs/core/permissions/namespaces_libraries)
+  
+:::
 
 You can also choose to play the NetEase Edition.
 
