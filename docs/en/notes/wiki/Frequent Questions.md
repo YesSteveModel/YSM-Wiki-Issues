@@ -61,7 +61,8 @@ We always expect that you can use the latest version. You can check the version 
 ::: warning
 
 - Please distinguish the difference between `Forge` and `Fabric` when downloading!
-  :::
+
+:::
 
 Watch some walkthrough videos in case you really don't know how to install the mod.
 
