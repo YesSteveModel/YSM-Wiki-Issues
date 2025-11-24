@@ -217,7 +217,7 @@ If you are using the correct launcher but still cannot play normally, please upd
 ::: collapse
 - If you are the developer of the Android version of Minecraft JE Launcher...
 
-  Due to Android's permission restrictions, YSM requires a special environment variable `MOD_ANDROID_RUNTIME` to run properly. It is used to store the files needed for YSM's operation. Below is the compatibility description:
+  Due to Android's permission restrictions, YSM requires a special environment variable `MOD_ANDROID_RUNTIME` to run properly. It is used to store the native files needed for YSM's operation. Below is the compatibility description:
 
   ::: demo-wrapper title="MOD_ANDROID_RUNTIME Environment Variable Configuration Instructions"
 
