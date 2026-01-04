@@ -18,7 +18,7 @@ All commands have in-game hints. All model IDs and player IDs are intelligently 
 These commands can be executed on both the server and the client.
 
 - `/ysm model reload` Reload all model files: Also synchronizes the model files to all client players.
-- `/ysm model set <player> <model_id> <texture_id> [ignore_auth]` Assign a specific model and texture to a player. The last `ignore_auth` parameter is optional. When set to true, it will ignore the model authorization and force the model to be assigned to the player.
+- `/ysm model set <player> <model_id> <texture_id> [ignore_auth]` Assign a specific model and texture to a player, `-` can be entered in `texture_id` to apply the default texture. The last `ignore_auth` parameter is optional. When set to true, it will ignore the model authorization and force the model to be assigned to the player.
 - `/ysm play <player> <animation_name>` Force a player to play an animation.
 - `/ysm play <player> stop` Clear the animation that was previously forced to be played by the player.
 - `/ysm auth <player> all` Authorize all models to a player.

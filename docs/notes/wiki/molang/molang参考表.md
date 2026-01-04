@@ -111,6 +111,7 @@ author: K螺诺亚
 |                   `query.cape_flap_amount`                   |          返回披⻛飘起的程度，即使玩家没穿披⻛也有效          |   0 为完全垂下，1 完全飘起<br>返回数据非常奇怪，不推荐使用   | 1.2.0 |
 |                     `query.player_level`                     |                         返回玩家等级                         |                                                              | 1.1.5 |
 |                      `query.is_jumping`                      |               玩家跳跃时为 true，否则为 false                |                                                              | 1.1.5 |
+|`query.rotation_to_camera`|返回玩家摄像机视角的 yaw 和 pitch|2.6.0|
 
 
 ### ysm 实体部分
@@ -205,9 +206,9 @@ author: K螺诺亚
 | `ysm.relative_block_name_any(xOffset, yOffset, zOffset, 'blockName1', 'blockName2'...)` | 和 `ysm.relative_block_name` 类似，不过可以传入多个方块 ID 字符串。 |               只要有一个 ID 匹配，即返回 true                | 2.5.0 |
 |                `ysm.in_shield_block_cooldown`                |       布尔值变量，当前是否处于盾牌成功格挡的冷却时间内       |                     冷却时间持续 5 tick                      | 2.5.0 |
 |            `ysm.xxa`<br/>`ysm.yya`<br/>`ysm.zza`             | 当玩家骑乘实体时，玩家按下前后左右键时，该变量分别有对应数值 | 前后为 `ysm.xxa`<br>左右为 `ysm.yya`<br>`ysm.zza` 不知何用，上下移动未见数值变化 | 2.5.0 |
-| `ysm.play_sound('id', 'sound_name', boolean, volume, pitch)` | 播放音频，`id`为该音频的标识，`sound_name` 写法和音频关键帧动画里的写法一致。<br>`boolean` 为是否强制播放 | 当设置为强制播放时，每次执行都会把先前同 ID 的音频停掉，然后重头播放。 | 2.5.0 |
-|                    `ysm.stop_sound('id')`                    |                 停止音频，`id`为该音频的标识                 |                                                              | 2.5.0 |
-|                    `ysm.stop_all_sounds`                     |               停止所有 molang 添加而播放的音频               |                          该函数无参                          | 2.5.0 |
+| `ysm.play_sound('id', 'sound_name', boolean, volume, pitch)`[+new_sound] | 播放音频，`id`为该音频的标识，`sound_name` 写法和音频关键帧动画里的写法一致。<br>`boolean` 为是否强制播放 | 当设置为强制播放时，每次执行都会把先前同 ID 的音频停掉，然后重头播放。 | 2.5.0 |
+|                    `ysm.stop_sound('id')`[+new_sound]                    |                 停止音频，`id`为该音频的标识                 |                                                              | 2.5.0 |
+|                    `ysm.stop_all_sounds`[+new_sound]                     |               停止所有 molang 添加而播放的音频               |                          该函数无参                          | 2.5.0 |
 |                      `ysm.block_light`                       |                         脚下方块亮度                         |                             0-15                             | 2.5.0 |
 |                       `ysm.sky_light`                        |                 脚下方块受到天空所贡献的亮度                 |                     0-15，完全露天为 15                      | 2.5.0 |
 |                `ysm.mouse(keycode)` [+client]                |                       检测鼠标按键情况                       | 填入键码[鼠标按键对应的数字](https://www.glfw.org/docs/latest/group__buttons.html) | 2.5.0 |
@@ -215,6 +216,8 @@ author: K螺诺亚
 |                       `ysm.time_delta`                       |                      两帧之间的时间间隔                      |                                                              | 2.5.0 |
 |                 `ysm.sync(int1, int2, ...)`                  |      主动向服务器同步数据，参考后续自定义函数篇章的说明      |                                                              | 2.5.0 |
 |                    `ysm.ground_speed2`                     |                         返回玩家速度                         | 该值和上面的 `query.ground_speed` 都是人物的速度。但是此值可以在服务端玩家之间同步<br/>此方法返回数值和上面的变量有所不同，数值稍大 | 2.5.1 |
+|                    `ysm.hit_target_id`                     |                         返回鼠标指针指向的方块或实体 ID                         |  | 2.6.0 |
+|                    `ysm.hit_target_type`                   |                         返回鼠标指针指向的目标类型                        | 方块返回 block，实体返回 entity| 2.6.0 |
 
 ### ysm 弹射物相关
 
@@ -229,6 +232,14 @@ author: K螺诺亚
 |    `ysm.throwable_item`     |              物品类型投掷物的物品 ID               |                                                              |  2.5.0   |
 |       `ysm.hooked_in`       |                 鱼钩勾住的实体 ID                  |                      不存在时为空字符串                      |  2.5.0   |
 |       `ysm.is_biting`       |                    鱼钩是否咬钩                    |                            布尔值                            |  2.5.0   |
+
+### ysm 攻击 swing 相关 molang
+|      Molang       |                 描述                 | 适用版本 |
+| :---------------: | :----------------------------------: | :-----: |
+| `ysm.swinging` |          布尔值，当玩家挥动时，返回 true           |   2.6.0  |
+|  `ysm.swing_time`  | 整数，当玩家挥动时，返回挥动的计数，一般在 10 以内 |   2.6.0  |
+|  `ysm.swinging_arm`  |         挥动的手臂，主手为 0，副手为 1         |   2.6.0  |
+| `ysm.attack_timee`  |       浮点数，攻击时前摇的计数器；0-1 之间，当为 1 时，触发攻击        |   2.6.0  |
 
 ### Ctrl 部分
 
@@ -276,6 +287,18 @@ author: K螺诺亚
 |  `ctrl.slashblade_animation`   |                    玩家当前打出的剑技名称                    |      返回字符串<br/>如果没有打出任何剑技，返回空字符串       |  2.3.0   |
 | `ctrl.playing_extra_animation` |                    玩家是否在播放轮盘动画                    |                          返回布尔值                          |  2.5.0   |
 | `ctrl.create_hanging_skyhook`  |                   玩家是否在机械动力悬链上                   |                          返回布尔值                          |  2.5.0   |
+| `ctrl.tac_fire_mode`           |                    tacz 的开火模式                          |                          返回字符串                          |  2.6.0   |
+| `ctrl.bcombat_attack_animation` |                   返回 Better Combat 的攻击动画            |              注意该动画不区分主副手，需通过额外条件判断         |  2.6.0   |
+| `ctrl.iss_animation`           |                    返回 铁魔法施法动画                      |                            返回字符串                         |  2.6.0   |
+
+###  Ctrl 沉浸式奏乐相关
+|      Molang       |                 描述                 | 适用版本 |
+| :---------------: | :----------------------------------: | :-----: |
+| `ctrl.im_current` |          电平强度，范围0-1           |   2.6.0  |
+|  `ctrl.im_delta`  | 自上次音符输出后经过的时间（单位：ms） |   2.6.0  |
+|  `ctrl.im_pitch`  |         音高，一般是0-2之间          |   2.6.0  |
+| `ctrl.im_volume`  |       音符强度，一般是0-2之间        |   2.6.0  |
+|  `ctrl.im_time`   |         自开始演奏后过的时间         |   2.6.0  |
 
 ### 脚本控制器
 
@@ -330,3 +353,7 @@ author: K螺诺亚
 [+client]:
     ::fluent-color:warning-24 =36px:: 此 molang 仅能在客户端使用 <br>
     无法同步此数据到服务器其他玩家
+
+[+new_sound]:
+    ::fluent-color:warning-24 =36px:: 声音播放相关的 molang 在 2.5.3 时进行了一次更新 <br>
+    [点击这里查看相关信息](/wiki/sound/#_2-5-3-版本音频系统更新)

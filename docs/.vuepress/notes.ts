@@ -32,7 +32,8 @@ const zhNote = defineNoteConfig({
                 '项目结构',
                 '模型制作',
                 '贴图制作',
-                "PBR贴图",
+                'YSM 模型 UV 规范',
+                'PBR贴图',
                 '添加音频',
                 '自定义轮盘',
                 '动画控制器',
@@ -65,6 +66,9 @@ const zhNote = defineNoteConfig({
                 '女仆动画',
                 '骑乘实体动画',
                 '第一人称动画',
+                '铁魔法动画',
+                '沉浸式奏乐动画',
+                '更好的战斗动画',
                 '更真实的第一人称'
             ],
         },
@@ -98,6 +102,7 @@ const zhNote = defineNoteConfig({
             icon: 'ix:log',
             prefix: '更新日志',
             items: [
+                '2.6.0 更新日志',
                 '2.5.3 更新日志',
                 '2.5.2 更新日志',
                 '2.5.1 更新日志',
@@ -146,6 +151,7 @@ const enNote = defineNoteConfig({
             icon: 'ix:log',
             prefix: 'Update Log',
             items: [
+                '2.6.0 Update Log',
                 '2.5.3 Update Log',
                 '2.5.2 Update Log',
                 '2.4.1 Update Log',
