@@ -25,6 +25,7 @@ There are three formats for model files. All of them can be recognized and loade
 All custom model files are placed in the `config/yes_steve_model` folder under the main game directory. Four folders will be automatically generated under `yes_steve_model`:
 
 - `auth` folder: Used to place custom models. The custom models in this folder **must be authorized** before they can be used.
+- `builtin` folder: Contains the model files that come with the mod. This folder **will be cleared and regenerated every time the game is launched**.
 - `cache` folder: A cache folder for encrypted model files automatically obtained from the server by the system.
 - `custom` folder: Used to place custom models. The custom models in this location can be used **without authorization**.
 - `export` folder: When the `/ysm export` command is used in the game, the models in the exclusive ysm format generated will be here.

@@ -13,10 +13,12 @@ Yes Steve Model is a mod that modifies the original player model. It uses the mo
 ![img](https://s2.loli.net/2023/01/01/RAor58n6LBct3kW.jpg)
 
 ::: tip
-The latest version of Yes Steve Model is **2.5.0**.
+The latest version of Yes Steve Model is **2.6.0**.
 :::
 
 ::: tip
+Version **2.6.0** supports 1.20.1 Forge, 1.20.1/1.21.1 Fabric, and 1.21.1 NeoForge, a total of 4 versions.
+
 Version **2.4.1** supports 1.16.5/1.18.2/1.19.2/1.20.1 Forge, 1.16.5/1.18.2/1.19.2/1.20.1/1.21/1.21.1 Fabric, and 1.21/1.21.1 NeoForge, a total of 12 versions.
 :::
 
@@ -82,6 +84,30 @@ The Yes Steve Model mod takes into account the mod requirements of the server co
     description="Capable of rendering Sophisticated Backpacks"
     href="/"
   />
+ <ImageCard
+    image="https://s2.loli.net/2025/09/19/HUiqBToOeYDnayl.jpg"
+    title="Superb Warfare"
+    description="It can be perfectly compatible with various actions of the module, such as holding a gun, reloading, aiming, firing, and throwing grenades."
+    href="/"
+  />
+ <ImageCard
+    image="https://s2.loli.net/2025/09/19/2Mhn5ufiCxysOwH.jpg"
+    title="Create"
+    description="Support Suspended-under-Chain Animation."
+    href="/"
+  />
+ <ImageCard
+    image="https://s41.ax1x.com/2026/01/04/pZadZ6g.jpg"
+    title="Iron's Spells 'n Spellbooks"
+    description="Support the casting animations of Iron's Spells 'n Spellbooks"
+    href="/"
+  />
+ <ImageCard
+    image="https://s41.ax1x.com/2026/01/04/pZadEp8.jpg"
+    title="Immersive Melodies"
+    description="Support Immersive Melodies Animations"
+    href="/"
+  />
 </CardGrid>
 
 ## Mod Compatibility
@@ -98,6 +124,9 @@ The Yes Steve Model mod takes into account the mod requirements of the server co
 - Compatible with the fake players of the [Carpet](https://www.curseforge.com/minecraft/mc-mods/carpet) and [Curtain](https://www.curseforge.com/minecraft/mc-mods/curtain) mods.
 - Compatible with [Touhou Little Maid](https://www.curseforge.com/minecraft/mc-mods/touhou-little-maid), which can replace the rendering model of the maid in this mod. Requires to use Maid mod version 1.2.0 or above.
 - Compatible with [Sophisticated Backpacks](https://modrinth.com/mod/sophisticated-backpacks), which can render the backpack of this mod.
+- Compatible with [Better Combat](https://modrinth.com/mod/better-combat), Attack animations for Better Combat can now be created.
+- Compatible with [Iron's Spells 'n Spellbooks](https://modrinth.com/mod/irons-spells-n-spellbooks) mods.
+- Compatible with [Immersive Melodies](https://modrinth.com/mod/immersive-melodies) mods.
 
 ## Platform Support
 
