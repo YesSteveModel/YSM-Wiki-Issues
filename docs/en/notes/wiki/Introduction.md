@@ -13,11 +13,11 @@ Yes Steve Model is a mod that modifies the original player model. It uses the mo
 ![img](/img/notes/wiki/intro/intro_image_001_f2170853.jpg)
 
 ::: tip
-The latest version of Yes Steve Model is **2.6.4**.
+The latest version of Yes Steve Model is **2.6.5**.
 :::
 
 ::: tip
-Version **2.6.4** supports 1.20.1 Forge, 1.20.1/1.21.1 Fabric, and 1.21.1 NeoForge, a total of 4 versions.
+Version **2.6.5** supports 1.20.1 Forge, 1.20.1/1.21.1 Fabric, and 1.21.1/26.1.2 NeoForge, a total of 5 versions.
 
 Version **2.4.1** supports 1.16.5/1.18.2/1.19.2/1.20.1 Forge, 1.16.5/1.18.2/1.19.2/1.20.1/1.21/1.21.1 Fabric, and 1.21/1.21.1 NeoForge, a total of 12 versions.
 :::
