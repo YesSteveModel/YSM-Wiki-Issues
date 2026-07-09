@@ -65,8 +65,8 @@ author: K螺诺亚
 |                          `query.max_durability(slotType)`                           |                返回指定槽位物品的最⼤耐久                 |     slotType 参数有：`chest` `feet` `head` `legs` `mainhand` `offhand`      | 2.2.1 |
 |                    `query.remaining_durability`<br>`(slotType)`                     |                返回指定槽位物品的剩余耐久                 |     slotType 参数有：`chest` `feet` `head` `legs` `mainhand` `offhand`      | 2.2.1 |
 |                                 `query.actor_count`                                 |                返回已加载范围内的实体数量                 |                                                                         | 1.1.5 |
-|                                  `query.anim_time`                                  |           当前动画播放时间（秒），如果动画未播放则为 0            |                   是动画时间轴，输出单位是秒。<br>循环动画则是播放总时长，长度无限制                   | 1.1.5 |
-|                                  `query.life_time`                                  |           当前动画播放了多久（秒），如果动画未播放则为 0           |                           是动画生存时间，最大长度是当前动画长度                           | 1.1.5 |
+|                                  `query.anim_time`                                  |           当前动画播放时间（秒），如果动画未播放则为 0            |                   是动画时间轴，最大长度是当前动画长度                   | 1.1.5 |
+|                                  `query.life_time`                                  |           当前动画播放了多久（秒），如果动画未播放则为 0           |                           是动画生存时间，输出单位是秒。<br>循环动画则是播放总时长，长度无限制                         | 1.1.5 |
 |                           `query.all_animations_finished`                           |              当前控制器内所有的动画都播放完毕了               |                               仅能用于动画控制器内                                | 2.3.0 |
 |                           `query.any_animation_finished`                            |              当前控制器内任意一个动画播放完毕了               |                               仅能用于动画控制器内                                | 2.3.0 |
 |                               `query.head_x_rotation`                               |             返回玩家头部 X 旋转⻆度，默认为 0              |                                                                         | 1.1.5 |
@@ -332,7 +332,7 @@ author: K螺诺亚
 | `tlm.favorability_level` |          女仆好感度等级          |                  返回值：0-384                  | 2.4.0 |
 |      `tlm.task_id`       |         女仆工作模式 id         |                    是字符串                     | 2.4.0 |
 |      `tlm.schedule`      |          女仆工作日程           |  返回值：`day`、`night`、`all`<br>分别对应：白班、夜班、全天   | 2.4.0 |
-|      `tlm.activity`      |          女仆当前活动           | 返回值：`work`、`idle`、`reset`<br/>分别对应：上班、下班、睡觉 | 2.4.0 |
+|      `tlm.activity`      |          女仆当前活动           | 返回值：`work`、`idle`、`rest`<br/>分别对应：上班、下班、睡觉 | 2.4.0 |
 |  `tlm.gomoku_win_count`  |        女仆五子棋赢棋总回合数        |                  目前仅记录了五子棋                  | 2.4.0 |
 |    `tlm.gomoku_rank`     |          女仆五子棋段位          |                1-4，==没有 0==                 | 2.4.0 |
 |    `tlm.game_statue`     |           棋局状态            |           返回值：`win`、`lost`或者空字符串            | 2.4.0 |
